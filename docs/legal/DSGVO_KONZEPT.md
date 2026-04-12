@@ -67,7 +67,7 @@ Es gilt **nicht** für:
 |---|---|---|
 | **Niedergelassener Vertragsarzt / Praxis** | **Verantwortlicher** (Art. 4 Nr. 7 DSGVO) | Entscheidet über Zweck und Mittel der Datenverarbeitung; das Tool ist Mittel zur Erfüllung seiner Dokumentations- und Plausibilitätsprüfungspflichten. |
 | **VerordnungsAmpel (Software)** | **Hilfsmittel / Werkzeug** | Kein eigenes Rechtssubjekt. Die Software verarbeitet Daten rein lokal auf der Infrastruktur des Verantwortlichen. |
-| **Um:bruch e.V. / Therapiefreiheit e.V. (Entwickler/Herausgeber)** | **Weder Auftragsverarbeiter noch Verantwortlicher** | Stellt die Software als Open-Source-Werkzeug bereit. Kein Zugriff auf die Daten, keine Weisungsbefugnis bei der Verarbeitung. Analog zu Herstellern von Office-Software oder Editoren. |
+| **Urheber des Quellcodes** (Lukas Geiger, c/o Um:bruch Think Tank — nicht als eingetragener Verein; keine formelle Trägerorganisation) | **Weder Auftragsverarbeiter noch Verantwortlicher** | Stellt die Software als Open-Source-Werkzeug bereit. Kein Zugriff auf die Daten, keine Weisungsbefugnis bei der Verarbeitung. Analog zu Herstellern von Office-Software oder Editoren. |
 | **Prototype Fund / OKFN Deutschland (Förderer)** | **Kein DSGVO-Akteur** | Fördert die Entwicklung, verarbeitet keine Daten aus dem Tool. |
 
 ### 2.1 Warum der Entwickler nicht Verantwortlicher ist

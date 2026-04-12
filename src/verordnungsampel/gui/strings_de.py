@@ -8,10 +8,10 @@ from __future__ import annotations
 
 
 APP_TITLE = "VerordnungsAmpel"
-APP_TAGLINE = "Companion-Tool für Vertragsärzte zur Regress-Prävention"
+APP_TAGLINE = "Softwareentwurf — Regress-Risikoindikatoren aus öffentlichen Regelwerken (ohne Gewähr)"
 
 # Tray-Tooltip / Menüs
-TRAY_TOOLTIP = "VerordnungsAmpel — Regress-Prävention"
+TRAY_TOOLTIP = "VerordnungsAmpel — Risiko-Check (Softwareentwurf, ohne Gewähr)"
 TRAY_SHOW = "Fenster anzeigen"
 TRAY_HIDE = "Fenster verbergen"
 TRAY_QUIT = "Beenden"
