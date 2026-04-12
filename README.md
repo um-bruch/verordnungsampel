@@ -1,23 +1,41 @@
 # VerordnungsAmpel
 
-> Companion-Tool für niedergelassene Vertragsärzte zur Regress-Prävention
-> im Moment der Verordnung.
+> **Softwareentwurf** zum strukturierten Abgleich ärztlicher Verordnungen
+> mit öffentlich dokumentierten Regelwerken (AM-RL Anlagen III/V/VI,
+> PRISCUS 2.0, Praxisbesonderheiten-Listen). Zu Forschungs- und
+> Weiterentwicklungszwecken veröffentlicht — ohne jegliche Gewähr.
 >
-> Companion tool for German physicians to prevent recoupment claims at the
-> point of prescription.
+> **Software draft** for structured comparison of prescriptions with
+> publicly documented regulatory rule-sets (German statutory health-
+> insurance context). Released for research and further development
+> by stakeholders in the healthcare system — without any warranty.
 
 > ⚠️ **Rechtlicher Hinweis / Legal Notice**
 >
-> VerordnungsAmpel ist ein **Informations- und Nachschlagewerk**.
-> Kein Medizinprodukt. Nicht klinisch validiert. Nicht durch BfArM oder
-> Benannte Stelle geprüft. Nicht zertifiziert. Kein Wartungsvertrag,
-> kein Support-Versprechen, keine Verfügbarkeitszusage. Nutzung auf
-> eigenes Risiko. Die ärztliche Verantwortung bleibt unverändert
-> (§ 76 SGB V, § 630a BGB).
+> Dieses Projekt ist ein **Softwareentwurf**, der **bekannte** Regress-
+> Risikoindikatoren aus öffentlichen Regelwerken zur Anzeige bringt —
+> nicht mehr. Er ist:
+>
+> - **Kein Medizinprodukt** im Sinne der MDR (EU) 2017/745
+> - **Keine Regress-Prävention** — Regresse werden durch das Tool
+>   weder verhindert noch mit Wirksamkeit versprochen
+> - **Kein klinisches Entscheidungsunterstützungssystem**
+> - **Nicht klinisch validiert**, nicht durch BfArM oder eine Benannte
+>   Stelle geprüft, nicht zertifiziert
+> - **Ohne Validitätsprüfung** der Regelwerkseinträge durch medizinische
+>   Fachgesellschaften
+> - **Ohne** Wartungsvertrag, Support-Versprechen oder
+>   Verfügbarkeitszusage
+>
+> Zweckbestimmung: **Risikoindikatoren-Anzeige zu Forschungszwecken**,
+> freigegeben zur Weiterentwicklung durch Akteure des Gesundheitswesens
+> (Ärzteverbände, Forschungsgruppen, Pilotprojekte). Die ärztliche
+> Verantwortung für jede Verordnung bleibt unverändert und
+> uneingeschränkt (§ 76 SGB V, § 630a BGB).
 >
 > Unentgeltliche Open-Source-Schenkung gemäß §§ 516 ff. BGB. Haftung
 > auf Vorsatz und grobe Fahrlässigkeit beschränkt (§ 521 BGB, GPL-3.0
-> §§ 15/16).
+> §§ 15/16). Nutzung ausschließlich auf eigenes Risiko.
 
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
@@ -29,14 +47,22 @@
 
 ### Was es ist
 
-Ein Open-Source-Tool, das neben dem Praxisverwaltungssystem (PVS) läuft und bei jeder
-ärztlichen Verordnung die Kombination aus **ICD-10-GM-Code** und **ATC-Code** gegen
-öffentliche Regelwerke prüft. Ausgabe: eine Ampel (grün/gelb/rot) mit Begründung,
-Quellenverweis und fälschungssicherem Audit-Trail.
+Ein **Softwareentwurf**, der die Kombination aus **ICD-10-GM-Code** und
+**ATC-Code** gegen **bekannte öffentliche Regelwerke** (AM-RL Anlagen III/V/VI,
+PRISCUS 2.0) abgleicht und farbige Risikoindikatoren (grün/gelb/rot) ausgibt —
+mit Quellenverweis und nachvollziehbarem Audit-Trail. Zweckbestimmung:
+Forschung, Lehre, Weiterentwicklung durch Akteure des Gesundheitswesens.
 
-**Was es nicht ist:** Kein Praxisverwaltungssystem. Kein Medical Device (im Sinne der
-MDR). Keine Patientendatenverarbeitung. Nur Plausibilitätsprüfung gegen öffentliche
-Regelwerke.
+**Was es ausdrücklich NICHT ist:**
+- Kein Praxisverwaltungssystem
+- Kein Medical Device Software (MDSW) im Sinne der MDR
+- **Keine Regress-Prävention** — das Tool verhindert keine Regresse und
+  verspricht keine Wirkung
+- Keine klinische Entscheidungsunterstützung
+- Keine Therapie- oder Diagnoseempfehlung
+- Keine Patientendatenverarbeitung
+- **Nicht klinisch validiert** — die Regelwerkseinträge wurden von
+  medizinischen Fachgesellschaften nicht geprüft
 
 ### Warum
 
@@ -205,7 +231,7 @@ only fully terminated by **right-clicking the tray icon → Quit**.
 
 - **PP-003** — anonymous reporting platform concept for past recoupments
 - **ST-001** — scientific companion study — https://github.com/research-line/regressangst
-- **VerordnungsAmpel** — this project — tool to prevent future recoupments before they happen
+- **VerordnungsAmpel** — this project — **software draft** displaying recoupment-risk indicators from public rule-sets, released for research and further development (no warranty, no clinical validation, no claim of actual prevention)
 
 ### Disclaimer
 

@@ -324,7 +324,7 @@ Legende: ✅ voll vorhanden · 🟡 teilweise / eingeschränkt · ❌ nicht vorh
 
 ### 4.1 Klare Stärken (belastbar belegt)
 
-1. **§ 106 SGB V als Primärzweck.** Kein anderes recherchiertes Tool adressiert **Wirtschaftlichkeitsprüfung / Regress-Prävention** als Kernzweck. Die kommerziellen Tools (UpToDate, AMBOSS, Lexicomp) sind medizinische Informationswerke; Dr. Clever adressiert EBM-Abrechnung, nicht Arzneimittel-Verordnung; arriba adressiert Shared Decision Making. Die VerordnungsAmpel füllt eine **nachweislich offene Nische**.
+1. **§ 106 SGB V als Zweckbezug am Point-of-Prescription.** Kein anderes recherchiertes Tool zeigt am Verordnungspunkt Regress-Risikoindikatoren aus AM-RL Anlagen III/V/VI mit Container-Logik und Hash-Chain-Log. Die kommerziellen Tools (UpToDate, AMBOSS, Lexicomp) sind medizinische Informationswerke; Dr. Clever adressiert EBM-Abrechnung, nicht Arzneimittel-Verordnung; arriba adressiert Shared Decision Making; medimed prescriber® (siehe Nachtrag § 106) arbeitet rückblickend, nicht am Point-of-Prescription. Die VerordnungsAmpel füllt eine **belegte Workflow-Lücke**. Hinweis: Das Tool **verspricht keine Regress-Prävention** und nutzt diesen Begriff nicht als Zweckbestimmung — es ist ein Risikoindikatoren-Softwareentwurf zu Forschungszwecken.
 
 2. **Hash-Chain-Compliance-Log mit Beweiskraftanspruch.** In der Recherche fand sich kein kommerzielles Arzneimittel-Tool mit einer expliziten kryptographischen Hash-Chain auf Ebene der einzelnen Verordnung plus dokumentiertem Anspruch auf Beweiskraft im Sozialgerichtsverfahren (§ 371a ZPO analog). PVS führen Audit-Logs, aber die öffentliche Doku-Tiefe reicht nicht bis zu einer kryptographischen Verkettung.
 
@@ -354,7 +354,7 @@ Legende: ✅ voll vorhanden · 🟡 teilweise / eingeschränkt · ❌ nicht vorh
 
 Ist VerordnungsAmpel **Komplement** oder **Konkurrent** zu AMBOSS, ifap, den PVS-Modulen?
 
-**Plausibelste Antwort:** Komplement. Die juristisch-compliance-fokussierte Nische (Regress-Prävention, § 106-Compliance-Log, Praxisbesonderheiten, BSG-Formularerzwingung) ist von medizinischen Informationswerken nicht besetzt und würde sich in deren Produktstrategie auch nicht sinnvoll integrieren lassen, weil sie die MDSW-Klassifizierung dieser Werke verändern könnte.
+**Plausibelste Antwort:** Komplement. Die juristisch-sozialrechtlich-fokussierte Nische (Risikoindikatoren-Anzeige am Verordnungspunkt, § 106-Compliance-Log, Praxisbesonderheiten-Hinweise, BSG-konforme Begründungserfassung) ist von medizinischen Informationswerken nicht besetzt und würde sich in deren Produktstrategie auch nicht sinnvoll integrieren lassen, weil sie die MDSW-Klassifizierung dieser Werke verändern könnte.
 
 ---
 

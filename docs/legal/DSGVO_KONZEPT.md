@@ -1,6 +1,6 @@
 # VerordnungsAmpel_SOCIAL — DSGVO-Konzept
 
-> Datenschutzkonzept für das Companion-Tool "VerordnungsAmpel" (Regress-Prävention für Vertragsärzte).
+> Datenschutzkonzept für das Projekt "VerordnungsAmpel" (Softwareentwurf: Abgleich ärztlicher Verordnungen mit öffentlichen Regelwerken; Regress-Risikoindikatoren-Anzeige zu Forschungszwecken).
 > Erstellt: 2026-04-12 | Status: Erstversion | Version: 1.0
 > Verfasser: Rechtsabteilung (RB) des Um:bruch Think Tanks (CL / Claude)
 > Prüfintervall: Halbjährlich oder bei funktionalen Erweiterungen, die neue Datenflüsse einführen.
@@ -74,8 +74,9 @@ Es gilt **nicht** für:
 
 Gemäß EuGH C-25/17 (Zeugen Jehovas) und EDSA-Leitlinien 07/2020 zu Verantwortlichkeit ist
 Verantwortlicher, wer **"über Zwecke und Mittel der Verarbeitung entscheidet"**. Die Entwickler
-von VerordnungsAmpel entscheiden weder über den Zweck der Verarbeitung (Regressprävention in der
-konkreten Praxis) noch über die Mittel im entscheidungsrelevanten Sinne (welche Patientenfälle
+von VerordnungsAmpel entscheiden weder über den Zweck der Verarbeitung (Risikoindikatoren-Sichtung
+und sozialrechtliche Dokumentation in der konkreten Praxis) noch über die Mittel im
+entscheidungsrelevanten Sinne (welche Patientenfälle
 verordnet werden). Die Festlegung der Software-Funktionen ist mit der Festlegung des Zwecks einer
 allgemeinen Software (z. B. LibreOffice, Thunderbird) vergleichbar und begründet keine Verantwort-
 lichkeit.
@@ -115,9 +116,9 @@ Der Arzt / die Praxis muss:
 
 | Nr. | Tätigkeit | Betroffene | Datenarten | Rechtsgrundlage | Speicherdauer | Empfänger | Drittland? |
 |---|---|---|---|---|---|---|---|
-| **V1** | **Plausibilitätsprüfung Verordnung** | Arzt (als Nutzer); ggf. Patient (pseudonymisiert) | ICD-10-GM-Code, ATC-Code, Alter (Jahre), optional Patienten-Pseudonym | Art. 6(1)(f) DSGVO (berechtigtes Interesse Arzt: Regressprävention, Dokumentation nach § 630f BGB) | Dauerhaft im Compliance-Log, bis aktive Löschung durch Arzt | Keine (lokal) | Nein |
+| **V1** | **Plausibilitätsprüfung Verordnung** | Arzt (als Nutzer); ggf. Patient (pseudonymisiert) | ICD-10-GM-Code, ATC-Code, Alter (Jahre), optional Patienten-Pseudonym | Art. 6(1)(f) DSGVO (berechtigtes Interesse Arzt: Regress-Risiko-Dokumentation, Dokumentation nach § 630f BGB) | Dauerhaft im Compliance-Log, bis aktive Löschung durch Arzt | Keine (lokal) | Nein |
 | **V2** | **Strukturierte Begründung (HSM)** | Arzt; ggf. Patient (pseudonymisiert) | Freitext-Begründung, Vorbehandlung, Therapieversagen, Diagnose-Kontext | Art. 6(1)(c) i.V.m. § 630f BGB (Dokumentationspflicht), Art. 6(1)(f) (Beweisvorsorge) | Dauerhaft im Compliance-Log | Keine | Nein |
-| **V3** | **Compliance-Log mit Hash-Chain** | Arzt; Praxis | Zeitstempel, Hash-Kette, versiegelter Eintrag (enthält V1+V2-Daten) | Art. 6(1)(c) i.V.m. § 630f BGB, Art. 6(1)(f) (Regressschutz) | 10 Jahre (Analogie zu § 630f Abs. 3 BGB, ärztliche Dokumentationspflicht); danach löschbar | Keine | Nein |
+| **V3** | **Compliance-Log mit Hash-Chain** | Arzt; Praxis | Zeitstempel, Hash-Kette, versiegelter Eintrag (enthält V1+V2-Daten) | Art. 6(1)(c) i.V.m. § 630f BGB, Art. 6(1)(f) (Regress-Risiko-Dokumentation, Beweisvorsorge) | 10 Jahre (Analogie zu § 630f Abs. 3 BGB, ärztliche Dokumentationspflicht); danach löschbar | Keine | Nein |
 | **V4** | **Praxis-Kontextdaten** | Arzt, Praxis | Praxisname, Arztname, ggf. LANR, BSNR (in Workflow-Briefen) | Art. 6(1)(c) (Pflichtangaben in KK-Antrag), Art. 6(1)(f) | Bis Deinstallation / aktive Löschung | Keine | Nein |
 | **V5** | **Workflow-Brief-Generierung** (Antrag an KK, Stellungnahme) | Arzt, Patient (pseudonymisiert), Krankenkasse (Empfänger) | Praxisdaten (V4) + Patienten-Pseudonym + medizinische Begründung (V2) | Art. 6(1)(c) i.V.m. § 31 Abs. 6 SGB V (Cannabis), § 37 SGB V etc. | Briefausgabe dauerhaft im Compliance-Log; Textdatei-Export liegt in Nutzerhand | Krankenkasse (bei Versand durch Arzt) | Nein |
 | **V6** | **Quartalsreminder Praxisbesonderheiten** | Arzt | Aggregation aus V1-V3-Einträgen eines Quartals | Art. 6(1)(f) (LSG BW 15.11.2023: substanziierter Vortrag PB) | Report-Ausgabe transient; Rohdaten siehe V3 | Keine | Nein |
@@ -138,7 +139,7 @@ Siehe Abschnitt 8 (Technisch-organisatorische Maßnahmen).
 
 | Verarbeitung | Primäre Rechtsgrundlage | Sekundäre/Flankierende | Erwägung |
 |---|---|---|---|
-| V1 Plausibilitätsprüfung | **Art. 6(1)(f)** berechtigtes Interesse | Art. 6(1)(b) wenn Patient Arztvertrag hat | Regressprävention ist berechtigtes Interesse des Arztes; Patient profitiert mittelbar (qualitätsgesicherte Verordnung). |
+| V1 Plausibilitätsprüfung | **Art. 6(1)(f)** berechtigtes Interesse | Art. 6(1)(b) wenn Patient Arztvertrag hat | Regress-Risiko-Dokumentation ist berechtigtes Interesse des Arztes; Patient profitiert mittelbar (qualitätsgesicherte Verordnung). |
 | V2 Begründungsdokumentation | **Art. 6(1)(c)** rechtliche Pflicht | Art. 6(1)(f) | § 630f BGB (Patientenakte), § 57 BMV-Ä, SGB V. |
 | V3 Compliance-Log | **Art. 6(1)(c)** + **Art. 6(1)(f)** | — | Doppelter Grund: Dokumentationspflicht + Beweisvorsorge Sozialgericht (BSG B 6 KA 26/13). |
 | V4 Praxis-Kontextdaten | **Art. 6(1)(c)** | Art. 6(1)(f) | Pflichtangaben bei Anträgen; eigene Daten des Arztes (Art. 6(1)(a) nicht erforderlich, da keine Drittperson). |

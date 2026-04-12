@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "verordnungsampel"
 version = "0.1.0"
-description = "Companion-Tool fuer Vertragsaerzte zur Regress-Praevention im Moment der Verordnung"
+description = "Softwareentwurf — Abgleich aerztlicher Verordnungen mit bekannten oeffentlichen Regelwerken (AM-RL, PRISCUS). Regress-Risikoindikatoren ohne Gewaehr, zu Forschungszwecken."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "GPL-3.0-or-later" }
 authors = [
     { name = "Lukas Geiger", email = "hallo@um-bruch.org" }
 ]
-keywords = ["medizin", "verordnung", "regress", "praevention", "gkv", "icd-10", "atc"]
+keywords = ["medizin", "verordnung", "regress", "risiko-indikator", "gkv", "icd-10", "atc", "forschung", "open-source"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Healthcare Industry",

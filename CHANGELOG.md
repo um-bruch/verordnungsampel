@@ -15,9 +15,10 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 ### Geändert / Changed
 - Ordner-Lifecycle: DEV → PreGit → GO-PRI (privates Repository in research-line)
 - Repository-URL: github.com/research-line/verordnungsampel
+- Zweckbestimmung neu formuliert: **"Regress-Prävention"** als Vermarktungsbegriff fallengelassen (Risiko § 444 BGB Zusicherung, § 5 UWG irreführende Werbung, MDR-Zweckbestimmung). Neu: "Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren aus öffentlichen Regelwerken — zu Forschungs- und Weiterentwicklungszwecken, ohne Gewähr." Betroffen: README, NOTICE, pyproject.toml, GUI-Strings, DSGVO-Konzept, Marktvergleich.
 
 ### Behoben / Fixed
--
+- Marketing-Blacklist: "KI" als interne Abkürzung für Kontraindikation ersetzt (Verwechslungsgefahr mit AI/KI); "KI-gestützt" → "KI-basiert" in USER-GUIDE
 
 ## [0.1.0] - 2026-04-08
 

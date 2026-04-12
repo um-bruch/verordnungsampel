@@ -120,8 +120,12 @@ BTN_CLOSE = "Schließen"
 STATUS_READY = "Bereit"
 ABOUT_TEXT = (
     "VerordnungsAmpel — Prototyp v{version}\n"
-    "Companion-Tool für Vertragsärzte zur Regress-Prävention.\n"
-    "Kein Medical Device. Ersetzt keine ärztliche Prüfung.\n"
+    "Softwareentwurf zum Abgleich ärztlicher Verordnungen\n"
+    "mit bekannten öffentlichen Regelwerken (AM-RL, PRISCUS 2.0).\n"
+    "Regress-Risikoindikatoren-Anzeige ohne Gewähr.\n"
+    "Zu Forschungs- und Weiterentwicklungszwecken veröffentlicht.\n"
+    "Kein Medical Device. Keine Regress-Prävention. Nicht klinisch\n"
+    "validiert. Ersetzt keine ärztliche Prüfung.\n"
     "Lizenz: GPL-3.0-or-later"
 )
 
