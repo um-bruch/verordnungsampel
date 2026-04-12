@@ -6,6 +6,19 @@
 > Companion tool for German physicians to prevent recoupment claims at the
 > point of prescription.
 
+> ⚠️ **Rechtlicher Hinweis / Legal Notice**
+>
+> VerordnungsAmpel ist ein **Informations- und Nachschlagewerk**.
+> Kein Medizinprodukt. Nicht klinisch validiert. Nicht durch BfArM oder
+> Benannte Stelle geprüft. Nicht zertifiziert. Kein Wartungsvertrag,
+> kein Support-Versprechen, keine Verfügbarkeitszusage. Nutzung auf
+> eigenes Risiko. Die ärztliche Verantwortung bleibt unverändert
+> (§ 76 SGB V, § 630a BGB).
+>
+> Unentgeltliche Open-Source-Schenkung gemäß §§ 516 ff. BGB. Haftung
+> auf Vorsatz und grobe Fahrlässigkeit beschränkt (§ 521 BGB, GPL-3.0
+> §§ 15/16).
+
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
 **Repository:** https://github.com/research-line/verordnungsampel

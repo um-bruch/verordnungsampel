@@ -130,3 +130,36 @@ HINT_NOT_MEDICAL_DEVICE = (
     "Hinweis: Dies ist ein Informationswerk, kein Medical Device. "
     "Es ersetzt NICHT die ärztliche Prüfung im Einzelfall."
 )
+
+# Dauerhafte Statuszeile (unter MainWindow, Haftungsgutachten 10.3)
+STATUS_PERMANENT_DISCLAIMER = (
+    "Pre-Alpha — nicht klinisch validiert — keine Gewährleistung"
+)
+
+# Disclaimer-Dialog (Erststart-Acknowledgement, Haftungsgutachten 10.2)
+DISCLAIMER_DIALOG_TITLE = (
+    "VerordnungsAmpel — Nutzungsbedingungen zur Kenntnis nehmen"
+)
+DISCLAIMER_DIALOG_HEADLINE = (
+    "Bevor Sie das Tool benutzen, bestätigen Sie bitte die folgenden Punkte:"
+)
+DISCLAIMER_CHECK_NOT_VALIDATED = (
+    "Ich habe verstanden, dass dieses Tool nicht klinisch validiert ist."
+)
+DISCLAIMER_CHECK_NOT_CERTIFIED = (
+    "Ich habe verstanden, dass es kein Medizinprodukt und nicht zertifiziert ist."
+)
+DISCLAIMER_CHECK_DOCTOR_RESPONSIBILITY = (
+    "Ich bestätige, dass die ärztliche Verantwortung für jede Verordnung "
+    "unverändert bei mir liegt."
+)
+DISCLAIMER_CHECK_OWN_RISK = (
+    "Ich nutze das Tool auf eigenes Risiko (Haftung auf Vorsatz und grobe "
+    "Fahrlässigkeit beschränkt, § 521 BGB)."
+)
+DISCLAIMER_BTN_ACCEPT = "Akzeptieren"
+DISCLAIMER_BTN_REJECT = "Ablehnen"
+DISCLAIMER_INFO_BUTTONS = (
+    "Der Akzeptieren-Knopf wird erst aktiv, wenn alle vier Punkte angehakt sind. "
+    "Bei Ablehnung wird die Anwendung beendet."
+)

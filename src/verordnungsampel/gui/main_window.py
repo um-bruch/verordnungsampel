@@ -72,8 +72,16 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(self.tabs)
 
-        # Statusleiste
+        # Statusleiste mit dauerhaftem Haftungshinweis
+        # (Empfehlung 10.3 aus RECHTSGUTACHTEN_HAFTUNG.md)
         self.setStatusBar(QStatusBar())
+        from PySide6.QtWidgets import QLabel as _QLabel
+
+        self._permanent_disclaimer_label = _QLabel(S.STATUS_PERMANENT_DISCLAIMER)
+        self._permanent_disclaimer_label.setStyleSheet(
+            "color: #8a4a00; font-weight: bold;"
+        )
+        self.statusBar().addPermanentWidget(self._permanent_disclaimer_label)
         self.statusBar().showMessage(S.STATUS_READY)
 
         # Menüs

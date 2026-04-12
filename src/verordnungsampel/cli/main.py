@@ -51,6 +51,23 @@ from verordnungsampel.utils.logger import get_logger
 
 logger = get_logger("verordnungsampel.cli")
 
+_STARTBANNER = (
+    "VerordnungsAmpel: Informationswerk, nicht klinisch validiert. "
+    "Nutzung auf eigenes Risiko. `--help` fuer Details."
+)
+
+
+def _print_startbanner(args: argparse.Namespace) -> None:
+    """Druckt den CLI-Startbanner (nur bei ``init`` und ``gui``).
+
+    Empfehlung 10.1/10.3 aus RECHTSGUTACHTEN_HAFTUNG.md. Wird durch
+    ``--quiet`` oder ``--no-banner`` unterdrueckt.
+    """
+    if getattr(args, "quiet", False) or getattr(args, "no_banner", False):
+        return
+    print(_STARTBANNER, file=sys.stderr)
+
+
 _AMPEL_GLYPHEN = {
     Ampel.GRUEN: "GRUEN",
     Ampel.GELB:  "GELB",
@@ -116,6 +133,7 @@ def _format_justification(just: Justification) -> str:
 
 def cmd_init(args: argparse.Namespace) -> int:
     """Initialisiert die DB und laedt Seed-Daten."""
+    _print_startbanner(args)
     conn, path = open_database()
     counts = load_seed_data(conn)
     conn.close()
@@ -403,6 +421,7 @@ def cmd_gui(args: argparse.Namespace) -> int:
     Gibt einen benutzerfreundlichen Fehler aus, wenn PySide6 nicht
     installiert ist.
     """
+    _print_startbanner(args)
     try:
         from verordnungsampel.gui.app import run_gui
     except ImportError as exc:  # pragma: no cover - umgebungsabhaengig
@@ -698,6 +717,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--version", action="version", version=f"verordnungsampel {__version__}"
+    )
+    parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Unterdrueckt den Haftungs-Startbanner (bei init/gui).",
+    )
+    parser.add_argument(
+        "--no-banner",
+        dest="no_banner",
+        action="store_true",
+        help="Alias zu --quiet (Haftungs-Startbanner unterdruecken).",
     )
 
     sub = parser.add_subparsers(dest="cmd", required=True)

@@ -120,7 +120,7 @@ STEPS: Dict[JustificationState, JustificationStep] = {
     ),
     JustificationState.THERAPIEVERSAGEN: JustificationStep(
         state=JustificationState.THERAPIEVERSAGEN,
-        prompt="Warum war die Vorbehandlung nicht ausreichend? (Unvertraeglichkeit/Wirkungslosigkeit/KI)",
+        prompt="Warum war die Vorbehandlung nicht ausreichend? (Unvertraeglichkeit/Wirkungslosigkeit/Kontraindikation)",
         help_text=(
             "Erforderlich bei ROT-Bewertungen. Muss konkret auf die vorhandene "
             "Vorbehandlung Bezug nehmen (Therapieversagen = nicht bloss "

@@ -545,7 +545,7 @@ Begründung der Einstufung (Kurzform):
 
 Ausführliche Begründung: `docs/legal/RECHTSGUTACHTEN_MDSW.md`.
 
-Abgrenzungs-Hinweis: Das erste KI-gestützte Rechtsgutachten (MDSW) liegt vor. Ein zweites Gutachten zur produktsicherheits-/gewährleistungs-rechtlichen Haftung (**Haftungsgutachten**) ist *in Erstellung*. Ein **Research-Use-Only-Gutachten** (`RECHTSGUTACHTEN_RUO.md`) und ein **Publikations-/Lizenzgutachten** (`RECHTSGUTACHTEN_PUBLIKATION_LIZENZ.md`) liegen ebenfalls vor.
+Abgrenzungs-Hinweis: Das erste KI-basierte Rechtsgutachten (MDSW) liegt vor. Ein zweites Gutachten zur produktsicherheits-/gewährleistungs-rechtlichen Haftung (**Haftungsgutachten**) ist *in Erstellung*. Ein **Research-Use-Only-Gutachten** (`RECHTSGUTACHTEN_RUO.md`) und ein **Publikations-/Lizenzgutachten** (`RECHTSGUTACHTEN_PUBLIKATION_LIZENZ.md`) liegen ebenfalls vor.
 
 ### 9.2 Haftung
 

@@ -159,6 +159,22 @@ def run_gui(argv: Optional[list] = None) -> int:
         )
         return 1
 
+    # Erststart-Acknowledgement (Haftungsgutachten 10.2) - muss VOR
+    # MainWindow angezeigt werden.
+    from verordnungsampel.audit.compliance_log import ComplianceLog
+    from verordnungsampel.db.connection import open_database
+    from verordnungsampel.gui.disclaimer_dialog import ensure_disclaimer_accepted
+
+    conn, _ = open_database()
+    log = ComplianceLog()
+    try:
+        accepted = ensure_disclaimer_accepted(conn, log)
+    finally:
+        log.close()
+        conn.close()
+    if not accepted:
+        return 0
+
     window = MainWindow()
     controller = TrayController(app, window)  # noqa: F841 - lebt am app
     window.show()
