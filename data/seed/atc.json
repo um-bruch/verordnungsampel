@@ -1,0 +1,18 @@
+[
+  { "code": "A02BC01", "bezeichnung": "Omeprazol",        "wirkstoff": "Omeprazol",        "ddd": 20,  "ddd_einheit": "mg" },
+  { "code": "A02BC02", "bezeichnung": "Pantoprazol",      "wirkstoff": "Pantoprazol",      "ddd": 40,  "ddd_einheit": "mg" },
+  { "code": "C09AA02", "bezeichnung": "Enalapril",        "wirkstoff": "Enalapril",        "ddd": 10,  "ddd_einheit": "mg" },
+  { "code": "C09AA05", "bezeichnung": "Ramipril",         "wirkstoff": "Ramipril",         "ddd": 2.5, "ddd_einheit": "mg" },
+  { "code": "N05BA01", "bezeichnung": "Diazepam",         "wirkstoff": "Diazepam",         "ddd": 10,  "ddd_einheit": "mg" },
+  { "code": "N05BA12", "bezeichnung": "Alprazolam",       "wirkstoff": "Alprazolam",       "ddd": 1,   "ddd_einheit": "mg" },
+  { "code": "N06AA09", "bezeichnung": "Amitriptylin",     "wirkstoff": "Amitriptylin",     "ddd": 75,  "ddd_einheit": "mg" },
+  { "code": "R06AD02", "bezeichnung": "Promethazin",      "wirkstoff": "Promethazin",      "ddd": 25,  "ddd_einheit": "mg" },
+  { "code": "M01AB05", "bezeichnung": "Diclofenac",       "wirkstoff": "Diclofenac",       "ddd": 100, "ddd_einheit": "mg" },
+  { "code": "L03AB07", "bezeichnung": "Interferon beta-1a","wirkstoff": "Interferon beta-1a","ddd": null,"ddd_einheit": null },
+  { "code": "N02AX02", "bezeichnung": "Tramadol",         "wirkstoff": "Tramadol",         "ddd": 300, "ddd_einheit": "mg" },
+  { "code": "N02AJ13", "bezeichnung": "Tramadol und Paracetamol", "wirkstoff": "Tramadol+Paracetamol", "ddd": null, "ddd_einheit": null },
+  { "code": "QV12",    "bezeichnung": "Cannabis (vereinfacht)",      "wirkstoff": "Cannabis", "ddd": null, "ddd_einheit": null },
+  { "code": "A10BJ06", "bezeichnung": "Semaglutid",          "wirkstoff": "Semaglutid",       "ddd": null, "ddd_einheit": null },
+  { "code": "A10BJ02", "bezeichnung": "Liraglutid",          "wirkstoff": "Liraglutid",       "ddd": null, "ddd_einheit": null },
+  { "code": "QZ01",    "bezeichnung": "Soziotherapie (vereinfacht)","wirkstoff": "Soziotherapie-Leistung", "ddd": null, "ddd_einheit": null }
+]

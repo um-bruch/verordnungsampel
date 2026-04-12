@@ -1,0 +1,44 @@
+# Changelog / Änderungsprotokoll
+
+Alle wesentlichen Änderungen an diesem Projekt werden hier dokumentiert.
+Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
+
+## [Unreleased]
+
+### Hinzugefügt / Added
+- PySide6-basierte Tray-GUI (Companion-Modus neben Praxisverwaltungssystemen)
+- Vollständiger AM-RL-Seed-Datensatz (Anlagen III, V, VI-A, VI-B)
+- Erstes KI-basiertes Rechtsgutachten: Status als Informationswerk vs. MDSW
+- DSGVO-Konzept (Verarbeitungsverzeichnis, TOMs, Betroffenenrechte, Löschkonzept)
+- GitHub-Pflichtdateien (CODE_OF_CONDUCT, SECURITY, CONTRIBUTING, FUNDING)
+
+### Geändert / Changed
+- Ordner-Lifecycle: DEV → PreGit → GO-PRI (privates Repository in research-line)
+- Repository-URL: github.com/research-line/verordnungsampel
+
+### Behoben / Fixed
+-
+
+## [0.1.0] - 2026-04-08
+
+### Hinzugefügt / Added
+- MVP-Kern mit allen 5 KONZEPT-Funktionen
+- SQLite-Regelwerk (`db/schema.py`, `db/seed.py`, `db/connection.py`)
+- Ampel-Engine GRÜN/GELB/ROT mit Container-Logik (`engine/evaluator.py`, `engine/rules.py`)
+- Kryptografische Hash-Chain als Compliance-Log (`audit/compliance_log.py`)
+- Strukturierte Begründungspflicht als Hierarchical State Machine (`engine/justification_fsm.py`)
+  Pattern adaptiert aus Geiger (2026) *"An Integrated Multiaxial Model for Computer-Assisted Psychiatric Diagnosis"*, Section 9 (DOI 10.5281/zenodo.18736725)
+- Vorab-Klärungs-Workflow container-sensitiv (`output/vorab_workflow.py`):
+  PFLICHT_ANTRAG / VERBOTEN_HINWEIS / STELLUNGNAHME / KEINE_AKTION
+- Praxisbesonderheiten-Erkennung + Quartalsreminder (`engine/praxisbesonderheit.py`)
+- CLI-Frontend mit 7 Subcommands: `init`, `check`, `log`, `verify`, `justify`, `workflow`, `remind`
+- Interaktives Demo-Menü (`start.bat` mit 14 Optionen)
+- Seed-Daten MVP-Umfang: 10 Quellen, 13 ICD-10, 16 ATC, 4 AM-RL-Anlagen, 2 Praxisbesonderheiten, 10 Regeln
+- Test-Suite: 86/86 tests passed
+- Projekt-Dokumentation: KONZEPT.md, README.md, CODE_AUDIT.md, RESOURCES_DIAGNOSTIC_PAPER.md
+
+### Architekturentscheidungen
+- Python-Stdlib-only für MVP-Kern (sqlite3, json, hashlib, argparse, datetime)
+- GPL-3.0-Lizenz
+- Kein PVS, kein Medical Device, keine Patientendaten (nur ICD- und ATC-Codes)
+- Lokale Speicherung in SQLite (`%APPDATA%\VerordnungsAmpel\regelwerk.db`)

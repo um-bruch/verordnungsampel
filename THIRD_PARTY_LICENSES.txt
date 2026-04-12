@@ -1,0 +1,104 @@
+THIRD-PARTY LICENSES
+====================
+
+Dieses Projekt nutzt die folgenden Drittanbieter-Komponenten:
+
+------------------------------------------------------------------------
+1. PySide6  (optional — nur bei GUI-Installation)
+------------------------------------------------------------------------
+
+Anbieter: The Qt Company Ltd.
+Lizenz:   LGPL-3.0-only  (optional auch GPL-2.0-or-later oder kommerziell)
+Webseite: https://wiki.qt.io/Qt_for_Python
+SPDX:     LGPL-3.0-only
+
+Hinweis: Die Nutzung unter LGPL-3.0 erfordert, dass Anwender von
+VerordnungsAmpel die PySide6-Bibliothek austauschen koennen (dynamische
+Verlinkung). Dies ist bei der Nutzung ueber pip gegeben. Siehe auch:
+https://doc.qt.io/qtforpython-6/licenses.html
+
+------------------------------------------------------------------------
+2. pytest  (optional — nur fuer Entwicklung/CI)
+------------------------------------------------------------------------
+
+Anbieter: Holger Krekel and pytest-dev team
+Lizenz:   MIT
+Webseite: https://pytest.org
+SPDX:     MIT
+
+------------------------------------------------------------------------
+3. pytest-cov  (optional — nur fuer Entwicklung/CI)
+------------------------------------------------------------------------
+
+Anbieter: Marc Schlaich and pytest-cov contributors
+Lizenz:   MIT
+Webseite: https://pytest-cov.readthedocs.io/
+SPDX:     MIT
+
+------------------------------------------------------------------------
+4. pytest-qt  (optional — nur fuer Entwicklung/CI)
+------------------------------------------------------------------------
+
+Anbieter: Bruno Oliveira and contributors
+Lizenz:   MIT
+Webseite: https://pytest-qt.readthedocs.io/
+SPDX:     MIT
+
+------------------------------------------------------------------------
+5. Python Standard Library
+------------------------------------------------------------------------
+
+Anbieter: Python Software Foundation
+Lizenz:   PSF License Agreement (Python 3.x)
+Webseite: https://docs.python.org/3/license.html
+SPDX:     PSF-2.0
+
+------------------------------------------------------------------------
+DATENQUELLEN (Regelwerke, Seed-Daten)
+------------------------------------------------------------------------
+
+- **Arzneimittel-Richtlinie des G-BA**, Anlagen III, V und VI
+  (https://www.g-ba.de/richtlinien/anlage/)
+  Status: Amtliches Werk nach § 5 UrhG, gemeinfrei nutzbar.
+  Siehe `data/seed/quellen.json` fuer Stand-Daten und URLs.
+
+- **ICD-10-GM** (BfArM/DIMDI)
+  Status: Amtliches Werk (§ 5 UrhG), gemeinfrei nutzbar.
+  Downloadbedingungen: https://www.bfarm.de/
+
+- **ATC / DDD Codes** (WHO Collaborating Centre for Drug Statistics)
+  Status: Frei nutzbar fuer nicht-kommerzielle Zwecke.
+  Copyright-Hinweis: https://atcddd.fhi.no/copyright_disclaimer/
+
+- **PRISCUS 2.0 Liste**, Mann et al. 2023
+  Quelle: Deutsches Aerzteblatt International 2023; 120: 3-10
+  DOI: 10.3238/arztebl.m2022.0377
+  Status: Wissenschaftliche Faktendaten, frei zitierbar. Die Fachinhalte
+  werden paraphrasiert und mit Quellenverweis genannt.
+
+- **Bundessozialgericht und Sozialgericht-Urteile** (B 6 KA etc.)
+  Status: Amtliche Entscheidungen, frei zitierbar (§ 5 UrhG).
+
+- **§ 29 BMV-AE, § 31 Abs. 6 SGB V, § 37, § 37a, § 40 SGB V** u.a.
+  Status: Gesetze und Bundesmantelvertrag, amtliche Werke (§ 5 UrhG).
+
+Alle Regelwerke im Seed sind mit Quellen-URL und Stand-Datum versehen
+(`data/seed/quellen.json` und `_meta.stand` je Anlage-JSON).
+
+------------------------------------------------------------------------
+LIZENZ DES EIGENEN QUELLCODES
+------------------------------------------------------------------------
+
+GPL-3.0-or-later (siehe Datei LICENSE).
+
+------------------------------------------------------------------------
+LIZENZ DER DOKUMENTATION
+------------------------------------------------------------------------
+
+Die Dokumentation (README.md, USER-GUIDE.md, KONZEPT.md, CHANGELOG.md,
+docs/**) steht — soweit nicht anders gekennzeichnet — unter
+**Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+Siehe https://creativecommons.org/licenses/by/4.0/
+
+Die Rechtsgutachten in `docs/legal/*.md` sind KI-basierte Ersteinschaetzungen
+unter CC BY 4.0. Sie ersetzen keine anwaltliche Beratung.

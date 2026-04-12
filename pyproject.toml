@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verordnungsampel"
+version = "0.1.0"
+description = "Companion-Tool fuer Vertragsaerzte zur Regress-Praevention im Moment der Verordnung"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "Lukas Geiger", email = "hallo@um-bruch.org" }
+]
+keywords = ["medizin", "verordnung", "regress", "praevention", "gkv", "icd-10", "atc"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-qt>=4.4",
+]
+gui = [
+    "PySide6>=6.6.0",
+]
+
+[project.scripts]
+verordnungsampel = "verordnungsampel.cli.main:main"
+
+[project.urls]
+Homepage = "https://um-bruch.org"
+Repository = "https://github.com/research-line/verordnungsampel"
+Issues = "https://github.com/research-line/verordnungsampel/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+verordnungsampel = ["data/seed/*.json", "gui/icons/*.svg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers"

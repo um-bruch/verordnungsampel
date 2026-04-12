@@ -1,0 +1,62 @@
+[
+  {
+    "kuerzel": "AMRL_III",
+    "titel": "Arzneimittel-Richtlinie (AM-RL) Anlage III — Uebersicht ueber Verordnungseinschraenkungen und -ausschluesse",
+    "url": "https://www.g-ba.de/downloads/83-691-1036/AM-RL-III-Verordnungseinschraenkungen_2025-10-09.pdf",
+    "stand": "2025-10-09"
+  },
+  {
+    "kuerzel": "AMRL_V",
+    "titel": "Arzneimittel-Richtlinie (AM-RL) Anlage V — Uebersicht der verordnungsfaehigen Medizinprodukte",
+    "url": "https://www.g-ba.de/downloads/83-691-1078/AM-RL-V_2026-03-24.pdf",
+    "stand": "2026-03-24"
+  },
+  {
+    "kuerzel": "AMRL_VI",
+    "titel": "Arzneimittel-Richtlinie (AM-RL) Anlage VI — Off-Label-Use (Teil A anerkannt, Teil B nicht anerkannt)",
+    "url": "https://www.g-ba.de/downloads/83-691-1009/AM-RL-VI-Off-label-2025-05-07.pdf",
+    "stand": "2025-05-07"
+  },
+  {
+    "kuerzel": "PRISCUS_2",
+    "titel": "PRISCUS-2.0-Liste — potenziell inadaequate Medikation fuer aeltere Menschen",
+    "url": "https://media.priscus2-0.de/",
+    "stand": "2023"
+  },
+  {
+    "kuerzel": "GKV_SV_PB",
+    "titel": "GKV-Spitzenverband — bundesweite Praxisbesonderheiten (AMNOG)",
+    "url": "https://www.gkv-spitzenverband.de/",
+    "stand": "2025"
+  },
+  {
+    "kuerzel": "SGB_V_31_6",
+    "titel": "§ 31 Abs. 6 SGB V — Cannabis als Medizin (Genehmigungspflicht)",
+    "url": "https://www.gesetze-im-internet.de/sgb_5/__31.html",
+    "stand": "2024"
+  },
+  {
+    "kuerzel": "BMV_AE_29",
+    "titel": "§ 29 BMV-AE — Verbot der Einzelfall-Vorabgenehmigung normaler Arzneimittel",
+    "url": "https://www.kbv.de/html/bmv-aerzte.php",
+    "stand": "2024"
+  },
+  {
+    "kuerzel": "BSG_B6KA26_13",
+    "titel": "BSG B 6 KA 26/13 R — Nachgereichte Doku reicht nicht (Wirtschaftlichkeitspruefung)",
+    "url": "https://www.bsg.bund.de/",
+    "stand": "2014"
+  },
+  {
+    "kuerzel": "BSG_B6KA27_12",
+    "titel": "BSG B 6 KA 27/12 R — Bitte um Stellungnahme an KK zulaessig (Grauzonen)",
+    "url": "https://www.bsg.bund.de/",
+    "stand": "2013"
+  },
+  {
+    "kuerzel": "AMRL_III_GLP1",
+    "titel": "AM-RL Anlage III Nr. 32 — GLP-1-Analoga nur bei Diabetes mellitus erstattungsfaehig",
+    "url": "https://www.g-ba.de/richtlinien/anlage/9/",
+    "stand": "2025"
+  }
+]

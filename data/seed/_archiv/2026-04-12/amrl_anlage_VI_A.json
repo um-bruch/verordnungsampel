@@ -1,0 +1,378 @@
+{
+  "_meta": {
+    "anlage": "VI-A",
+    "titel": "Arzneimittel-Richtlinie Anlage VI Teil A - Off-Label-Use, anerkannt",
+    "stand": "2025-05-07",
+    "quelle_kuerzel": "AMRL_VI",
+    "quelle_url": "https://www.g-ba.de/downloads/83-691-1009/AM-RL-VI-Off-label-2025-05-07.pdf",
+    "quelle_datei": "AM-RL-VI-Off-label-2025-05-07.pdf",
+    "raw_datei": "_raw/amrl_VI_2025-05-07.txt",
+    "extraktion_datum": "2026-04-12",
+    "extraktion_methode": "PyMuPDF (fitz) Rohtext-Extraktion aus offizieller G-BA-PDF, anschliessend strukturierte Zerlegung (Nummer + ATC-Pattern + Bedingung + Begruendung) und manuelle Verifikation gegen Seitenzahlen des PDFs.",
+    "extraktion_version": "1.0.0",
+    "eintraege_anzahl": 36,
+    "lizenz": "Oeffentliche G-BA-Richtlinie, gemeinfreies amtliches Werk (§ 5 UrhG)."
+  },
+  "eintraege": [
+    {
+      "anlage": "VI-A",
+      "nr": "III",
+      "atc_pattern": "L01XA02",
+      "wirkstoff": "Carboplatin",
+      "bedingung": "Fortgeschrittenes nicht-kleinzelliges Bronchialkarzinom (NSCLC) - Kombinationstherapie (palliativ). Auswahl der Platin-Komponente nach Toxizitaetsprofil und Komorbiditaeten. Keine Monotherapie.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. III (Stand 07.05.2025): Carboplatin im Off-Label bei NSCLC als Kombinationstherapie anerkannt, verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "IV",
+      "atc_pattern": "R03BC01",
+      "wirkstoff": "Dinatriumcromoglycat (DNCG), oral",
+      "bedingung": "Systemische Mastozytose - orale Anwendung von DNCG.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. IV: Orales DNCG bei systemischer Mastozytose im Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "V",
+      "atc_pattern": "N03AG01",
+      "wirkstoff": "Valproinsaeure",
+      "bedingung": "Migraeneprophylaxe im Erwachsenenalter (NICHT bei gebaerfaehigen Patientinnen - siehe Teil B XVII, NICHT bei Kindern/Jugendlichen - siehe Teil B VII).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. V: Valproinsaeure bei Erwachsenen zur Migraeneprophylaxe Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "VI",
+      "atc_pattern": "L01BB05",
+      "wirkstoff": "Fludarabin",
+      "bedingung": "Andere als in der Zulassung genannte niedrig bzw. intermediaer maligne B-Non-Hodgkin-Lymphome (B-NHL) als chronische lymphatische Leukaemien (CLL).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. VI: Fludarabin bei B-NHL anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "VII",
+      "atc_pattern": "L01CB01",
+      "wirkstoff": "Etoposid",
+      "bedingung": "Ewing-Tumoren in verschiedenen Kombinationen.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. VII: Etoposid bei Ewing-Tumoren Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "VIII",
+      "atc_pattern": "L01DB01",
+      "wirkstoff": "Doxorubicin",
+      "bedingung": "Merkelzellkarzinom.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. VIII: Doxorubicin beim Merkelzellkarzinom Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "IX",
+      "atc_pattern": "C08DA01",
+      "wirkstoff": "Verapamil",
+      "bedingung": "Prophylaxe des Clusterkopfschmerzes.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. IX: Verapamil zur Cluster-Prophylaxe Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "X",
+      "atc_pattern": "M03AX01",
+      "wirkstoff": "Clostridium botulinum Toxin Typ A (OnabotulinumtoxinA, AbobotulinumtoxinA)",
+      "bedingung": "Spasmodische Dysphonie (Laryngeale Dystonie).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. X: Botulinumtoxin A bei laryngealer Dystonie anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XI",
+      "atc_pattern": "L01CE02",
+      "wirkstoff": "Irinotecan",
+      "bedingung": "Kleinzelliges Bronchialkarzinom (SCLC), extensive disease.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XI: Irinotecan bei SCLC extensive disease Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XII",
+      "atc_pattern": "J06BA02",
+      "wirkstoff": "Intravenoese Immunglobuline (IVIG)",
+      "bedingung": "Polymyositis im Erwachsenenalter (Add-on-Behandlung bei therapieresistentem Verlauf) und Dermatomyositis im Erwachsenenalter (Add-on bei therapieresistentem Verlauf).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XII: IVIG bei therapieresistenter Poly-/Dermatomyositis anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XIII",
+      "atc_pattern": "L01BC02",
+      "wirkstoff": "5-Fluorouracil (in Kombi mit Mitomycin und Bestrahlung)",
+      "bedingung": "Analkarzinom - Kombination 5-FU + Mitomycin + Bestrahlung.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XIII: 5-FU/Mitomycin/Bestrahlung beim Analkarzinom Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XIV",
+      "atc_pattern": "L01XX05",
+      "wirkstoff": "Hydroxycarbamid",
+      "bedingung": "Chronische myelomonozytaere Leukaemie (CMML).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XIV: Hydroxycarbamid bei CMML Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XV",
+      "atc_pattern": "D06BB10",
+      "wirkstoff": "Imiquimod",
+      "bedingung": "Behandlung analer Dysplasien als Praekanzerosen bei HIV-Infizierten.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XV: Imiquimod bei analer Dysplasie bei HIV Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XVI",
+      "atc_pattern": "L04AA06",
+      "wirkstoff": "Mycophenolat Mofetil",
+      "bedingung": "Myasthenia gravis.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XVI: Mycophenolat Mofetil bei Myasthenia gravis Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XVII",
+      "atc_pattern": "J06BA02_MG",
+      "wirkstoff": "Intravenoese Immunglobuline (IVIG)",
+      "bedingung": "Myasthenia gravis.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XVII: IVIG bei Myasthenia gravis Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XVIII",
+      "atc_pattern": "J01GB06",
+      "wirkstoff": "Amikacin",
+      "bedingung": "Tuberkulose.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XVIII: Amikacin bei Tuberkulose Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XX",
+      "atc_pattern": "N03AX12",
+      "wirkstoff": "Gabapentin",
+      "bedingung": "Spastik im Rahmen der Multiplen Sklerose.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XX: Gabapentin bei MS-Spastik Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXI",
+      "atc_pattern": "L01XA01",
+      "wirkstoff": "Cisplatin (in Kombi mit Gemcitabin)",
+      "bedingung": "Fortgeschrittene Karzinome der Gallenblase und Gallenwege - Cisplatin + Gemcitabin.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXI: Cisplatin+Gemcitabin bei Gallengangs-Ca Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXII",
+      "atc_pattern": "N03AX09",
+      "wirkstoff": "Lamotrigin",
+      "bedingung": "Zentraler neuropathischer Schmerz nach Schlaganfall (post-stroke pain).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXII: Lamotrigin bei post-stroke pain Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXIII",
+      "atc_pattern": "J01EE01",
+      "wirkstoff": "Cotrimoxazol (Trimethoprim/Sulfamethoxazol)",
+      "bedingung": "Prophylaxe von Pneumocystis-Pneumonien.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXIII: Cotrimoxazol zur PCP-Prophylaxe Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXIV",
+      "atc_pattern": "J01EE01_TOXO",
+      "wirkstoff": "Cotrimoxazol (Trimethoprim/Sulfamethoxazol)",
+      "bedingung": "Prophylaxe der Toxoplasmose-Enzephalitis.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXIV: Cotrimoxazol zur Toxoplasmose-Enzephalitis-Prophylaxe Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXV",
+      "atc_pattern": "J04BA02",
+      "wirkstoff": "Dapson + Pyrimethamin",
+      "bedingung": "Prophylaxe der Toxoplasmose-Enzephalitis (bei Cotrimoxazol-Unvertraeglichkeit).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXV: Dapson+Pyrimethamin zur Toxoplasmose-Prophylaxe Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXVI",
+      "atc_pattern": "L01FA01",
+      "wirkstoff": "Rituximab",
+      "bedingung": "Mantelzell-Lymphom.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXVI: Rituximab beim Mantelzell-Lymphom Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXVII",
+      "atc_pattern": "L04AA06_LN",
+      "wirkstoff": "Mycophenolatmofetil / Mycophenolsaeure",
+      "bedingung": "Induktions-/Erhaltungstherapie bei Lupusnephritis.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXVII: MMF/MPA bei Lupusnephritis Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXIX",
+      "atc_pattern": "G04CA02",
+      "wirkstoff": "Tamsulosin",
+      "bedingung": "Urolithiasis - medikamentoese expulsive Therapie, auch nach Lithotripsie.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXIX: Tamsulosin bei Urolithiasis Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXX",
+      "atc_pattern": "J01AA02",
+      "wirkstoff": "Doxycyclin",
+      "bedingung": "Behandlung des Bulloesen Pemphigoids.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXX: Doxycyclin bei Bulloesem Pemphigoid Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXI",
+      "atc_pattern": "M03AX01_FD",
+      "wirkstoff": "Clostridium botulinum Toxin Typ A",
+      "bedingung": "Aufgabenspezifische fokale Dystonie.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXI: Botulinumtoxin A bei fokaler Dystonie Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXII",
+      "atc_pattern": "L01XA02_UC",
+      "wirkstoff": "Carboplatin + Gemcitabin",
+      "bedingung": "Inoperables lokal fortgeschrittenes oder metastasiertes Urothelkarzinom, wenn eine Cisplatin-Therapie nicht infrage kommt.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXII: Carboplatin+Gemcitabin bei Urothelkarzinom (Cisplatin-ungeeignet) Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXIII",
+      "atc_pattern": "L01XG01",
+      "wirkstoff": "Bortezomib + Cyclophosphamid + Dexamethason",
+      "bedingung": "Induktionstherapie des neu diagnostizierten Multiplen Myeloms.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXIII: Bortezomib+Cyclophosphamid+Dexamethason (VCD) als Induktion beim Multiplen Myelom Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXIV",
+      "atc_pattern": "L01BB02",
+      "wirkstoff": "6-Mercaptopurin",
+      "bedingung": "Immunsuppression bei chronisch entzuendlichen Darmerkrankungen.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXIV: 6-Mercaptopurin zur Immunsuppression bei CED Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXV",
+      "atc_pattern": "L01BC05",
+      "wirkstoff": "Gemcitabin (+ Capecitabin oder Mono)",
+      "bedingung": "Adjuvante Behandlung des Pankreaskarzinoms (Gemcitabin + Capecitabin bzw. Gemcitabin-Monotherapie).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXV: Gemcitabin adjuvant beim Pankreaskarzinom Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXVI",
+      "atc_pattern": "L01CD01",
+      "wirkstoff": "Paclitaxel, Docetaxel oder Irinotecan",
+      "bedingung": "Mono-therapie des Magenkarzinoms oder Oesophaguskarzinoms (Adeno-Ca) mit Progress nach einer Platin- und Fluoropyrimidin-haltigen Chemotherapie.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXVI: Paclitaxel/Docetaxel/Irinotecan als Mono-2nd-line beim Magen-/Oesophagus-Ca Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXVII",
+      "atc_pattern": "M05BA%",
+      "wirkstoff": "Bisphosphonate",
+      "bedingung": "Patientinnen mit Hormonrezeptor (HR)-positivem, postmenopausalem Mammakarzinom - adjuvante Bisphosphonattherapie.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXVII: Bisphosphonate adjuvant bei HR+ postmenopausalem Mamma-Ca Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXVIII",
+      "atc_pattern": "L01EX02",
+      "wirkstoff": "Sorafenib",
+      "bedingung": "Desmoidtumoren / Fibromatosen vom Desmoidtyp.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXVIII: Sorafenib bei Desmoidtumoren Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XXXIX",
+      "atc_pattern": "C03DA04",
+      "wirkstoff": "Eplerenon",
+      "bedingung": "Primaerer Hyperaldosteronismus (PA), wenn Spironolacton nicht oder nicht mehr infrage kommt.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XXXIX: Eplerenon bei PA (Spironolacton nicht geeignet) Off-Label anerkannt.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-A",
+      "nr": "XL",
+      "atc_pattern": "L01FA01_AIHA",
+      "wirkstoff": "Rituximab",
+      "bedingung": "Autoimmunhaemolytische Anaemie (AIHA) sowie mikroangiopathische haemolytische Anaemie (MAHA).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage VI Teil A Nr. XL: Rituximab bei AIHA/MAHA Off-Label verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    }
+  ]
+}

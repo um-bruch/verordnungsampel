@@ -1,0 +1,18 @@
+[
+  {
+    "atc_pattern": "L03AB%",
+    "icd_pattern": "G35",
+    "bezeichnung": "Anerkannte Praxisbesonderheit: Multiple Sklerose-Therapie",
+    "gueltig_ab": "2024-01-01",
+    "gueltig_bis": null,
+    "quelle": "GKV_SV_PB"
+  },
+  {
+    "atc_pattern": "QV12",
+    "icd_pattern": "R52.1",
+    "bezeichnung": "Anerkannte Praxisbesonderheit: Cannabinoid-Therapie bei chronischem Schmerz (mit Vorab-Genehmigung)",
+    "gueltig_ab": "2024-01-01",
+    "gueltig_bis": null,
+    "quelle": "GKV_SV_PB"
+  }
+]

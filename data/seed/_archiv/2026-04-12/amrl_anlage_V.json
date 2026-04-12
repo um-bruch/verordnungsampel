@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "anlage": "V",
+    "titel": "Arzneimittel-Richtlinie Anlage V - Uebersicht der verordnungsfaehigen Medizinprodukte",
+    "stand": "2026-03-24",
+    "quelle_kuerzel": "AMRL_V",
+    "quelle_url": "https://www.g-ba.de/downloads/83-691-1078/AM-RL-V_2026-03-24.pdf",
+    "quelle_datei": "AM-RL-V_2026-03-24.pdf",
+    "raw_datei": "_raw/amrl_V_2026-03-24.txt",
+    "extraktion_datum": "2026-04-12",
+    "extraktion_methode": "PyMuPDF (fitz) Rohtext-Extraktion aus offizieller G-BA-PDF, anschliessend strukturierte Zerlegung (Nummer + ATC-Pattern + Bedingung + Begruendung) und manuelle Verifikation gegen Seitenzahlen des PDFs.",
+    "extraktion_version": "1.0.0",
+    "eintraege_anzahl": 21,
+    "lizenz": "Oeffentliche G-BA-Richtlinie, gemeinfreies amtliches Werk (§ 5 UrhG)."
+  },
+  "eintraege": [
+    {
+      "anlage": "V",
+      "produkt": "1xklysma salinisch",
+      "atc_pattern": "A06AG11",
+      "bedingung": "Zur raschen/nachhaltigen Entleerung des Enddarms vor Operationen und diagnostischen Eingriffen; nicht bei Saeuglingen und Kindern unter 6 Jahren.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V (Stand 24.03.2026) - verordnungsfaehiges Medizinprodukt; Befristung 21.04.2027.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Ampuwa Spuelloesung",
+      "atc_pattern": "B05CX_AMPUWA",
+      "bedingung": "Zur Anfeuchtung von Tamponaden/Verbaenden (Plastikschraubflasche); zur Atemluftbefeuchtung nur in geschlossenen Systemen; jeweils in Einzelanwendungsmenge.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: verordnungsfaehiges Medizinprodukt; Befristung 31.12.2028.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Amvisc / Amvisc Plus",
+      "atc_pattern": "S01KA%",
+      "bedingung": "Operationshilfe bei ophthalmischen Eingriffen am vorderen Augenabschnitt.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: viskoelastisches Medizinprodukt fuer ophthalmische Chirurgie; Befristung 31.12.2028.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Aqua B. Braun",
+      "atc_pattern": "B05CX_AQUA",
+      "bedingung": "Spuelung/Reinigung bei operativen Eingriffen, Spuelung von Wunden/Verbrennungen, Anfeuchten von Wundtamponaden/Tuechern/Verbaenden, Durchlaessigkeitspruefung Blasenkatheter, mechanische Augenspuelung.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: medizinisches Spuelwasser; Befristung 31.12.2028.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Bausch & Lomb Balanced Salt Solution / BSS DISTRA-SOL / BSS PLUS (Alcon) / BSS Sterile Spuelloesung (Alcon) / Eye-Lotion BSS / POLYSOL / PURI CLEAR / Sentol / Serag BSS / Serumwerk-Augenspuelloesung BSS",
+      "atc_pattern": "S01XA20",
+      "bedingung": "Zur Irrigation im Rahmen extraokulaerer und intraokulaerer Eingriffe.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: ophthalmische Spuelloesungen, verordnungsfaehig in der Chirurgie.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "BD PosiFlush SP / XS / TP SalineFlush",
+      "atc_pattern": "B05CX_FLUSH",
+      "bedingung": "Ausschliesslich zum Spuelen von in-situ Gefaesszugangssystemen (SP nicht in sterilem Umfeld; XS in sterilem Feld verwendbar).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: Spuelloesungen fuer Gefaesszugangssysteme.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "belAir NaCl 0,9% / IsoFree / Kochsalz 0,9% Inhalat Paedia / Isotonische Kochsalzloesung zur Inhalation (Eifelfango) / PARI NaCl Inhalationsloesung",
+      "atc_pattern": "R05CB_NACL_INH",
+      "bedingung": "Isotone Traegerloesung bei Verwendung von Inhalaten in Verneblern/Aerosolgeraeten; nur wenn Fachinformation des Inhalats den Zusatz zwingend vorsieht.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: NaCl-Traegerloesungen fuer Inhalatoren.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Dimet 20 / Hedrin Once Liquid Gel / mosquito med LaeuseShampoo 10 / NYDA Laeusespray",
+      "atc_pattern": "P03AX%",
+      "bedingung": "Fuer Kinder bis 12. LJ und Jugendliche mit Entwicklungsstoerungen bis 18. LJ zur physikalischen Behandlung des Kopfhaares bei Kopflausbefall.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: Kopflausmittel fuer Kinder/Jugendliche verordnungsfaehig.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Dk-line / Okta-line / Oxane 1300 / Oxane 5700",
+      "atc_pattern": "S01KA_VISC",
+      "bedingung": "Operationshilfe in der Ophthalmochirurgie zur mechanischen Netzhautentfaltung (Ablatio/PVR/PDR, Riesenrisse, Traumata) bzw. intraokulaere Tamponade bei schweren Netzhautabloesungen.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: viskoelastische Netzhaut-/Tamponade-Produkte.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "DuoVisc / ProVisc / VISCOAT / OcuCoat / Pe-Ha-Visco (2,0%) / polyvisc 2,0% / Z-HYALIN",
+      "atc_pattern": "S01KA01",
+      "bedingung": "Operationshilfe in der Ophthalmochirurgie des vorderen Augenabschnitts (Kataraktextraktion und IOL-Implantation).",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: ophthalmische viskoelastische Produkte (Hyaluronsaeure/Chondroitin).",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Freka-Clyss",
+      "atc_pattern": "A06AG11_FK",
+      "bedingung": "Ab 12. LJ zur Obstipation nur bei Tumorleiden, Megacolon (ex. kongenital), Divertikulose, Mukoviszidose, neurogener Darmlaehmung, vor diagnostischen Eingriffen, bei Opiat-/Opioidtherapie, in der Terminalphase. Fuer Jugendliche mit Entwicklungsstoerung: Obstipation/Enddarmentleerung vor Operationen/urolog./roentgenolog./gynaekolog. Untersuchungen/Rektoskopie.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage V: Freka-Clyss nur bei strenger Indikation verordnungsfaehig.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Freka Drainjet NaCl 0,9% / NaCl 0,9% B. Braun / NaCl 0,9% Fresenius Kabi / Ringer B. Braun / Ringer Fresenius Spuelloesung",
+      "atc_pattern": "B05CB%",
+      "bedingung": "Interne/externe Spuelungen (Blasenspuelung urologischer Eingriffe, Magen-Darm-, Fistel-, Drainagespuelung, Wundbehandlung, Tuecher-/Verbandsbefeuchtung, mechanische Augenspuelung); Einzelanwendungsmengen.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: medizinische Spuelloesungen in Einzelanwendungsmenge.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Freka Drainjet Purisole SM verduennt / Purisole SM verduennt",
+      "atc_pattern": "B05CX_PURISOL",
+      "bedingung": "Intra- und postoperative Blasenspuelung bei urologischen Eingriffen; Einzelanwendungsmenge.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: urologische Spuelloesung.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "HydroTouch / InstillaGel Lubri",
+      "atc_pattern": "V07AY_KATH",
+      "bedingung": "Zur Anwendung bei Patienten mit Katheterisierung.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: Katheter-Gleitgel/-Hilfsloesung.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "HYLO-GEL / VISMED / VISMED MULTI",
+      "atc_pattern": "S01XA20_TR",
+      "bedingung": "Synthetische Traenenfluessigkeit bei Autoimmunerkrankungen (Sjoegren mit Funktionsstoerung trockenes Auge Grad 2, Epidermolysis bullosa, okulaeres Pemphigoid), Fehlen/Schaedigung der Traenendruese, Fazialisparese, Lagophthalmus.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage V: synthetische Traenenfluessigkeit nur bei engen Indikationen.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "ISOMOL / Macrogol AbZ / Macrogol beta Lemon / Macrogol dura / MOVICOL / MOVICOL aromafrei / MOVICOL fluessig Orange / MOVICOL Schoko / MOVICOL V / Onligol Macrogol 4000 / roleca macrogol",
+      "atc_pattern": "A06AD15",
+      "bedingung": "Ab vollendetem 12. LJ zur Obstipation nur bei Tumorleiden, Megacolon (ex. toxisch), Divertikulose, Divertikulitis, Mukoviszidose, neurogener Darmlaehmung, phosphatbindender Medikation bei chronischer Niereninsuffizienz, Opiat-/Opioidtherapie, Terminalphase. Fuer Jugendliche mit Entwicklungsstoerungen 12-18 J zur Obstipation.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage V: Macrogol-Laxantien nur bei strenger Indikation verordnungsfaehig.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Kinderlax elektrolytfrei / MOVICOL Junior aromafrei / MOVICOL Junior Schoko",
+      "atc_pattern": "A06AD15_KID",
+      "bedingung": "Fuer Kinder (Kinderlax 6 Monate - 11 J; MOVICOL Junior 2 - 11 J; Junior aromafrei zusaetzlich 5 - 11 J fuer Koprostase) zur Behandlung der Obstipation.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: paediatrische Macrogol-Zubereitungen.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Kochsalz 6% Inhalat Paedia / MucoClear 6% / MUCOfree 6% zur Inhalation / Nebusal 7%",
+      "atc_pattern": "R05CB01",
+      "bedingung": "Zur symptomatischen Inhalationsbehandlung der Mukoviszidose fuer Patienten ab 6 Jahren.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: hypertone Kochsalzloesungen zur Mukoviszidose-Inhalation.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "NutriLock / TauroSept",
+      "atc_pattern": "V07AY_KATHB",
+      "bedingung": "Fuer parenteral ernaehrte Patienten ab 18. LJ als Katheter-Block-Loesung zur Instillation venoeser Gefaesskatheter zur Vorbeugung von Blutstrominfektionen. Nicht bei maligner Grunderkrankung oder bereits aufgetretener CRBSI.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage V: Katheter-Lock-Loesungen zur CRBSI-Praevention; strenge Indikation.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "Saliva natura",
+      "atc_pattern": "A01AD11",
+      "bedingung": "Zur Behandlung krankheitsbedingter Mundtrockenheit bei onkologischen oder Autoimmunerkrankungen.",
+      "ampel": "gruen",
+      "begruendung": "AM-RL Anlage V: synthetischer Speichel, unbefristet verordnungsfaehig.",
+      "quelle": "AMRL_V"
+    },
+    {
+      "anlage": "V",
+      "produkt": "UrgoStart Tuel",
+      "atc_pattern": "D09AX_URGOS",
+      "bedingung": "Zur Wundbehandlung von diabetischen Fussulzera nach Ausschluss kritischer Ischaemie, bei Erwachsenen, nicht-infizierte Wunden, nach mindestens zweiwoechiger Behandlung mit Verbandmitteln (§ 53 AM-RL) ohne Heilungsfortschritt.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage V: erstes zur Wundbehandlung aufgenommenes MP (2025); Voraussetzungen strikt.",
+      "quelle": "AMRL_V"
+    }
+  ]
+}

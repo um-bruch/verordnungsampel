@@ -1,0 +1,52 @@
+VerordnungsAmpel — Companion-Tool für Vertragsärzte zur
+Regress-Prävention im Moment der Verordnung.
+
+Copyright (C) 2026 Lukas Geiger (c/o Um:bruch Think Tank, https://um-bruch.org)
+
+Dieses Projekt ist Freie Software unter der GNU General Public License
+Version 3 oder höher. Siehe Datei LICENSE für den vollständigen Lizenztext.
+
+========================================================================
+WICHTIGER HAFTUNGSAUSSCHLUSS — KEIN MEDIZINPRODUKT
+========================================================================
+
+VerordnungsAmpel ist ein **Informations- und Nachschlagewerk** im Sinne
+eines juristisch-regulatorischen Reference-Tools. Es ist:
+
+- KEIN Medizinprodukt im Sinne der MDR (EU) 2017/745
+- KEINE Medical Device Software (MDSW)
+- KEINE klinische Entscheidungsunterstützung
+- KEINE Diagnose- oder Therapieempfehlung
+- NICHT klinisch validiert
+- NICHT durch das BfArM geprüft oder zertifiziert
+
+Alle Hinweise, Ampel-Bewertungen und Begründungstexte ersetzen NICHT die
+ärztliche Prüfung im Einzelfall. Die Verantwortung für jede Verordnung
+liegt ausschließlich beim verordnenden Arzt (§ 76 SGB V, § 630a BGB).
+
+Die Regelwerke (AM-RL, PRISCUS 2.0 etc.) werden aus öffentlichen Quellen
+übernommen — mit Stand-Datum gekennzeichnet. Ein automatisches Update
+findet NICHT statt. Der Nutzer ist verpflichtet, sich vor Anwendung über
+den Aktualitätsstand der Regelwerke zu informieren.
+
+========================================================================
+HAFTUNG
+========================================================================
+
+Die Software wird als unentgeltliche Schenkung im Sinne der §§ 516 ff.
+BGB überlassen. Die Haftung des Anbieters ist gemäß § 521 BGB auf
+Vorsatz und grobe Fahrlässigkeit beschränkt. Der Ausschluss sonstiger
+Gewährleistung folgt zusätzlich aus GPL-3.0 Abschnitten 15 und 16.
+
+Dies ist eine **unentgeltliche, nicht-kommerzielle Veröffentlichung**
+ohne Wartungsvertrag, ohne Support-Versprechen, ohne
+Verfügbarkeitszusage und ohne Eignungsgarantie für einen bestimmten
+Zweck. Die Nutzung erfolgt ausschließlich auf eigenes Risiko des
+Anwenders.
+
+========================================================================
+DRITTANBIETER-LIZENZEN
+========================================================================
+
+Siehe Datei THIRD_PARTY_LICENSES.txt für Lizenzhinweise zu verwendeten
+Drittanbieter-Komponenten (PySide6, pytest etc.).

@@ -1,0 +1,10 @@
+# VerordnungsAmpel — Runtime-Abhängigkeiten
+# Der MVP-Kern (CLI) hält sich an die Python-Stdlib
+# (sqlite3, json, hashlib, argparse, datetime).
+
+# GUI (optional — nur nötig wenn die PySide6-Tray-App genutzt wird):
+# pip install -e ".[gui]"   →   installiert PySide6
+PySide6>=6.6.0
+
+# Dev-Abhängigkeiten:
+# pip install -e ".[dev]"   →   installiert pytest, pytest-cov, pytest-qt

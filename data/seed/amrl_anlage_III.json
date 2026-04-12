@@ -1,0 +1,522 @@
+{
+  "_meta": {
+    "anlage": "III",
+    "titel": "Arzneimittel-Richtlinie Anlage III - Uebersicht ueber Verordnungseinschraenkungen und -ausschluesse",
+    "stand": "2025-10-09",
+    "quelle_kuerzel": "AMRL_III",
+    "quelle_url": "https://www.g-ba.de/downloads/83-691-1036/AM-RL-III-Verordnungseinschraenkungen_2025-10-09.pdf",
+    "quelle_datei": "AM-RL-III-Verordnungseinschraenkungen_2025-10-09.pdf",
+    "raw_datei": "_raw/amrl_III_2025-10-09.txt",
+    "extraktion_datum": "2026-04-12",
+    "extraktion_methode": "PyMuPDF (fitz) Rohtext-Extraktion aus offizieller G-BA-PDF, anschliessend strukturierte Zerlegung (Nummer + ATC-Pattern + Bedingung + Begruendung) und manuelle Verifikation gegen Seitenzahlen des PDFs.",
+    "extraktion_version": "1.0.0",
+    "eintraege_anzahl": 56,
+    "lizenz": "Oeffentliche G-BA-Richtlinie, gemeinfreies amtliches Werk (§ 5 UrhG)."
+  },
+  "eintraege": [
+    {
+      "anlage": "III",
+      "nr": "1",
+      "atc_pattern": "A02B%",
+      "bedingung": "Acida: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III Nr. 1. Bei nicht verschreibungspflichtigen Arzneimitteln ist eine Verordnung auch fuer Kinder bis zum vollendeten 12. Lebensjahr und fuer Jugendliche mit Entwicklungsstoerungen bis zum vollendeten 18. Lebensjahr unwirtschaftlich.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 1 (Stand 09.10.2025): Acida sind von der GKV-Verordnung ausgeschlossen. Ausnahmen nur in medizinisch begruendeten Einzelfaellen mit Begruendung (§ 31 Abs. 1 Satz 4 SGB V, § 16 Abs. 5 AM-RL).",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "2",
+      "atc_pattern": "N07BB%",
+      "bedingung": "Mittel zur Behandlung der Alkoholabhaengigkeit, ausgenommen zur Unterstuetzung der Aufrechterhaltung der Abstinenz im Rahmen eines therapeutischen Gesamtkonzepts mit psychosozialen/soziotherapeutischen Massnahmen bzw. zur Reduktion des Alkoholkonsums bei alkoholkranken Patienten (max. 3 Monate, in begruendeten Faellen weitere 3 Monate).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 2 (Stand 09.10.2025): Verordnungseinschraenkung. Einleitung nur durch in der Therapie der Alkoholabhaengigkeit erfahrene Aerzt:innen; Einsatz besonders zu dokumentieren.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "4",
+      "atc_pattern": "A13A%",
+      "bedingung": "Amara (Bittermittel): Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 4 (Stand 09.10.2025): Amara von GKV-Versorgung ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "5",
+      "atc_pattern": "A14A%",
+      "bedingung": "Anabolika: Verordnungsausschluss durch Rechtsverordnung fuer Chlorhydromethyltestosteron, Clostebol, Metenolol zum Doping, Nandrolon, Orotsaeure als Anabolikum, Oxabolon, Stanozolol; zusaetzlich Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 5 (Stand 09.10.2025): Anabolika doppelt ausgeschlossen (Rechtsverordnung + AM-RL).",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "6",
+      "atc_pattern": "M01B%",
+      "bedingung": "Analgetika, Antiphlogistika oder Antirheumatika in fixer Kombination mit anderen Wirkstoffen; ausgenommen Kombinationen: (a) Analgetikum + Naloxon, (b) NSAR + PPI bei Patienten mit hohem gastroduodenalem Risiko, (c) NSAR + Lokalanaesthetika zum Einbringen in Operationswunde, (d) Kombinationen mit Mydriatika. Zusaetzliche Verordnungsausschluesse fuer ASS+Diazepam, Phenazon+Coffein, Phenazon+Propyphenazon+Coffein, Propyphenazon+Coffein.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 6 (Stand 09.10.2025): Verordnungseinschraenkung fixer Analgetika-Kombinationen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "7",
+      "atc_pattern": "A02AD%",
+      "bedingung": "Antacida in fixer Kombination mit anderen Wirkstoffen; ausgenommen Kombinationen verschiedener Antacida.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 7 (Stand 09.10.2025): Verordnungseinschraenkung fixer Antacida-Kombinationen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "8",
+      "atc_pattern": "B03AE%",
+      "bedingung": "Antianaemika-Kombinationen: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 8 (Stand 09.10.2025): Antianaemika-Kombinationen ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "9",
+      "atc_pattern": "M01AX%",
+      "bedingung": "Antiarthrotika und Chondroprotektiva: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 9 (Stand 09.10.2025): Antiarthrotika/Chondroprotektiva ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "10",
+      "atc_pattern": "N06D%",
+      "bedingung": "Antidementiva: Verordnungseinschraenkung, sofern der Versuch einer Therapie mit Monopraeparaten ueber 12 Wochen (bei Cholinesterasehemmern und Memantine ueber 24 Wochen) erfolglos geblieben ist. Nach erfolgreichem Therapieversuch ist Weiterverordnung zulaessig. Art, Dauer und Ergebnis sind zu dokumentieren. Verordnungsausschluss durch Rechtsverordnung fuer Cinnarizin und Procain bei Hirnleistungsstoerungen.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 10 (Stand 09.10.2025): Dokumentation der Therapie-Dauer und Wirksamkeit Pflicht.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "11",
+      "atc_pattern": "A10B%",
+      "bedingung": "Antidiabetika, orale: ausgenommen nach erfolglosem Therapieversuch mit nichtmedikamentoesen Massnahmen. Die Anwendung anderer therapeutischer Massnahmen ist zu dokumentieren.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 11 (Stand 09.10.2025): Vor oralen Antidiabetika nichtmedikamentoese Massnahmen dokumentieren.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "12",
+      "atc_pattern": "A07D%",
+      "bedingung": "Antidiarrhoika: ausgenommen (a) Elektrolyte zur Rehydratation bei Saeuglingen/Kleinkindern/Kindern bis 12. LJ, (b) E. coli Nissle 1917 bei Saeuglingen/Kleinkindern zusaetzlich zur Rehydratation, (c) Saccharomyzes boulardii ab 7. Lebensmonat, (d) Racecadotril ab 4. Lebensmonat, (e) Motilitaetshemmer nach kolorektalen Resektionen, bei schweren/laenger dauernden Diarrhoen, zur Vermeidung arzneimittel-induzierter Diarrhoen. Laengerfristige Anwendung (ueber 4 Wochen) bedarf besonderer Dokumentation.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 12 (Stand 09.10.2025): Verordnungseinschraenkung Antidiarrhoika, Ausnahmen eng.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "13",
+      "atc_pattern": "G02CC%",
+      "bedingung": "Antidysmenorrhoika: ausgenommen Prostaglandinsynthetasehemmer bei Regelschmerzen; ausgenommen systemische hormonelle Behandlung von Regelanomalien.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 13 (Stand 09.10.2025): Verordnungseinschraenkung Antidysmenorrhoika.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "14",
+      "atc_pattern": "A04A%",
+      "bedingung": "Antiemetika in Kombination mit Antivertiginosa zur Behandlung von Uebelkeit: gesetzlicher Verordnungsausschluss gegen Reisekrankheit; Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 14 (Stand 09.10.2025): Antiemetika+Antivertiginosa-Kombis ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "15",
+      "atc_pattern": "D04AA%",
+      "bedingung": "Antihistaminika, zur Anwendung auf der Haut; ausgenommen bei Kindern. Verordnungsausschluss durch Rechtsverordnung fuer Alimemazin, Mepyramin.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 15 (Stand 09.10.2025): Topische Antihistaminika, Ausnahme nur fuer Kinder.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "16",
+      "atc_pattern": "C01CA%",
+      "bedingung": "Antihypotonika, orale: ausgenommen fuer Behandlung der symptomatischen neurogenen Hypotonie, wenn andere Massnahmen nicht ausreichend sind.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 16 (Stand 09.10.2025): Verordnungseinschraenkung orale Antihypotonika.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "17",
+      "atc_pattern": "S01XA15",
+      "bedingung": "Antikataraktika: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 17 (Stand 09.10.2025): Antikataraktika ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "19",
+      "atc_pattern": "V03ZZ%",
+      "bedingung": "Arzneimittel, die als 'traditionell angewendete' Arzneimittel gemaess § 109a AMG oder 'traditionelle pflanzliche' Arzneimittel nach § 39a AMG in den Verkehr gebracht werden: Verordnungsausschluss.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 19 (Stand 09.10.2025): Traditionelle (pflanzliche) Arzneimittel ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "20",
+      "atc_pattern": "A03AX%",
+      "bedingung": "Carminativa: ausgenommen bei Saeuglingen und Kleinkindern.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 20 (Stand 09.10.2025): Carminativa nur fuer Saeuglinge/Kleinkinder verordnungsfaehig.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "21",
+      "atc_pattern": "B01AC04",
+      "bedingung": "Clopidogrel als Monotherapie zur Praevention atherothrombotischer Ereignisse bei Patienten mit Herzinfarkt, ischaemischem Schlaganfall oder pAVK. Nicht eingeschraenkt bei: pAVK-bedingter Amputation/Gefaessintervention; diagnostisch gesicherter typischer Claudicatio intermittens mit Schmerzrueckbildung < 10 min Ruhe; ASS-Unvertraeglichkeit. Clopidogrel+ASS bei akutem Koronarsyndrom: bei ACS ohne ST-Strecken-Hebung bis 12 Monate; bei STEMI mit Thrombolyse bis 28 Tage.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 21 (Stand 09.10.2025): Clopidogrel-Verordnungseinschraenkung; Ausnahmen strikt dokumentieren.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "22",
+      "atc_pattern": "A07FA%",
+      "bedingung": "Darmflora-Regulantien (inkl. Stoffwechselprodukte, Zellen, Hydrolysate bakterieller Mikroorganismen); ausgenommen E. coli Nissle 1917 nur zur Behandlung der Colitis ulcerosa in Remission bei Mesalazin-Unvertraeglichkeit.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 22 (Stand 09.10.2025): Darmflora-Regulantien eingeschraenkt.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "23",
+      "atc_pattern": "D02%",
+      "bedingung": "Dermatika, die auch zur Reinigung/Pflege/Faerbung der Haut/Haare/Naegel/Zaehne/Mundhoehle dienen und bei denen Krankenbehandlung nicht im Vordergrund steht.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 23 (Stand 09.10.2025): Kosmetisch-funktionale Dermatika ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "24",
+      "atc_pattern": "C04A%",
+      "bedingung": "Durchblutungsfoerdernde Mittel: ausgenommen Prostanoide parenteral bei pAVK Stadium III/IV Fontaine im begruendeten Einzelfall; ausgenommen Naftidrofuryl bei pAVK Stadium II Fontaine nach erfolglosem nicht-medikamentoesem Therapieversuch und Gehstrecke < 200 m.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 24 (Stand 09.10.2025): Einsatz durchblutungsfoerdernder Mittel besonders zu begruenden.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "25",
+      "atc_pattern": "A09AA%",
+      "bedingung": "Enzympraeparate in fixen Kombinationen: ausgenommen Pankreasenzyme zur Behandlung der chronischen exokrinen Pankreasinsuffizienz, Mukoviszidose, oder funktionellen Pankreasinsuffizienz nach Gastrektomie mit Steatorrhoe.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 25 (Stand 09.10.2025): Fixe Enzym-Kombinationen eingeschraenkt.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "26",
+      "atc_pattern": "M02A%",
+      "bedingung": "Externa bei traumatisch bedingten Schwellungen, Oedemen und stumpfen Traumata. Verordnungsausschluss durch Rechtsverordnung fuer Nifenazon.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 26 (Stand 09.10.2025): Externa bei Trauma ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "27",
+      "atc_pattern": "A05AX%",
+      "bedingung": "Gallenwegstherapeutika und Cholagoga zur Behandlung funktioneller Dyspepsie. Verordnungsausschluss durch Rechtsverordnung fuer Dehydrocholsaeure, Piprozolin.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 27 (Stand 09.10.2025): Gallenwegstherapeutika bei funktioneller Dyspepsie eingeschraenkt.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "28",
+      "atc_pattern": "C05AX%",
+      "bedingung": "Geriatrika, Arteriosklerosemittel. Verordnungsausschluss durch Rechtsverordnung fuer Iod/Iodsalze in der Geriatrie.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 28 (Stand 09.10.2025): Geriatrika/Arteriosklerosemittel ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "29",
+      "atc_pattern": "M04A%",
+      "bedingung": "Gichtmittel: ausgenommen zur Behandlung des akuten Gichtanfalls, bei chronischer Niereninsuffizienz, bei Hyperurikaemie bei onkologischen Erkrankungen, sowie soweit ein Therapieversuch mit nichtmedikamentoesen Massnahmen erfolglos geblieben ist. Verordnungsausschluss Cinchophen, Orotsaeure bei Gicht.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 29 (Stand 09.10.2025): Gichtmittel: erst nichtmedikamentoese Therapie dokumentieren.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "29a",
+      "atc_pattern": "M04AA03",
+      "bedingung": "Febuxostat: nicht verordnungsfaehig in Indikation chronische Hyperurikaemie, solange mit Mehrkosten ggu. Allopurinol verbunden. Ausnahme: Unvertraeglichkeit/hohes Risiko gegen Allopurinol oder erfolgloser Therapieversuch mit individuell optimierter Allopurinol-Therapie.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 29a (Stand 09.10.2025): Febuxostat nur bei Allopurinol-Kontraindikation/-Versagen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "30",
+      "atc_pattern": "C05A%",
+      "bedingung": "Haemorrhoidenmittel in fixer Kombination mit anderen Wirkstoffen zur lokalen Anwendung: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 30 (Stand 09.10.2025): Fixe Haemorrhoidenkombinationen ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "31",
+      "atc_pattern": "R05%",
+      "bedingung": "Hustenmittel: fixe Kombinationen von Antitussiva oder Expektorantien oder Mukolytika untereinander oder mit anderen Wirkstoffen: gesetzlicher Verordnungsausschluss verschreibungspflichtiger Arzneimittel bei Erkaeltungskrankheiten.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 31 (Stand 09.10.2025): Fixe Husten-Kombinationen ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "32",
+      "atc_pattern": "N05C%",
+      "bedingung": "Hypnotika/Hypnogene oder Sedativa: ausgenommen zur Kurzzeittherapie bis 4 Wochen; ausgenommen fuer laenger als 4 Wochen in medizinisch begruendeten Einzelfaellen; weitere Ausnahmen fuer Nicht-24-h-Schlaf-Wach-Syndrom bei vollstaendig blinden Personen, Schlafstoerungen bei 2-18-jaehrigen Kindern/Jugendlichen mit ASS/neurogenetischen Stoerungen/ADHS sowie Daridorexant bei chronischer Insomnie. Verordnungsausschluss Barbiturate (Rechtsverordnung).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 32 (Stand 09.10.2025): Langzeit-Hypnotika stark eingeschraenkt, Einzelfall-Doku noetig.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "33",
+      "atc_pattern": "A10AB04",
+      "bedingung": "Insulinanaloga, schnell wirkende (Insulin Aspart, Glulisin, Lispro) zur Behandlung des Diabetes mellitus Typ 2: nicht verordnungsfaehig, solange mit Mehrkosten zu schnell wirkendem Humaninsulin verbunden. Ausnahmen: Humaninsulin-Allergie; trotz intensivierter Therapie keine adaequate Stoffwechsellage mit Humaninsulin; unverhaeltnismaessig hohe Humaninsulindosen.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 33 (Stand 09.10.2025): Schnelle Insulinanaloga bei T2DM nur bei Mehrkosten-Neutralitaet oder Ausnahmen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "33b",
+      "atc_pattern": "A10AE04",
+      "bedingung": "Insulinanaloga, lang wirkende (Insulin glargin, detemir) zur Behandlung des Diabetes mellitus Typ 2: nicht verordnungsfaehig, solange mit Mehrkosten ggu. intermediaer wirkendem Humaninsulin. Ausnahmen: Insulin glargin bei anhaltend hohem Hypoglykaemie-Risiko trotz individualisierter Therapie; Patienten mit Allergie gegen intermediaer wirkendes Humaninsulin.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 33 (Stand 09.10.2025): Lange Insulinanaloga bei T2DM: nur unter Mehrkosten-Neutralitaet / Ausnahme.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "35",
+      "atc_pattern": "C10A%",
+      "bedingung": "Lipidsenker: ausgenommen bei bestehender vaskulaerer Erkrankung (KHK, cerebrovaskulaere Manifestation, pAVK); ausgenommen bei hohem kardiovaskulaerem Risiko (>10% Ereignisrate/10 J, T1DM mit Mikroalbuminurie, familiaere Hypercholesterinaemie); ausgenommen bei risikoverstaerkenden Erkrankungen (SLE, HIV, Schizophrenie/bipolar); ausgenommen bei Chylomikronaemie-Syndrom mit Pankreatitis-Risiko.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 35 (Stand 09.10.2025): Lipidsenker nur bei hohem kardiovaskulaerem Risiko oder manifester vaskulaerer Erkrankung.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "35a",
+      "atc_pattern": "C10AX13",
+      "bedingung": "Evolocumab: nicht verordnungsfaehig, solange mit Mehrkosten ggu. anderer Lipidsenker (Statine, Anionenaustauscher, Cholesterinresorptionshemmer, ACL-Hemmer). Ausnahmen: homozygote familiaere Hypercholesterinaemie nach Ausschoepfung anderer Optionen; therapierefraktaere heterozygote/nichtfamiliaere Hypercholesterinaemie mit LDL-Apherese-Indikation. Einleitung/Ueberwachung nur durch Fachaerzte (Kardiologie/Nephrologie/Endokrinologie/Angiologie/Kinder-Spezialisten) oder Lipidambulanzen.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 35 (Stand 09.10.2025): PCSK9-Hemmer Evolocumab nur bei Apherese-Indikation verordnungsfaehig.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "35b",
+      "atc_pattern": "C10AX14",
+      "bedingung": "Alirocumab: identische Regelung wie Evolocumab (Nr. 35a) - Mehrkosten-Neutralitaet, Ausnahme bei therapierefraktaerer LDL-Apherese-Indikation, Einleitung durch Fachaerzte.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 35b (Stand 09.10.2025): PCSK9-Hemmer Alirocumab nur bei Apherese-Indikation.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "35c",
+      "atc_pattern": "C10AX16",
+      "bedingung": "Inclisiran: nicht verordnungsfaehig, solange mit Mehrkosten zu anderen Lipidsenkern. Ausnahmen: therapierefraktaere heterozygote familiaere oder nicht-familiaere Hypercholesterinaemie/gemischte Dyslipidaemie mit LDL-Apherese-Indikation. Einleitung/Ueberwachung nur durch Fachaerzte (Kardiologie/Nephrologie/Endokrinologie/Angiologie) oder Lipidambulanzen.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 35c (Stand 09.10.2025): siRNA-Lipidsenker Inclisiran nur bei Apherese-Indikation.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "36",
+      "atc_pattern": "N02CX%",
+      "bedingung": "Migraenemittel-Kombinationen: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III. Nicht verschreibungspflichtige sind auch fuer Kinder bis 12. LJ / Jugendliche mit Entwicklungsstoerungen bis 18. LJ unzweckmaessig.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 36 (Stand 09.10.2025): Fixe Migraenekombinationen ausgeschlossen, besonderes Gefaehrdungspotential bei Kindern.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "37",
+      "atc_pattern": "M03B%",
+      "bedingung": "Muskelrelaxantien in fixer Kombination mit anderen Wirkstoffen: Verordnungsausschluss nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 37 (Stand 09.10.2025): Fixe Muskelrelaxanskombinationen ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "38",
+      "atc_pattern": "S02%",
+      "bedingung": "Otologika: ausgenommen Antibiotika und Corticosteroide (auch in fixer Kombi) zur lokalen Anwendung bei Entzuendungen des aeusseren Gehoergangs; ausgenommen Ciprofloxacin lokal bei chronischer eitriger Mittelohrentzuendung mit Trommelfelldefekt; ausgenommen Clotrimazol bei pilzbedingter Otitis externa. Verordnungsausschluss 8-Chinolinol (Rechtsverordnung).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 38 (Stand 09.10.2025): Otologika eingeschraenkt, Ausnahmen eng definiert.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "39",
+      "atc_pattern": "G04CA%",
+      "bedingung": "Prostatamittel: sofern ein Therapieversuch ueber 24 Wochen Dauer erfolglos geblieben ist. Nach erfolgreichem Therapieversuch ist laengerfristige Verordnung zulaessig. Art, Dauer und Ergebnis sind zu dokumentieren.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 39 (Stand 09.10.2025): Prostatamittel-Re-Evaluation nach 24 Wochen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "40",
+      "atc_pattern": "M02AA%",
+      "bedingung": "Rheumamittel (Analgetika/Antiphlogistika/Antirheumatika) zur externen Anwendung: Verordnungsausschluss nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 40 (Stand 09.10.2025): Topische Rheumamittel ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "41",
+      "atc_pattern": "R01AB%",
+      "bedingung": "Rhinologika in fixer Kombination mit gefaessaktiven Stoffen: gesetzlicher Verordnungsausschluss verschreibungspflichtiger Arzneimittel bei Erkaeltungskrankheiten.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 41 (Stand 09.10.2025): Fixe Rhinologika-Kombinationen ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "42",
+      "atc_pattern": "A13A%",
+      "bedingung": "Roborantien, Tonika und appetitanregende Mittel: Verordnungsausschluss nach Rechtsverordnung und nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 42 (Stand 09.10.2025): Roborantien/Tonika ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "43",
+      "atc_pattern": "V99_SAFT%",
+      "bedingung": "Saftzubereitungen fuer Erwachsene: ausgenommen von in der Person des Patienten begruendeten Ausnahmen. Einsatz besonders zu begruenden.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 43 (Stand 09.10.2025): Saftzubereitungen fuer Erwachsene nur mit personaler Begruendung.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "44",
+      "atc_pattern": "N06B%",
+      "bedingung": "Stimulantien (Psychoanaleptika, Psychoenergetika, coffeinhaltige Mittel): ausgenommen Narkolepsie; ausgenommen zur Reduktion uebermaessiger Tagesschlaefrigkeit bei OSA trotz optimierter CPAP-Therapie; ausgenommen bei ADS/ADHS im Rahmen therapeutischer Gesamtstrategie bei Kindern ab 6 J und Jugendlichen (Spezialist fuer Verhaltensstoerungen); ausgenommen bei Erwachsenen ab 18 J mit ADS/ADHS mit bereits im Kindesalter bestehender Erkrankung (Diagnose via WURS-k; Spezialist). Verordnungsausschluss Amfetaminil, Metamfetamin parenteral (Rechtsverordnung).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 44 (Stand 09.10.2025): Stimulantien: strikte Indikation, Facharztbindung, Doku ueber 12 Monate.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "45",
+      "atc_pattern": "N05BA%",
+      "bedingung": "Tranquillantien: ausgenommen Kurzzeittherapie bis 4 Wochen; ausgenommen laenger als 4 Wochen in medizinisch begruendeten Einzelfaellen. Laengerfristige Anwendung ist besonders zu begruenden. Verordnungsausschluss Methaqualon (Rechtsverordnung).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 45 (Stand 09.10.2025): Tranquillantien - Dauer strikt dokumentieren.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "46",
+      "atc_pattern": "L03AX%",
+      "bedingung": "Umstimmungsmittel und Immunstimulantien zur Staerkung der Abwehrkraefte: Verordnungsausschluss nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 46 (Stand 09.10.2025): Immunstimulantien zur Abwehrstaerkung ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "47",
+      "atc_pattern": "C05B%",
+      "bedingung": "Venentherapeutika: ausgenommen Veroedungsmittel. Verordnungsausschluss Natriumapolat topisch (Rechtsverordnung).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 47 (Stand 09.10.2025): Venentherapeutika eingeschraenkt, Veroedungsmittel erlaubt.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "48",
+      "atc_pattern": "V03AX%",
+      "bedingung": "Zellulartherapeutika und Organpraeparate: Verordnungsausschluss nach AM-RL Anlage III und Rechtsverordnung.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 48 (Stand 09.10.2025): Zellulartherapeutika/Organpraeparate ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "49",
+      "atc_pattern": "A10BG%",
+      "bedingung": "Glitazone (Pioglitazon, Rosiglitazon) zur Behandlung des Diabetes mellitus Typ 2: Verordnungsausschluss nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 49 (Stand 09.10.2025): Glitazone bei T2DM ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "50",
+      "atc_pattern": "A10BX%",
+      "bedingung": "Glinide (Nateglinid, Repaglinid) zur Behandlung des Diabetes mellitus Typ 2: Verordnungseinschraenkung. Ausgenommen ist die Behandlung niereninsuffizienter Patienten (Kreatinin-Clearance < 25 ml/min) mit Repaglinid, soweit keine anderen oralen Antidiabetika infrage kommen und Insulintherapie nicht angezeigt ist.",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 50 (Stand 09.10.2025): Glinide eingeschraenkt; Repaglinid bei schwerer Niereninsuffizienz zulaessig.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "51",
+      "atc_pattern": "N06AX18",
+      "bedingung": "Reboxetin: Verordnungsausschluss verschreibungspflichtiger Arzneimittel nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 51 (Stand 09.10.2025): Reboxetin ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "52",
+      "atc_pattern": "V04CA%",
+      "bedingung": "Harn- und Blutzuckerteststreifen bei Patienten mit Diabetes mellitus Typ 2, die nicht mit Insulin behandelt werden; ausgenommen bei instabiler Stoffwechsellage (interkurrente Erkrankungen, Ersteinstellung oder Therapieumstellung auf orale Antidiabetika mit hohem Hypoglykaemie-Risiko, je Behandlungssituation bis zu 50 Teststreifen).",
+      "ampel": "gelb",
+      "begruendung": "AM-RL Anlage III Nr. 52 (Stand 09.10.2025): BZ-Teststreifen bei nicht-insulinpflichtigem T2DM nur bei instabiler Stoffwechsellage.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "53",
+      "atc_pattern": "B01AC30",
+      "bedingung": "Dipyridamol in Kombination mit Acetylsalicylsaeure: Verordnungsausschluss nach AM-RL Anlage III.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage III Nr. 53 (Stand 09.10.2025): Dipyridamol+ASS-Fixkombi ausgeschlossen.",
+      "quelle": "AMRL_III"
+    },
+    {
+      "anlage": "III",
+      "nr": "32-GLP1",
+      "atc_pattern": "A10BJ%",
+      "bedingung": "GLP-1-Rezeptoragonisten (Semaglutid, Liraglutid, Dulaglutid, Exenatid, Lixisenatid) zur Behandlung des Diabetes mellitus Typ 2: verordnungsfaehig im Rahmen der Zulassung. Verordnung bei Adipositas OHNE T2DM (Lifestyle-Indikation) ist nicht erstattungsfaehig, siehe § 34 Abs. 1 Satz 7 SGB V (Lifestyle-Ausschluss).",
+      "ampel": "rot",
+      "begruendung": "AM-RL / SGB V: GLP-1-RA sind bei Adipositas ohne T2DM Lifestyle-Indikation und nicht erstattungsfaehig. Bei T2DM im Rahmen der Zulassung verordnungsfaehig.",
+      "quelle": "AMRL_III_GLP1"
+    }
+  ]
+}

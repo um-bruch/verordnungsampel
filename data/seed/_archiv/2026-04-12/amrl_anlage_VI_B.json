@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "anlage": "VI-B",
+    "titel": "Arzneimittel-Richtlinie Anlage VI Teil B - Off-Label-Use, nicht anerkannt",
+    "stand": "2025-05-07",
+    "quelle_kuerzel": "AMRL_VI",
+    "quelle_url": "https://www.g-ba.de/downloads/83-691-1009/AM-RL-VI-Off-label-2025-05-07.pdf",
+    "quelle_datei": "AM-RL-VI-Off-label-2025-05-07.pdf",
+    "raw_datei": "_raw/amrl_VI_2025-05-07.txt",
+    "extraktion_datum": "2026-04-12",
+    "extraktion_methode": "PyMuPDF (fitz) Rohtext-Extraktion aus offizieller G-BA-PDF, anschliessend strukturierte Zerlegung (Nummer + ATC-Pattern + Bedingung + Begruendung) und manuelle Verifikation gegen Seitenzahlen des PDFs.",
+    "extraktion_version": "1.0.0",
+    "eintraege_anzahl": 16,
+    "lizenz": "Oeffentliche G-BA-Richtlinie, gemeinfreies amtliches Werk (§ 5 UrhG)."
+  },
+  "eintraege": [
+    {
+      "anlage": "VI-B",
+      "nr": "II",
+      "atc_pattern": "L03AC01",
+      "wirkstoff": "Inhalatives Interleukin-2 (Proleukin)",
+      "bedingung": "Therapie des Nierenzellkarzinoms - inhalative Applikation.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. II (Stand 07.05.2025): inhalatives IL-2 beim Nierenzellkarzinom NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "III",
+      "atc_pattern": "L03AC01_MEL",
+      "wirkstoff": "Interleukin-2 (systemisch)",
+      "bedingung": "Systemische Anwendung beim metastasierten malignen Melanom.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. III: systemisches IL-2 beim metastasierten Melanom NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "IV",
+      "atc_pattern": "L01BC05_MAMMA",
+      "wirkstoff": "Gemcitabin (Monotherapie)",
+      "bedingung": "Monotherapie beim Mammakarzinom der Frau.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. IV: Gemcitabin-Mono beim Mammakarzinom NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "V",
+      "atc_pattern": "H01CB02",
+      "wirkstoff": "Octreotid",
+      "bedingung": "Hepatozellulaeres Karzinom (HCC).",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. V: Octreotid beim HCC NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "VI",
+      "atc_pattern": "N04BB01",
+      "wirkstoff": "Amantadin",
+      "bedingung": "Multiple Sklerose - Behandlung der Fatigue.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. VI: Amantadin bei MS-Fatigue NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "VII",
+      "atc_pattern": "N03AG01_KJ",
+      "wirkstoff": "Valproinsaeure",
+      "bedingung": "Migraeneprophylaxe bei Kindern und Jugendlichen.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. VII: Valproinsaeure zur Migraeneprophylaxe bei Kindern/Jugendlichen NICHT verordnungsfaehig (Teratogenitaet/Entwicklungsrisiken).",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "VIII",
+      "atc_pattern": "J04BA02_MONO",
+      "wirkstoff": "Dapson (Monotherapie)",
+      "bedingung": "Monotherapie zur Behandlung der Pneumocystis carinii / jirovecii.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. VIII: Dapson-Mono zur PCP-Behandlung NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "IX",
+      "atc_pattern": "L03AC01_HIV",
+      "wirkstoff": "Aldesleukin (auch als Adjuvans)",
+      "bedingung": "HIV/AIDS - auch adjuvanter Einsatz.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. IX: Aldesleukin bei HIV/AIDS NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "X",
+      "atc_pattern": "J06BA02_HIV",
+      "wirkstoff": "Intravenoese Immunglobuline (IVIG)",
+      "bedingung": "HIV/AIDS im Erwachsenenalter (auch als Adjuvans).",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. X: IVIG bei HIV/AIDS (Erwachsene) NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XI",
+      "atc_pattern": "L01DB01_GLIOM",
+      "wirkstoff": "Doxorubicin",
+      "bedingung": "Gliomrezidiv.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XI: Doxorubicin beim Gliomrezidiv NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XII",
+      "atc_pattern": "L01CB01_SARK",
+      "wirkstoff": "Etoposid (+ Carboplatin)",
+      "bedingung": "(Weichteil-)Sarkome des Erwachsenen in Kombination mit Carboplatin.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XII: Etoposid+Carboplatin bei Weichteilsarkomen (Erwachsene) NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XIII",
+      "atc_pattern": "L01DB01_CTCL",
+      "wirkstoff": "Liposomales Doxorubicin",
+      "bedingung": "Kutane T-Zell-Lymphome (CTCL) nach Versagen von PUVA und Interferon-alpha, Chlorambucil.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XIII: liposomales Doxorubicin bei CTCL (nach PUVA/IFN-alpha-Versagen) NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XIV",
+      "atc_pattern": "P01AX06",
+      "wirkstoff": "Atovaquon + Pyrimethamin",
+      "bedingung": "Prophylaxe der Toxoplasmose-Enzephalitis.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XIV: Atovaquon+Pyrimethamin zur Toxoplasmose-Prophylaxe NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XV",
+      "atc_pattern": "N06AX16",
+      "wirkstoff": "Venlafaxin",
+      "bedingung": "Neuropathische Schmerzen.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XV: Venlafaxin bei neuropathischen Schmerzen NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XVI",
+      "atc_pattern": "N06AA09_MIG",
+      "wirkstoff": "Amitriptylin / Topiramat",
+      "bedingung": "Migraeneprophylaxe bei Kindern und Jugendlichen.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XVI: Amitriptylin und Topiramat zur Migraeneprophylaxe bei Kindern/Jugendlichen NICHT verordnungsfaehig.",
+      "quelle": "AMRL_VI"
+    },
+    {
+      "anlage": "VI-B",
+      "nr": "XVII",
+      "atc_pattern": "N03AG01_GP",
+      "wirkstoff": "Valproinsaeure",
+      "bedingung": "Migraeneprophylaxe bei gebaerfaehigen Patientinnen.",
+      "ampel": "rot",
+      "begruendung": "AM-RL Anlage VI Teil B Nr. XVII: Valproinsaeure zur Migraeneprophylaxe bei gebaerfaehigen Frauen NICHT verordnungsfaehig (Teratogenitaet).",
+      "quelle": "AMRL_VI"
+    }
+  ]
+}

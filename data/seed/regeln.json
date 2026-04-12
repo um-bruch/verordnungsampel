@@ -1,0 +1,102 @@
+[
+  {
+    "kuerzel": "PRISCUS_BENZO_AELTER65",
+    "atc_pattern": "N05BA%",
+    "icd_pattern": null,
+    "altersgrenze": 65,
+    "ampel": "rot",
+    "begruendung": "PRISCUS 2.0: Benzodiazepine bei Patienten ab 65 Jahren potenziell inadaequat (Sturzrisiko, kognitive Beeintraechtigung, Abhaengigkeit). Alternative pruefen oder strikte Begruendung dokumentieren.",
+    "container": null,
+    "quelle": "PRISCUS_2"
+  },
+  {
+    "kuerzel": "PRISCUS_AMITRIPTYLIN_AELTER65",
+    "atc_pattern": "N06AA09",
+    "icd_pattern": null,
+    "altersgrenze": 65,
+    "ampel": "rot",
+    "begruendung": "PRISCUS 2.0: Amitriptylin als trizyklisches Antidepressivum bei Patienten ab 65 Jahren potenziell inadaequat (anticholinerge Effekte). Alternative pruefen.",
+    "container": null,
+    "quelle": "PRISCUS_2"
+  },
+  {
+    "kuerzel": "PRISCUS_PROMETHAZIN_AELTER65",
+    "atc_pattern": "R06AD02",
+    "icd_pattern": null,
+    "altersgrenze": 65,
+    "ampel": "gelb",
+    "begruendung": "PRISCUS 2.0: Promethazin (sedierendes Antihistaminikum) bei aelteren Patienten kritisch — anticholinerge Last erhoeht.",
+    "container": null,
+    "quelle": "PRISCUS_2"
+  },
+  {
+    "kuerzel": "CANNABIS_VORAB_PFLICHT",
+    "atc_pattern": "QV12",
+    "icd_pattern": null,
+    "altersgrenze": null,
+    "ampel": "gelb",
+    "begruendung": "§ 31 Abs. 6 SGB V: Cannabis als Medizin erfordert Vorab-Genehmigung der Krankenkasse vor Erstverordnung. Antrag stellen, Bewilligung abwarten.",
+    "container": "pflicht_vorab",
+    "quelle": "SGB_V_31_6"
+  },
+  {
+    "kuerzel": "ACE_HEMMER_HYPERTONIE_OK",
+    "atc_pattern": "C09AA%",
+    "icd_pattern": "I10",
+    "altersgrenze": null,
+    "ampel": "gruen",
+    "begruendung": "ACE-Hemmer bei essentieller Hypertonie (I10) sind Standardtherapie und in den Leitlinien als Mittel der ersten Wahl gefuehrt.",
+    "container": null,
+    "quelle": null
+  },
+  {
+    "kuerzel": "PPI_REFLUX_OK",
+    "atc_pattern": "A02BC%",
+    "icd_pattern": "K21%",
+    "altersgrenze": null,
+    "ampel": "gruen",
+    "begruendung": "PPI bei gastrooesophagealer Refluxkrankheit (K21.x) sind leitliniengerechte Standardtherapie. Re-Evaluation nach 8 Wochen empfohlen.",
+    "container": null,
+    "quelle": null
+  },
+  {
+    "kuerzel": "PPI_KEINE_REFLUX_HINT",
+    "atc_pattern": "A02BC%",
+    "icd_pattern": null,
+    "altersgrenze": null,
+    "ampel": "gelb",
+    "begruendung": "PPI ohne dokumentierte Reflux-/Ulkus-Indikation: Bitte Indikation und voraussichtliche Anwendungsdauer dokumentieren (AM-RL Anlage III).",
+    "container": null,
+    "quelle": "AMRL_III"
+  },
+  {
+    "kuerzel": "STANDARD_ARZNEIMITTEL_KEIN_VORAB",
+    "atc_pattern": "C09AA%",
+    "icd_pattern": null,
+    "altersgrenze": null,
+    "ampel": "gruen",
+    "begruendung": "Hinweis: Vorab-Genehmigung normaler Arzneimittel ist nach § 29 BMV-AE NICHT zulaessig. Defensiv dokumentieren statt Antrag stellen.",
+    "container": "verboten_vorab",
+    "quelle": "BMV_AE_29"
+  },
+  {
+    "kuerzel": "GLP1_ADIPOSITAS_GRAUZONE",
+    "atc_pattern": "A10BJ%",
+    "icd_pattern": "E66%",
+    "altersgrenze": null,
+    "ampel": "rot",
+    "begruendung": "GLP-1-Analoga (z.B. Semaglutid, Liraglutid) sind bei Adipositas OHNE begleitenden Diabetes mellitus nicht erstattungsfaehig (AM-RL Anlage III). Einzelfallpruefung und Bitte um Stellungnahme der Krankenkasse empfohlen.",
+    "container": "stellungnahme",
+    "quelle": "AMRL_III_GLP1"
+  },
+  {
+    "kuerzel": "SOZIOTHERAPIE_VORAB_PFLICHT",
+    "atc_pattern": "QZ01",
+    "icd_pattern": "F2%",
+    "altersgrenze": null,
+    "ampel": "gelb",
+    "begruendung": "§ 37a SGB V: Soziotherapie fuer schwer psychisch kranke Versicherte erfordert vor Leistungsbeginn einen Genehmigungsantrag bei der Krankenkasse mit aerztlicher Verordnung und Therapieziel-Plan.",
+    "container": "pflicht_vorab",
+    "quelle": "SGB_V_31_6"
+  }
+]

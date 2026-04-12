@@ -1,0 +1,15 @@
+[
+  { "code": "I10",   "bezeichnung": "Essentielle (primaere) Hypertonie", "kapitel": "IX" },
+  { "code": "I50.0", "bezeichnung": "Kongestive Herzinsuffizienz",       "kapitel": "IX" },
+  { "code": "E11.9", "bezeichnung": "Diabetes mellitus Typ 2, ohne Komplikationen", "kapitel": "IV" },
+  { "code": "E66.0", "bezeichnung": "Adipositas durch uebermaessige Kalorienzufuhr", "kapitel": "IV" },
+  { "code": "K21.0", "bezeichnung": "Gastrooesophageale Refluxkrankheit mit Oesophagitis", "kapitel": "XI" },
+  { "code": "M54.5", "bezeichnung": "Kreuzschmerz",                        "kapitel": "XIII" },
+  { "code": "F32.1", "bezeichnung": "Mittelgradige depressive Episode",    "kapitel": "V" },
+  { "code": "F33.2", "bezeichnung": "Rezidivierende depressive Stoerung, gegenwaertig schwere Episode ohne psychotische Symptome", "kapitel": "V" },
+  { "code": "G35",   "bezeichnung": "Multiple Sklerose",                   "kapitel": "VI" },
+  { "code": "G47.31","bezeichnung": "Obstruktives Schlafapnoe-Syndrom",    "kapitel": "VI" },
+  { "code": "R52.1", "bezeichnung": "Chronischer unbeeinflussbarer Schmerz", "kapitel": "XVIII" },
+  { "code": "E66.01","bezeichnung": "Adipositas Grad II durch uebermaessige Kalorienzufuhr", "kapitel": "IV" },
+  { "code": "F20.0", "bezeichnung": "Paranoide Schizophrenie",              "kapitel": "V" }
+]

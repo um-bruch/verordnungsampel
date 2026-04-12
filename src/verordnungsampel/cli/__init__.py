@@ -1,0 +1,1 @@
+"""CLI-Frontend fuer VerordnungsAmpel."""

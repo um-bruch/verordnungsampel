@@ -1,0 +1,81 @@
+# VerordnungsAmpel — .gitignore
+
+# Referenz-Codebases (NICHT mit veroeffentlichen, urheberrechtlich geschuetzt)
+_codebases/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tests / Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Compliance-Log und User-DB (NIE committen)
+*.db
+*.sqlite
+*.sqlite3
+compliance_log/
+~/.verordnungsampel/
+
+# Lokale User-Dateien
+TEST.txt
+TESTS.txt
+TESTERGEBNISSE.txt
+.env
+*.local
+
+# Interne Steuerungsdateien (Um:bruch / .SOFTWARE-Konvention)
+AUFGABEN.txt
+BUGREPORT.md
+DIAGNOSE_REPORT.md
+SKILL.md
+tmpclaude-*
+
+# Rechtsdokumente als lokale Entwürfe (nur das finale PDF/MD kommt ins Repo via docs/legal/)
+docs/legal/*_DRAFT.md
+docs/legal/*.docx
+
+# Lokale Release-Artefakte (GitHub Releases sind primärer Kanal)
+releases/
