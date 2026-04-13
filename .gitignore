@@ -79,3 +79,12 @@ docs/legal/*.docx
 
 # Lokale Release-Artefakte (GitHub Releases sind primärer Kanal)
 releases/
+
+# RB-Review 2026-04-13: interne Audit- und Cross-Projekt-Dokumente - nicht public
+docs/internal/
+docs/legal/RECHTSAUDIT_ALLE_PROJEKTE.md
+docs/legal/AUTOFIX_REPORT.md
+docs/legal/LICENSE_SWEEP_REPORT.md
+docs/legal/GUTACHTEN_VFDistiller_IVDR.md
+docs/legal/GUTACHTEN_VFDistiller_IVDR_NACHTRAG.md
+docs/legal/GESAMTEINSCHAETZUNG_FULL.md
