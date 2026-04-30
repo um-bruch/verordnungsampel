@@ -48,7 +48,7 @@ Issues = "https://github.com/research-line/verordnungsampel/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-verordnungsampel = ["data/seed/*.json", "gui/icons/*.svg"]
+verordnungsampel = ["data/seed/*.json", "gui/icons/*.svg", "gui/icons/*.ico"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

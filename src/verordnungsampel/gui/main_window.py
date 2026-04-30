@@ -36,6 +36,7 @@ from verordnungsampel.gui.tabs.workflow_tab import WorkflowTab
 
 
 _ICONS_DIR = Path(__file__).resolve().parent / "icons"
+_WINDOW_ICON = _ICONS_DIR / "ampel.ico"
 
 
 class MainWindow(QMainWindow):
@@ -50,7 +51,7 @@ class MainWindow(QMainWindow):
         self._current_ergebnis: Optional[AmpelErgebnis] = None
 
         self.setWindowTitle(S.APP_TITLE)
-        self.setWindowIcon(QIcon(str(_ICONS_DIR / "ampel.svg")))
+        self.setWindowIcon(QIcon(str(_WINDOW_ICON if _WINDOW_ICON.exists() else _ICONS_DIR / "ampel.svg")))
         self.resize(560, 640)
         self.setMinimumSize(440, 480)
 

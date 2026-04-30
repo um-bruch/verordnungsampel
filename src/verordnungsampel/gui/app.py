@@ -22,9 +22,17 @@ ICONS_DIR = Path(__file__).resolve().parent / "icons"
 
 
 def _find_icon(name: str) -> str:
-    """Pfad zu einem der mitgelieferten SVG-Icons."""
+    """Pfad zu einem mitgelieferten Icon-Asset."""
     path = ICONS_DIR / name
     return str(path)
+
+
+def _find_window_icon() -> str:
+    """Bevorzugt Windows-ICO fuer App/Fenster, faellt sonst auf SVG zurueck."""
+    ico_path = ICONS_DIR / "ampel.ico"
+    if ico_path.exists():
+        return str(ico_path)
+    return _find_icon("ampel.svg")
 
 
 def _require_pyside6():
@@ -148,7 +156,7 @@ def run_gui(argv: Optional[list] = None) -> int:
     app = QApplication.instance() or QApplication(argv or sys.argv)
     app.setApplicationName(S.APP_TITLE)
     app.setQuitOnLastWindowClosed(False)  # Tray darf App am Leben halten
-    app.setWindowIcon(QIcon(_find_icon("ampel.svg")))
+    app.setWindowIcon(QIcon(_find_window_icon()))
 
     if not QSystemTrayIcon.isSystemTrayAvailable():
         QMessageBox.critical(

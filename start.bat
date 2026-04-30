@@ -2,8 +2,8 @@
 REM ======================================================================
 REM VerordnungsAmpel - Interaktives Demo-Menue
 REM
-REM Prototyp v0.1 - Companion-Tool fuer Vertragsaerzte zur
-REM Regress-Praevention im Moment der Verordnung
+REM Prototyp v0.1 - Softwareentwurf zur Anzeige bekannter
+REM Regress-Risikoindikatoren im Moment der Verordnung
 REM
 REM Direkt-Modus: start.bat check --icd I10 --atc C09AA02
 REM Menue-Modus:  start.bat (ohne Argumente)
@@ -33,8 +33,8 @@ echo ======================================================================
 echo                  VerordnungsAmpel - Prototyp v0.1
 echo ======================================================================
 echo.
-echo   Companion-Tool fuer Vertragsaerzte zur Regress-Praevention
-echo   im Moment der Verordnung  (GPL-3.0, kein Medical Device)
+echo   Anzeige bekannter Regress-Risikoindikatoren im Moment
+echo   der Verordnung  (GPL-3.0, kein Medical Device)
 echo.
 echo ----------------------------------------------------------------------
 echo   SETUP

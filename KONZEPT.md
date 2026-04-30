@@ -164,11 +164,11 @@ Dieses Projekt ist die **technische Schwester** des Konzeptpapiers PP-003 (Regre
 
 - **PP-003** = Datensammlung über bereits geschehene Regresse (anonyme Meldeplattform)
 - **ST-001** = Wissenschaftliche Tiefenanalyse warum das nötig ist
-- **VerordnungsAmpel** = Werkzeug zur Verhinderung künftiger Regresse VOR der Verordnung
+- **VerordnungsAmpel** = Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren vor der Verordnung
 
 Die drei Bausteine ergänzen sich:
 - PP-003 schließt die Daten-Lücke (was passiert ist)
-- VerordnungsAmpel schließt die Werkzeug-Lücke (was zu tun ist)
+- VerordnungsAmpel schließt die Informations-Lücke am Verordnungspunkt
 - ST-001 liefert die Begründung für beides
 
 ---

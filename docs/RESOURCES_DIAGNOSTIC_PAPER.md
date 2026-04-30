@@ -181,8 +181,8 @@ Da Lukas Geiger sowohl Autor der Diagnostic-Paper-Codebase als auch der Verordnu
 
 ## Verweise
 
-- **Original-Projekt:** `C:\Users\User\OneDrive\.TOPICS\.RESEARCH\.CLOSED\!!!PP__Diagnostic\`
+- **Original-Projekt:** Diagnostic Testcenter / Geiger 2026, DOI `10.5281/zenodo.18736725`
 - **Lokaler Spiegel (diese Referenz):** `_codebases/REF_Diagnostic_Paper/`
 - **VerordnungsAmpel-Konzept:** `../KONZEPT.md`
-- **Code-Audit der anderen Referenzen:** `CODE_AUDIT.md` (MediPlaner, Foerderplaner)
-- **Um:bruch ST-001:** `C:\Users\User\OneDrive\.UMBRUCH\Publikationen\Positionspapier\ST-001_Das_Angstsystem.tex`
+- **Code-Audit der anderen Referenzen:** internes Audit-Dokument, nicht Teil dieses Repositories
+- **Um:bruch ST-001:** Begleitstudie zum Regress-System, siehe `https://github.com/research-line/regressangst`

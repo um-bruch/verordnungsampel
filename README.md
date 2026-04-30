@@ -135,6 +135,10 @@ Das Hauptfenster ist kompakt, lässt sich per Klick auf „X“ ins System-Tray 
 und wird erst über **Rechtsklick auf das Tray-Icon → Beenden** wirklich geschlossen.
 Always-on-top, Minimal-Modus und Transparenz-Optionen sind verfügbar.
 
+### Screenshot
+
+![VerordnungsAmpel GUI](README/screenshots/main.png)
+
 ### Architektur
 
 | Komponente | Wahl |
@@ -149,7 +153,8 @@ Always-on-top, Minimal-Modus und Transparenz-Optionen sind verfügbar.
 
 - [`KONZEPT.md`](KONZEPT.md) — Vollständiges Projektkonzept
 - [`CHANGELOG.md`](CHANGELOG.md) — Versionshistorie
-- [`docs/CODE_AUDIT.md`](docs/CODE_AUDIT.md) — Audit der Referenz-Codebases
+- [`docs/MARKTVERGLEICH.md`](docs/MARKTVERGLEICH.md) — Markt- und Abgrenzungsanalyse
+- [`docs/legal/GESAMTEINSCHAETZUNG.md`](docs/legal/GESAMTEINSCHAETZUNG.md) — Öffentliche rechtliche Kurzbewertung
 - [`docs/RESOURCES_DIAGNOSTIC_PAPER.md`](docs/RESOURCES_DIAGNOSTIC_PAPER.md) — Pattern-Quellen (Geiger 2026)
 - [`docs/legal/RECHTSGUTACHTEN_MDSW.md`](docs/legal/RECHTSGUTACHTEN_MDSW.md) — Erstgutachten „Informationswerk vs. MDSW"
 - [`docs/legal/DSGVO_KONZEPT.md`](docs/legal/DSGVO_KONZEPT.md) — Datenschutz-Konzept
@@ -159,8 +164,8 @@ Always-on-top, Minimal-Modus und Transparenz-Optionen sind verfügbar.
 - **PP-003** (Um:bruch) = anonyme Meldeplattform für bereits geschehene Regresse
 - **ST-001** (Um:bruch) = wissenschaftliche Begleitstudie zum Regress-System
   https://github.com/research-line/regressangst
-- **VerordnungsAmpel** (dieses Projekt) = Werkzeug zur Verhinderung künftiger Regresse
-  VOR der Verordnung
+- **VerordnungsAmpel** (dieses Projekt) = Softwareentwurf zur Anzeige bekannter
+  Regress-Risikoindikatoren vor der Verordnung
 
 ### Mitwirken
 
@@ -179,13 +184,15 @@ liegen bei der Ärztin / dem Arzt.
 
 ### What it is
 
-An open-source companion tool for German outpatient physicians that runs alongside the
-practice-management system (PVS) and, at the moment of prescribing, checks the combination
-of **ICD-10-GM code** and **ATC code** against public rule sets. Output: a traffic light
-(green / yellow / red) with justification, source reference, and a tamper-proof audit trail.
+An open-source software draft for German outpatient care contexts. It can run alongside
+the practice-management system (PVS) and, at the moment of prescribing, checks the
+combination of **ICD-10-GM code** and **ATC code** against public rule sets. Output:
+a traffic light (green / yellow / red) with justification, source reference, and a
+tamper-proof audit trail.
 
-**What it is not:** not a practice-management system, not a medical device, no patient
-data processing. Pure plausibility checking against public rule sets.
+**What it is not:** not a practice-management system, not a medical device, not clinical
+decision support, no patient data processing, and no promise of recoupment prevention.
+Pure plausibility checking against public rule sets.
 
 ### Why
 
@@ -226,6 +233,10 @@ python -m verordnungsampel.cli.main gui
 
 The main window is compact and, on clicking "X", minimises to the system tray. It is
 only fully terminated by **right-clicking the tray icon → Quit**.
+
+### Screenshot
+
+![VerordnungsAmpel GUI](README/screenshots/main.png)
 
 ### Relationship to Um:bruch / Regress-Melder
 

@@ -592,7 +592,7 @@ Dieses Gutachten wurde von Claude (KI) als Rechtsbeauftragter (RB) der Um:bruch-
 
 ### 12.2 Wann ein Anwalt einzuschalten ist
 
-Gemäß `C:\Users\User\OneDrive\.UMBRUCH\Policies\RECHTSABTEILUNG.md` ist ein Fachanwalt zwingend hinzuzuziehen bei:
+Gemäß der internen Um:bruch-Rechtsabteilungs-Policy ist ein Fachanwalt zwingend hinzuzuziehen bei:
 
 | Auslöser | Fachgebiet |
 |---|---|
@@ -691,7 +691,7 @@ Gemäß `C:\Users\User\OneDrive\.UMBRUCH\Policies\RECHTSABTEILUNG.md` ist ein Fa
 - `RECHTSGUTACHTEN_MDSW.md` (2026-04-12) — Hauptgutachten
 - `DSGVO_KONZEPT.md` (Projektintern)
 - `KONZEPT.md` (v1, 2026-04-08)
-- `C:\Users\User\OneDrive\.UMBRUCH\Policies\RECHTSABTEILUNG.md`
+- Um:bruch-Rechtsabteilungs-Policy (intern)
 
 ---
 

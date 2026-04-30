@@ -568,9 +568,9 @@ Das Konzept ist bei jeder der folgenden Änderungen zu aktualisieren:
 |---|---|
 | [KONZEPT.md](../../KONZEPT.md) | Projektkonzept, Funktionen, Architektur |
 | [README.md](../../README.md) | Kurzüberblick, CLI-Befehle |
-| [docs/CODE_AUDIT.md](../CODE_AUDIT.md) | Audit der Referenz-Codebases |
-| `C:\Users\User\OneDrive\.UMBRUCH\Wiki\DSGVO-KONZEPT.md` | Um:bruch-eigenes DSGVO-Konzept (Vorbild) |
-| `C:\Users\User\OneDrive\.UMBRUCH\Wiki\MERKBLATT-DSGVO.md` | Begriffs-Leitfaden |
+| Referenz-Codebase-Audit | Internes Audit-Dokument, nicht Teil dieses Repositories |
+| Um:bruch DSGVO-Konzept | Internes DSGVO-Konzept als methodisches Vorbild |
+| Um:bruch DSGVO-Merkblatt | Interner Begriffs-Leitfaden |
 
 ---
 

@@ -710,7 +710,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="verordnungsampel",
         description=(
-            "Companion-Tool fuer Vertragsaerzte zur Regress-Praevention. "
+            "Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren. "
             "Pruefe ICD+ATC-Kombinationen gegen oeffentliche Regelwerke und "
             "fuehre einen manipulationssicheren Compliance-Log."
         ),

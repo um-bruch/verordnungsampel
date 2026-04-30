@@ -1,4 +1,4 @@
-"""VerordnungsAmpel — Companion-Tool fuer Vertragsaerzte zur Regress-Praevention.
+"""VerordnungsAmpel — Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren.
 
 Dieses Paket exponiert das Kern-API:
 - :func:`verordnungsampel.engine.evaluator.evaluate` fuer Ampel-Pruefungen
