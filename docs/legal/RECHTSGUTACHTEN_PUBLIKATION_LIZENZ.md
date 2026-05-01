@@ -716,7 +716,7 @@ Für folgende Punkte wird eine **anwaltliche Zweitmeinung** empfohlen:
 
 - `docs/legal/RECHTSGUTACHTEN_MDSW.md` (Um:bruch/CL, 2026-04-12)
 - `docs/legal/DSGVO_KONZEPT.md` (Um:bruch/CL, 2026-04-12)
-- `.TOPICS/.SOFTWARE/GITHUB-POLICY.md` (Um:bruch/LG, 2026-02-22)
+- Projektinterne GitHub-Publishing-Policy (Um:bruch/LG, lokaler Stand 2026-02-22)
 - `KONZEPT.md` (Projekt-Konzept, 2026-04-08)
 
 ---

@@ -11,11 +11,15 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Erstes KI-basiertes Rechtsgutachten: Status als Informationswerk vs. MDSW
 - DSGVO-Konzept (Verarbeitungsverzeichnis, TOMs, Betroffenenrechte, Löschkonzept)
 - GitHub-Pflichtdateien (CODE_OF_CONDUCT, SECURITY, CONTRIBUTING, FUNDING)
+- Reproduzierbarer lokaler Windows-Build via `build_exe.bat` und `verordnungsampel_gui.py`
+- Gitignore-Abdeckung für lokale Build-Artefakte, Secrets, Credentials und Test-Locks erweitert
 
 ### Geändert / Changed
-- Ordner-Lifecycle: DEV → PreGit → GO-PRI (privates Repository in research-line)
+- Ordner-Lifecycle: DEV → PreGit → GO-PRI; GitHub-Sichtbarkeit ist inzwischen öffentlich.
 - Repository-URL: github.com/research-line/verordnungsampel
+- Der lokale `.SOFTWARE`-Ordnername bleibt bis zur nächsten Lifecycle-Bereinigung unverändert.
 - Zweckbestimmung neu formuliert: **"Regress-Prävention"** als Vermarktungsbegriff fallengelassen (Risiko § 444 BGB Zusicherung, § 5 UWG irreführende Werbung, MDR-Zweckbestimmung). Neu: "Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren aus öffentlichen Regelwerken — zu Forschungs- und Weiterentwicklungszwecken, ohne Gewähr." Betroffen: README, NOTICE, pyproject.toml, GUI-Strings, DSGVO-Konzept, Marktvergleich.
+- Desktop-Packaging dokumentiert: lokaler PyInstaller-Onedir-Build mit Seed-Daten und Tray-Icons
 
 ### Behoben / Fixed
 - Marketing-Blacklist: "KI" als interne Abkürzung für Kontraindikation ersetzt (Verwechslungsgefahr mit AI/KI); "KI-gestützt" → "KI-basiert" in USER-GUIDE

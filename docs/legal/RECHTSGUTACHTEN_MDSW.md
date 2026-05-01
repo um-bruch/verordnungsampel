@@ -382,7 +382,7 @@ Diese Einschätzung ist eine **KI-basierte Erstanalyse** der Um:bruch-Rechtsabte
 
 - VerordnungsAmpel_SOCIAL KONZEPT.md v1 (Stand 2026-04-08, lokal).
 - VerordnungsAmpel_SOCIAL README.md (Stand 2026-04-08, lokal).
-- Um:bruch-Politik zum Projekt: `.UMBRUCH/Policies/RECHTSABTEILUNG.md` Stand 02.04.2026.
+- Projektinterne Rechtsabteilungs-Policy, lokaler Stand 02.04.2026 (nicht Teil des öffentlichen Repositorys).
 
 ---
 

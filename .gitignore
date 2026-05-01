@@ -64,7 +64,16 @@ TEST.txt
 TESTS.txt
 TESTERGEBNISSE.txt
 .env
+.env.*
 *.local
+*.secret
+*.secrets
+secrets.*
+secret.*
+credentials.*
+credential.*
+client_secret*.json
+token.*
 
 # Interne Steuerungsdateien (Um:bruch / .SOFTWARE-Konvention)
 AUFGABEN.txt
@@ -79,6 +88,14 @@ docs/legal/*.docx
 
 # Lokale Release-Artefakte (GitHub Releases sind primärer Kanal)
 releases/
+*.exe
+*.msi
+*.msix
+*.appx
+*.zip
+*.7z
+*.spec
+*.log
 
 # RB-Review 2026-04-13: interne Audit- und Cross-Projekt-Dokumente - nicht public
 docs/internal/

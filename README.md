@@ -40,6 +40,8 @@
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
 **Repository:** https://github.com/research-line/verordnungsampel
+**GitHub-Sichtbarkeit / Visibility:** Public repository; lokale Datenbanken, Logs,
+Build-Artefakte und interne Steuerungsdateien bleiben per `.gitignore` lokal.
 
 ---
 
@@ -134,6 +136,12 @@ python -m verordnungsampel.cli.main gui
 Das Hauptfenster ist kompakt, lässt sich per Klick auf „X“ ins System-Tray minimieren
 und wird erst über **Rechtsklick auf das Tray-Icon → Beenden** wirklich geschlossen.
 Always-on-top, Minimal-Modus und Transparenz-Optionen sind verfügbar.
+
+Für einen lokalen Windows-Build liegt `build_exe.bat` im Projektwurzelverzeichnis.
+Das Skript erzeugt `dist/VerordnungsAmpel/VerordnungsAmpel.exe`; `build/`, `dist/`,
+`releases/` und `*.exe` bleiben lokale Release-Artefakte und werden nicht versioniert.
+Der Einstiegspunkt `verordnungsampel_gui.py` hält den Build ohne absolute lokale Pfade
+reproduzierbar.
 
 ### Screenshot
 
@@ -233,6 +241,12 @@ python -m verordnungsampel.cli.main gui
 
 The main window is compact and, on clicking "X", minimises to the system tray. It is
 only fully terminated by **right-clicking the tray icon → Quit**.
+
+For a local Windows desktop build, use `build_exe.bat` from the project root.
+It creates `dist/VerordnungsAmpel/VerordnungsAmpel.exe`; `build/`, `dist/`,
+`releases/`, and `*.exe` remain local release artifacts and stay out of Git.
+The `verordnungsampel_gui.py` entry point keeps the build reproducible without
+absolute local paths.
 
 ### Screenshot
 
