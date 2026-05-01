@@ -87,7 +87,10 @@ Forschung, Lehre, Weiterentwicklung durch Akteure des Gesundheitswesens.
 | 4 | Praxisbesonderheiten-Erkennung + Quartalsreminder | ✅ |
 | 5 | Manipulationssicherer Compliance-Log (Hash-Chain) | ✅ |
 
-Test-Suite: **86 / 86 passed**.
+Test-Suite: **121 / 121 passed**.
+
+Methodische Auswertung: `coverage --cases cases.json` berechnet C(S)=erklärte
+Fälle/alle Fälle für pseudonymisierte ICD-/ATC-Falllisten.
 
 ### Schnellstart
 
@@ -116,6 +119,9 @@ python -m verordnungsampel.cli.main workflow --icd R52.1 --atc QV12 \
 
 # Quartalsreminder
 python -m verordnungsampel.cli.main remind --quartal 2026-Q2
+
+# Regelwerksabdeckung fuer Fallliste berechnen
+python -m verordnungsampel.cli.main coverage --cases cases.json --json
 
 # Compliance-Log
 python -m verordnungsampel.cli.main log
@@ -219,7 +225,7 @@ Pure plausibility checking against public rule sets.
 4. Practice-specifics detection + quarterly reminder
 5. Tamper-proof compliance log (hash chain)
 
-Test suite: **86 / 86 passed**.
+Test suite: **121 / 121 passed**.
 
 ### Quick Start
 

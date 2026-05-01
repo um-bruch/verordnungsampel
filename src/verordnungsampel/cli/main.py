@@ -25,6 +25,11 @@ from verordnungsampel.db.seed import (
     load_meta_only,
     load_seed_data,
 )
+from verordnungsampel.engine.coverage import (
+    CoverageCase,
+    CoverageReport,
+    analyze_cases,
+)
 from verordnungsampel.engine.evaluator import Ampel, AmpelErgebnis, evaluate
 from verordnungsampel.engine.justification_fsm import (
     STEPS,
@@ -675,6 +680,77 @@ def cmd_rules(args: argparse.Namespace) -> int:
     return 0
 
 
+def _load_coverage_cases(path: Path) -> list[CoverageCase]:
+    """Laedt Coverage-Faelle aus JSON.
+
+    Erwartet entweder eine Liste von Faellen oder ein Objekt mit Feld
+    ``cases``. Jeder Fall braucht mindestens ``icd`` und ``atc``.
+    """
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, dict):
+        data = data.get("cases")
+    if not isinstance(data, list):
+        raise ValueError("Coverage-Datei muss eine Liste oder {'cases': [...]} sein.")
+    return [CoverageCase.from_mapping(item) for item in data]
+
+
+def _format_coverage_report(report: CoverageReport) -> str:
+    """Formatiert einen CoverageReport fuer die CLI."""
+    by_ampel = report.by_ampel
+    lines = [
+        "Coverage-Analyse fuer Ampel-Regelwerk",
+        "-" * 64,
+        f"Faelle gesamt:     {report.total}",
+        f"Erklaert:          {report.explained_count}",
+        f"Nicht erklaert:    {report.unexplained_count}",
+        f"C(S):              {report.coverage_ratio:.3f} "
+        f"({report.coverage_ratio * 100:.1f}%)",
+        "Ampel-Verteilung:  "
+        f"ROT={by_ampel['rot']}  GELB={by_ampel['gelb']}  GRUEN={by_ampel['gruen']}",
+    ]
+    if report.rule_hits:
+        lines.append("")
+        lines.append("Regel-Treffer:")
+        for kuerzel, count in report.rule_hits.items():
+            lines.append(f"  - {kuerzel}: {count}")
+    if report.unexplained_cases:
+        lines.append("")
+        lines.append("Nicht erklaerte Faelle:")
+        for case in report.unexplained_cases:
+            label = f"{case.case_id}: " if case.case_id else ""
+            alter = f" Alter={case.alter}" if case.alter is not None else ""
+            lines.append(f"  - {label}ICD={case.icd} ATC={case.atc}{alter}")
+    lines.append("")
+    lines.append(
+        "Hinweis: C(S) ist Regelwerksabdeckung, keine medizinische Validierung."
+    )
+    return "\n".join(lines)
+
+
+def cmd_coverage(args: argparse.Namespace) -> int:
+    """Berechnet C(S)=erklaerte Faelle / alle Faelle fuer JSON-Falllisten."""
+    try:
+        cases = _load_coverage_cases(Path(args.cases))
+    except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        print(
+            f"FEHLER: Coverage-Faelle konnten nicht geladen werden: {exc}",
+            file=sys.stderr,
+        )
+        return 2
+
+    conn, _ = open_database()
+    try:
+        report = analyze_cases(cases, conn=conn)
+    finally:
+        conn.close()
+
+    if args.json:
+        print(json.dumps(report.to_dict(), ensure_ascii=False, indent=2))
+    else:
+        print(_format_coverage_report(report))
+    return 0
+
+
 def cmd_verify(args: argparse.Namespace) -> int:
     """Prueft die Hash-Chain des Compliance-Logs."""
     with ComplianceLog() as log:
@@ -852,6 +928,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Zusaetzlich Begruendungstext mit ausgeben",
     )
     p_rules.set_defaults(func=cmd_rules)
+
+    p_coverage = sub.add_parser(
+        "coverage",
+        help="Berechnet Regelwerksabdeckung C(S) fuer JSON-Falllisten",
+    )
+    p_coverage.add_argument(
+        "--cases",
+        required=True,
+        help="JSON-Datei: Liste von {id?, icd, atc, alter?} oder {'cases': [...]}",
+    )
+    p_coverage.add_argument("--json", action="store_true", help="Ausgabe als JSON")
+    p_coverage.set_defaults(func=cmd_coverage)
 
     return parser
 

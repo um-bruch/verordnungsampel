@@ -8,6 +8,8 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 ### Hinzugefügt / Added
 - PySide6-basierte Tray-GUI (Companion-Modus neben Praxisverwaltungssystemen)
 - Vollständiger AM-RL-Seed-Datensatz (Anlagen III, V, VI-A, VI-B)
+- Coverage-Analyse für Ampel-Entscheidungen: `coverage --cases cases.json`
+  berechnet C(S)=erklärte Fälle/alle Fälle mit Regel-Treffern und Default-Grün-Liste
 - Erstes KI-basiertes Rechtsgutachten: Status als Informationswerk vs. MDSW
 - DSGVO-Konzept (Verarbeitungsverzeichnis, TOMs, Betroffenenrechte, Löschkonzept)
 - GitHub-Pflichtdateien (CODE_OF_CONDUCT, SECURITY, CONTRIBUTING, FUNDING)
