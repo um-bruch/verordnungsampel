@@ -1,169 +1,74 @@
-"""Zentrale deutsche Strings für die GUI.
+"""GUI-Strings — i18n-Bridge.
 
-Vorbereitet für spätere i18n (derzeit nur Deutsch). Alle Klartexte der
-GUI sollen hier leben, damit Übersetzungen später problemlos möglich sind.
+Ursprünglich enthielt dieses Modul deutsche Konstanten direkt im Code.
+Seit der i18n-Umstellung (data/translations/<lang>.json) wirkt es als
+Backwards-Compatible Bridge: Attribut-Zugriffe wie ``S.APP_TITLE`` werden
+über :func:`verordnungsampel.i18n.t` aufgelöst und folgen automatisch der
+aktiven Sprache (siehe ``i18n.set_language``).
+
+Der Modulname bleibt erhalten, damit bestehende Imports weiter funktionieren:
+
+    >>> from verordnungsampel.gui import strings_de as S
+    >>> S.APP_TITLE  # liefert deutsche oder englische Version je nach Sprache
+
+Neuer Code sollte direkt ``verordnungsampel.i18n.t("KEY")`` benutzen.
 """
 
 from __future__ import annotations
 
+from verordnungsampel import i18n
 
-APP_TITLE = "VerordnungsAmpel"
-APP_TAGLINE = "Softwareentwurf — Regress-Risikoindikatoren aus öffentlichen Regelwerken (ohne Gewähr)"
 
-# Tray-Tooltip / Menüs
-TRAY_TOOLTIP = "VerordnungsAmpel — Risiko-Check (Softwareentwurf, ohne Gewähr)"
-TRAY_SHOW = "Fenster anzeigen"
-TRAY_HIDE = "Fenster verbergen"
-TRAY_QUIT = "Beenden"
+# Statische Liste aller Keys, die diese Bridge nach außen exponiert.
+# Wird beim ersten Zugriff verifiziert (i18n liefert ansonsten TranslationError).
+_EXPORTED_KEYS: frozenset[str] = frozenset({
+    "APP_TITLE", "APP_TAGLINE",
+    "TRAY_TOOLTIP", "TRAY_SHOW", "TRAY_HIDE", "TRAY_QUIT",
+    "MENU_FILE", "MENU_QUIT", "MENU_VIEW", "MENU_ALWAYS_ON_TOP",
+    "MENU_MINIMAL_MODE", "MENU_TRANSPARENCY", "MENU_HELP", "MENU_ABOUT",
+    "TAB_CHECK", "TAB_JUSTIFY", "TAB_WORKFLOW", "TAB_LOG",
+    "TAB_REMINDER", "TAB_SOURCES",
+    "CHECK_ICD_LABEL", "CHECK_ATC_LABEL", "CHECK_AGE_LABEL",
+    "CHECK_BUTTON", "CHECK_NO_LOG", "CHECK_RESULT_LABEL",
+    "CHECK_SOURCES_LABEL", "CHECK_PB_LABEL",
+    "CHECK_HINT_EMPTY", "CHECK_HINT_UNKNOWN",
+    "CHECK_ERROR_MISSING", "CHECK_ERROR_GENERIC",
+    "AMPEL_GRUEN", "AMPEL_GELB", "AMPEL_ROT", "AMPEL_NONE",
+    "JUSTIFY_NO_DATA", "JUSTIFY_GRUEN_HINT", "JUSTIFY_INTRO",
+    "JUSTIFY_CONFIRM", "JUSTIFY_SUBMIT", "JUSTIFY_SUCCESS",
+    "JUSTIFY_ERROR_HEAD",
+    "WORKFLOW_INTRO", "WORKFLOW_PRAXIS", "WORKFLOW_PRAXIS_ADRESSE",
+    "WORKFLOW_ARZT", "WORKFLOW_BSNR", "WORKFLOW_LANR", "WORKFLOW_KK",
+    "WORKFLOW_PATIENT", "WORKFLOW_GENERATE", "WORKFLOW_COPY",
+    "WORKFLOW_SAVE", "WORKFLOW_NO_DATA", "WORKFLOW_KEINE_AKTION",
+    "WORKFLOW_COPIED", "WORKFLOW_SAVED",
+    "LOG_REFRESH", "LOG_VERIFY", "LOG_EMPTY",
+    "LOG_VERIFY_OK", "LOG_VERIFY_FAIL",
+    "REMINDER_QUARTAL", "REMINDER_GENERATE",
+    "REMINDER_ERROR", "REMINDER_EMPTY",
+    "BTN_OK", "BTN_CANCEL", "BTN_CLOSE",
+    "STATUS_READY", "ABOUT_TEXT",
+    "HINT_NOT_MEDICAL_DEVICE", "STATUS_PERMANENT_DISCLAIMER",
+    "DISCLAIMER_DIALOG_TITLE", "DISCLAIMER_DIALOG_HEADLINE",
+    "DISCLAIMER_CHECK_NOT_VALIDATED", "DISCLAIMER_CHECK_NOT_CERTIFIED",
+    "DISCLAIMER_CHECK_DOCTOR_RESPONSIBILITY", "DISCLAIMER_CHECK_OWN_RISK",
+    "DISCLAIMER_BTN_ACCEPT", "DISCLAIMER_BTN_REJECT",
+    "DISCLAIMER_INFO_BUTTONS",
+})
 
-# Menüs
-MENU_FILE = "&Datei"
-MENU_QUIT = "Be&enden"
-MENU_VIEW = "&Ansicht"
-MENU_ALWAYS_ON_TOP = "Immer im Vordergrund"
-MENU_MINIMAL_MODE = "Minimal-Modus"
-MENU_TRANSPARENCY = "Leicht transparent"
-MENU_HELP = "&Hilfe"
-MENU_ABOUT = "Über VerordnungsAmpel"
 
-# Tabs
-TAB_CHECK = "Check"
-TAB_JUSTIFY = "Begründen"
-TAB_WORKFLOW = "Workflow"
-TAB_LOG = "Compliance-Log"
-TAB_REMINDER = "Reminder"
-TAB_SOURCES = "Regelwerke"
+def __getattr__(name: str) -> str:
+    """PEP 562 — dynamischer Modul-Attribut-Zugriff über i18n."""
+    if name.startswith("_") or name not in _EXPORTED_KEYS:
+        raise AttributeError(
+            f"module 'verordnungsampel.gui.strings_de' has no attribute '{name}'"
+        )
+    return i18n.t(name)
 
-# Check-Tab
-CHECK_ICD_LABEL = "ICD-10-GM:"
-CHECK_ATC_LABEL = "ATC-Code:"
-CHECK_AGE_LABEL = "Alter (optional):"
-CHECK_BUTTON = "Prüfen"
-CHECK_NO_LOG = "Ergebnis NICHT im Compliance-Log speichern"
-CHECK_RESULT_LABEL = "Ergebnis:"
-CHECK_SOURCES_LABEL = "Quellen / Begründungen:"
-CHECK_PB_LABEL = "Praxisbesonderheit(en):"
-CHECK_HINT_EMPTY = "ICD- und ATC-Code eingeben, dann 'Prüfen'."
-CHECK_HINT_UNKNOWN = (
-    "Kein Treffer — die Kombination ist nicht in unserem Regelwerk. "
-    "Bei Unsicherheit: manuelle Prüfung gegen die AM-RL nötig."
-)
-CHECK_ERROR_MISSING = "ICD- und ATC-Code sind Pflicht."
-CHECK_ERROR_GENERIC = "Fehler bei der Prüfung: {msg}"
 
-# Ampel-Farben / Labels
-AMPEL_GRUEN = "GRÜN"
-AMPEL_GELB = "GELB"
-AMPEL_ROT = "ROT"
-AMPEL_NONE = "—"
+def __dir__() -> list[str]:
+    """Sichtbare Attribute für ``dir(strings_de)``."""
+    return sorted(_EXPORTED_KEYS)
 
-# Justify-Tab
-JUSTIFY_NO_DATA = (
-    "Erst einen Check im Reiter 'Check' ausführen. "
-    "Die strukturierte Begründungspflicht wird nur bei GELB oder ROT aktiv."
-)
-JUSTIFY_GRUEN_HINT = (
-    "Ampel ist GRÜN — keine strukturierte Begründungspflicht. "
-    "Du kannst trotzdem freiwillig dokumentieren."
-)
-JUSTIFY_INTRO = (
-    "Die folgenden Felder müssen im Moment der Verordnung ausgefüllt werden "
-    "(SG Marburg 14.02.2024; BSG B 6 KA 26/13). Nachträgliche Dokumentation reicht NICHT."
-)
-JUSTIFY_CONFIRM = "Ich bestätige, dass die Angaben im Moment der Verordnung zutreffen."
-JUSTIFY_SUBMIT = "Begründung versiegeln & im Log speichern"
-JUSTIFY_SUCCESS = "Begründung erfolgreich im Compliance-Log versiegelt."
-JUSTIFY_ERROR_HEAD = "Begründung unvollständig:"
 
-# Workflow-Tab
-WORKFLOW_INTRO = (
-    "Generiere einen Vorab-Klärungs-Workflow (Antrag / Hinweis / Stellungnahme) "
-    "für Container-Marker aus der Ampel."
-)
-WORKFLOW_PRAXIS = "Praxisname:"
-WORKFLOW_PRAXIS_ADRESSE = "Praxisadresse:"
-WORKFLOW_ARZT = "Arzt:"
-WORKFLOW_BSNR = "BSNR:"
-WORKFLOW_LANR = "LANR:"
-WORKFLOW_KK = "Krankenkasse:"
-WORKFLOW_PATIENT = "Patienten-Kürzel:"
-WORKFLOW_GENERATE = "Text generieren"
-WORKFLOW_COPY = "In Zwischenablage"
-WORKFLOW_SAVE = "Als TXT speichern…"
-WORKFLOW_NO_DATA = (
-    "Erst einen Check im Reiter 'Check' ausführen. "
-    "Der Workflow wird aus dem Ampel-Ergebnis abgeleitet."
-)
-WORKFLOW_KEINE_AKTION = (
-    "Für diese Verordnung ist kein Vorab-Klärungs-Schritt erforderlich."
-)
-WORKFLOW_COPIED = "Text wurde in die Zwischenablage kopiert."
-WORKFLOW_SAVED = "Text wurde gespeichert: {path}"
-
-# Log-Tab
-LOG_REFRESH = "Aktualisieren"
-LOG_VERIFY = "Hash-Chain prüfen"
-LOG_EMPTY = "Compliance-Log ist leer."
-LOG_VERIFY_OK = "Hash-Chain intakt ({n} Eintrag/Einträge)."
-LOG_VERIFY_FAIL = "ACHTUNG: Hash-Chain ist GEBROCHEN!"
-
-# Reminder-Tab
-REMINDER_QUARTAL = "Quartal (YYYY-Qn):"
-REMINDER_GENERATE = "Reminder erzeugen"
-REMINDER_ERROR = "Ungültiges Quartalsformat. Beispiel: 2026-Q2"
-REMINDER_EMPTY = "Keine Verordnungen mit Praxisbesonderheit in diesem Quartal."
-
-# Allgemein
-BTN_OK = "OK"
-BTN_CANCEL = "Abbrechen"
-BTN_CLOSE = "Schließen"
-STATUS_READY = "Bereit"
-ABOUT_TEXT = (
-    "VerordnungsAmpel — Prototyp v{version}\n"
-    "Softwareentwurf zum Abgleich ärztlicher Verordnungen\n"
-    "mit bekannten öffentlichen Regelwerken (AM-RL, PRISCUS 2.0).\n"
-    "Regress-Risikoindikatoren-Anzeige ohne Gewähr.\n"
-    "Zu Forschungs- und Weiterentwicklungszwecken veröffentlicht.\n"
-    "Kein Medical Device. Keine Regress-Prävention. Nicht klinisch\n"
-    "validiert. Ersetzt keine ärztliche Prüfung.\n"
-    "Lizenz: GPL-3.0-or-later"
-)
-
-# Hinweise
-HINT_NOT_MEDICAL_DEVICE = (
-    "Hinweis: Dies ist ein Informationswerk, kein Medical Device. "
-    "Es ersetzt NICHT die ärztliche Prüfung im Einzelfall."
-)
-
-# Dauerhafte Statuszeile (unter MainWindow, Haftungsgutachten 10.3)
-STATUS_PERMANENT_DISCLAIMER = (
-    "Pre-Alpha — nicht klinisch validiert — keine Gewährleistung"
-)
-
-# Disclaimer-Dialog (Erststart-Acknowledgement, Haftungsgutachten 10.2)
-DISCLAIMER_DIALOG_TITLE = (
-    "VerordnungsAmpel — Nutzungsbedingungen zur Kenntnis nehmen"
-)
-DISCLAIMER_DIALOG_HEADLINE = (
-    "Bevor Sie das Tool benutzen, bestätigen Sie bitte die folgenden Punkte:"
-)
-DISCLAIMER_CHECK_NOT_VALIDATED = (
-    "Ich habe verstanden, dass dieses Tool nicht klinisch validiert ist."
-)
-DISCLAIMER_CHECK_NOT_CERTIFIED = (
-    "Ich habe verstanden, dass es kein Medizinprodukt und nicht zertifiziert ist."
-)
-DISCLAIMER_CHECK_DOCTOR_RESPONSIBILITY = (
-    "Ich bestätige, dass die ärztliche Verantwortung für jede Verordnung "
-    "unverändert bei mir liegt."
-)
-DISCLAIMER_CHECK_OWN_RISK = (
-    "Ich nutze das Tool auf eigenes Risiko (Haftung auf Vorsatz und grobe "
-    "Fahrlässigkeit beschränkt, § 521 BGB)."
-)
-DISCLAIMER_BTN_ACCEPT = "Akzeptieren"
-DISCLAIMER_BTN_REJECT = "Ablehnen"
-DISCLAIMER_INFO_BUTTONS = (
-    "Der Akzeptieren-Knopf wird erst aktiv, wenn alle vier Punkte angehakt sind. "
-    "Bei Ablehnung wird die Anwendung beendet."
-)
+__all__ = sorted(_EXPORTED_KEYS)

@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "language": "en",
+    "language_name": "English",
+    "schema_version": 1,
+    "comment": "English translations for VerordnungsAmpel GUI. German legal terms (AM-RL, BSG, BSNR/LANR, Praxisbesonderheit) are preserved as proper nouns or marked in context. Schema cf. Geiger 2026 (DOI 10.5281/zenodo.18736725, MIT)."
+  },
+
+  "APP_TITLE": "VerordnungsAmpel",
+  "APP_TAGLINE": "Software draft — recourse risk indicators from public German GKV rule sets (no warranty)",
+
+  "TRAY_TOOLTIP": "VerordnungsAmpel — risk check (software draft, no warranty)",
+  "TRAY_SHOW": "Show window",
+  "TRAY_HIDE": "Hide window",
+  "TRAY_QUIT": "Quit",
+
+  "MENU_FILE": "&File",
+  "MENU_QUIT": "&Quit",
+  "MENU_VIEW": "&View",
+  "MENU_ALWAYS_ON_TOP": "Always on top",
+  "MENU_MINIMAL_MODE": "Minimal mode",
+  "MENU_TRANSPARENCY": "Slightly transparent",
+  "MENU_HELP": "&Help",
+  "MENU_ABOUT": "About VerordnungsAmpel",
+
+  "TAB_CHECK": "Check",
+  "TAB_JUSTIFY": "Justify",
+  "TAB_WORKFLOW": "Workflow",
+  "TAB_LOG": "Compliance log",
+  "TAB_REMINDER": "Reminder",
+  "TAB_SOURCES": "Rule sets",
+
+  "CHECK_ICD_LABEL": "ICD-10-GM:",
+  "CHECK_ATC_LABEL": "ATC code:",
+  "CHECK_AGE_LABEL": "Age (optional):",
+  "CHECK_BUTTON": "Check",
+  "CHECK_NO_LOG": "Do NOT store result in compliance log",
+  "CHECK_RESULT_LABEL": "Result:",
+  "CHECK_SOURCES_LABEL": "Sources / justifications:",
+  "CHECK_PB_LABEL": "Practice-specific exception(s):",
+  "CHECK_HINT_EMPTY": "Enter ICD and ATC code, then click 'Check'.",
+  "CHECK_HINT_UNKNOWN": "No match — this combination is not in our rule set. If in doubt, manually verify against the AM-RL.",
+  "CHECK_ERROR_MISSING": "ICD and ATC code are required.",
+  "CHECK_ERROR_GENERIC": "Error during check: {msg}",
+
+  "AMPEL_GRUEN": "GREEN",
+  "AMPEL_GELB": "YELLOW",
+  "AMPEL_ROT": "RED",
+  "AMPEL_NONE": "—",
+
+  "JUSTIFY_NO_DATA": "First run a check on the 'Check' tab. Structured justification is only required for YELLOW or RED results.",
+  "JUSTIFY_GRUEN_HINT": "Result is GREEN — no structured justification required. You can still document voluntarily.",
+  "JUSTIFY_INTRO": "The following fields must be filled in at the moment of prescription (SG Marburg 14 Feb 2024; BSG B 6 KA 26/13). Retrospective documentation is NOT sufficient.",
+  "JUSTIFY_CONFIRM": "I confirm that the information is accurate at the time of prescription.",
+  "JUSTIFY_SUBMIT": "Seal justification & store in log",
+  "JUSTIFY_SUCCESS": "Justification successfully sealed in compliance log.",
+  "JUSTIFY_ERROR_HEAD": "Justification incomplete:",
+
+  "WORKFLOW_INTRO": "Generate a pre-clarification workflow (application / notice / statement) for container markers from the traffic-light result.",
+  "WORKFLOW_PRAXIS": "Practice name:",
+  "WORKFLOW_PRAXIS_ADRESSE": "Practice address:",
+  "WORKFLOW_ARZT": "Physician:",
+  "WORKFLOW_BSNR": "BSNR:",
+  "WORKFLOW_LANR": "LANR:",
+  "WORKFLOW_KK": "Statutory health insurance:",
+  "WORKFLOW_PATIENT": "Patient initials:",
+  "WORKFLOW_GENERATE": "Generate text",
+  "WORKFLOW_COPY": "Copy to clipboard",
+  "WORKFLOW_SAVE": "Save as TXT…",
+  "WORKFLOW_NO_DATA": "First run a check on the 'Check' tab. The workflow is derived from the traffic-light result.",
+  "WORKFLOW_KEINE_AKTION": "No pre-clarification step is required for this prescription.",
+  "WORKFLOW_COPIED": "Text copied to clipboard.",
+  "WORKFLOW_SAVED": "Text saved: {path}",
+
+  "LOG_REFRESH": "Refresh",
+  "LOG_VERIFY": "Verify hash chain",
+  "LOG_EMPTY": "Compliance log is empty.",
+  "LOG_VERIFY_OK": "Hash chain intact ({n} entry/entries).",
+  "LOG_VERIFY_FAIL": "WARNING: Hash chain is BROKEN!",
+
+  "REMINDER_QUARTAL": "Quarter (YYYY-Qn):",
+  "REMINDER_GENERATE": "Generate reminder",
+  "REMINDER_ERROR": "Invalid quarter format. Example: 2026-Q2",
+  "REMINDER_EMPTY": "No prescriptions with practice-specific exception in this quarter.",
+
+  "BTN_OK": "OK",
+  "BTN_CANCEL": "Cancel",
+  "BTN_CLOSE": "Close",
+
+  "STATUS_READY": "Ready",
+  "ABOUT_TEXT": "VerordnungsAmpel — prototype v{version}\nSoftware draft for matching physician prescriptions\nagainst public German GKV rule sets (AM-RL, PRISCUS 2.0).\nDisplay of recourse risk indicators without warranty.\nPublished for research and further-development purposes.\nNot a medical device. Not recourse prevention. Not clinically\nvalidated. Does not replace medical review.\nLicense: GPL-3.0-or-later",
+
+  "HINT_NOT_MEDICAL_DEVICE": "Note: This is an informational tool, not a medical device. It does NOT replace medical review of the individual case.",
+
+  "STATUS_PERMANENT_DISCLAIMER": "Pre-Alpha — not clinically validated — no warranty",
+
+  "DISCLAIMER_DIALOG_TITLE": "VerordnungsAmpel — please acknowledge the terms of use",
+  "DISCLAIMER_DIALOG_HEADLINE": "Before using this tool, please confirm the following points:",
+  "DISCLAIMER_CHECK_NOT_VALIDATED": "I understand that this tool is not clinically validated.",
+  "DISCLAIMER_CHECK_NOT_CERTIFIED": "I understand that it is not a medical device and not certified.",
+  "DISCLAIMER_CHECK_DOCTOR_RESPONSIBILITY": "I confirm that medical responsibility for every prescription remains with me.",
+  "DISCLAIMER_CHECK_OWN_RISK": "I use the tool at my own risk (liability limited to intent and gross negligence, § 521 BGB).",
+  "DISCLAIMER_BTN_ACCEPT": "Accept",
+  "DISCLAIMER_BTN_REJECT": "Reject",
+  "DISCLAIMER_INFO_BUTTONS": "The Accept button is enabled only after all four points are checked. If rejected, the application will close."
+}

@@ -10,11 +10,20 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Vollständiger AM-RL-Seed-Datensatz (Anlagen III, V, VI-A, VI-B)
 - Coverage-Analyse für Ampel-Entscheidungen: `coverage --cases cases.json`
   berechnet C(S)=erklärte Fälle/alle Fälle mit Regel-Treffern und Default-Grün-Liste
+- i18n-Infrastruktur (DE/EN): JSON-basierte Übersetzungen unter
+  `data/translations/de.json` und `data/translations/en.json`, neues Modul
+  `verordnungsampel.i18n` mit `t()`, `set_language()`, `get_language()`,
+  `available_languages()`. Schema angelehnt an Geiger 2026 (DOI 10.5281/zenodo.18736725, MIT).
+  Bestehender Code (`from gui import strings_de as S; S.APP_TITLE`) wird per
+  PEP 562-Bridge weiterhin unterstützt und reagiert auf Sprachwechsel.
 - Erstes KI-basiertes Rechtsgutachten: Status als Informationswerk vs. MDSW
 - DSGVO-Konzept (Verarbeitungsverzeichnis, TOMs, Betroffenenrechte, Löschkonzept)
 - GitHub-Pflichtdateien (CODE_OF_CONDUCT, SECURITY, CONTRIBUTING, FUNDING)
 - Reproduzierbarer lokaler Windows-Build via `build_exe.bat` und `verordnungsampel_gui.py`
 - Gitignore-Abdeckung für lokale Build-Artefakte, Secrets, Credentials und Test-Locks erweitert
+- Test-Suite-Wachstum: 24 neue Tests in `tests/test_i18n.py`
+  (Lazy-Load, Fallback DE↔EN, Format-Substitution, Bridge-Kompatibilität,
+  Konsistenz DE/EN-Keysets)
 
 ### Geändert / Changed
 - Ordner-Lifecycle: DEV → PreGit → GO-PRI; GitHub-Sichtbarkeit ist inzwischen öffentlich.
