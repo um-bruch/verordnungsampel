@@ -1,18 +1,16 @@
-# Seed-Daten fuer VerordnungsAmpel
+# Seed-Daten für VerordnungsAmpel
 
-Dieses Verzeichnis enthaelt **JSON-Stammdaten**, die beim ersten Start
-in die SQLite-Datenbank geladen werden. Alle Daten sind oeffentlich,
+Dieses Verzeichnis enthält **JSON-Stammdaten**, die beim ersten Start
+in die SQLite-Datenbank geladen werden. Alle Daten sind öffentlich
 oder explizit unter freier Lizenz.
 
-## Wichtig: MVP-Beispieldaten
+## Wichtig: Regelwerks-Snapshot, keine medizinische Validierung
 
-Die hier abgelegten Beispiele sind **kein vollstaendiges AM-RL-Regelwerk**!
-Sie dienen ausschliesslich der Demonstration und dem Testing der Engine.
-
-Die echte Extraktion von AM-RL Anlage III/V/VI ist als eigenstaendige
-Aufgabe in der `AUFGABEN.txt` getrackt und braucht juristische
-Pruefung pro Eintrag durch den medizinischen Review-Partner
-(Therapiefreiheit e.V.).
+Die AM-RL-Anlagen III, V und VI liegen als strukturierter Snapshot mit
+Stand-Datum, Quell-URL und Extraktionsmetadaten vor. Sie bleiben dennoch
+ein **Software- und Forschungsdatensatz**: Vor produktiver oder fachlicher
+Nutzung müssen neue oder geänderte Einträge juristisch-medizinisch geprüft
+werden.
 
 ## Dateien
 
@@ -22,8 +20,8 @@ Pruefung pro Eintrag durch den medizinischen Review-Partner
 | `icd10.json` | Beispiel-ICD-10-GM-Codes | `icd10` |
 | `atc.json` | Beispiel-ATC-Codes (WHO) | `atc` |
 | `amrl_anlagen.json` | Legacy-Sammeldatei AM-RL (MVP, kann leer sein) | `amrl_anlage` |
-| `amrl_anlage_III.json` | AM-RL Anlage III (Verordnungseinschraenkungen/-ausschluesse, Stand 2025-10-09) | `amrl_anlage` |
-| `amrl_anlage_V.json` | AM-RL Anlage V (verordnungsfaehige Medizinprodukte, Stand 2026-03-24) | `amrl_anlage` |
+| `amrl_anlage_III.json` | AM-RL Anlage III (Verordnungseinschränkungen/-ausschlüsse, Stand 2025-10-09) | `amrl_anlage` |
+| `amrl_anlage_V.json` | AM-RL Anlage V (verordnungsfähige Medizinprodukte, Stand 2026-03-24) | `amrl_anlage` |
 | `amrl_anlage_VI_A.json` | AM-RL Anlage VI Teil A (anerkannter Off-Label-Use, Stand 2025-05-07) | `amrl_anlage` |
 | `amrl_anlage_VI_B.json` | AM-RL Anlage VI Teil B (nicht anerkannter Off-Label-Use, Stand 2025-05-07) | `amrl_anlage` |
 | `praxisbesonderheiten.json` | Beispiel-Praxisbesonderheiten | `praxisbesonderheit` |
@@ -39,25 +37,25 @@ Die `atc_pattern`-Felder nutzen SQL-LIKE-Syntax:
 
 ## Quellenpflege
 
-Jede Regel sollte einen `quelle`-Verweis (Kuerzel) tragen. Wenn die Quelle
+Jede Regel sollte einen `quelle`-Verweis (Kürzel) tragen. Wenn die Quelle
 in `quellen.json` existiert, wird die Regel beim Seed-Laden mit der
-korrekten `quelle_id` verknuepft.
+korrekten `quelle_id` verknüpft.
 
 ## Versionierung und Updates
 
 Seit Seed-Version 1.0.0 (2026-04-12) haben die AM-RL-Anlagen-Dateien
 einen `_meta`-Header mit Stand-Datum, Quell-URL, Extraktionsmethode und
-Version. Der Loader (`src/verordnungsampel/db/seed.py`) unterstuetzt
+Version. Der Loader (`src/verordnungsampel/db/seed.py`) unterstützt
 beide Formate (neu + Legacy-Liste).
 
-Fuer das **Aktualisierungsverfahren** siehe **`UPDATE_METHODE.md`** in
-diesem Verzeichnis. Archivierte Staende liegen in `_archiv/<DATUM>/`,
+Für das **Aktualisierungsverfahren** siehe **`UPDATE_METHODE.md`** in
+diesem Verzeichnis. Archivierte Stände liegen in `_archiv/<DATUM>/`,
 Rohtext-Extrakte in `_raw/`.
 
 CLI:
 
 ```
-python -m verordnungsampel.cli.main sources              # Uebersicht
+python -m verordnungsampel.cli.main sources              # Übersicht
 python -m verordnungsampel.cli.main sources --json       # JSON-Export
 python -m verordnungsampel.cli.main rules --anlage III   # einzelne Anlage
 python scripts/update_amrl.py diff --anlage III --url <G-BA-URL>  # Maintainer

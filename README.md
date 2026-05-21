@@ -120,12 +120,16 @@ python -m verordnungsampel.cli.main workflow --icd R52.1 --atc QV12 \
 # Quartalsreminder
 python -m verordnungsampel.cli.main remind --quartal 2026-Q2
 
-# Regelwerksabdeckung fuer Fallliste berechnen
+# Regelwerksabdeckung für Fallliste berechnen
 python -m verordnungsampel.cli.main coverage --cases cases.json --json
 
 # Compliance-Log
 python -m verordnungsampel.cli.main log
 python -m verordnungsampel.cli.main verify
+
+# Regelwerksquellen und Seed-Stand prüfen
+python -m verordnungsampel.cli.main sources
+python scripts/update_amrl.py diff --anlage III --url <G-BA-PDF-URL>
 ```
 
 Unter Windows: Doppelklick auf `start.bat` öffnet ein interaktives Demo-Menü.
