@@ -2,7 +2,7 @@
 
 > **Quelle:** Lukas Geiger (2026). *An Integrated Multiaxial Model for Computer-Assisted Psychiatric Diagnosis*.
 > **DOI:** [10.5281/zenodo.18736725](https://doi.org/10.5281/zenodo.18736725)
-> **Lokaler Spiegel:** `_codebases/REF_Diagnostic_Paper/`
+> **Referenzstatus:** Ausgewertet aus einem lokalen, nicht versionierten Referenzspiegel.
 > **Lizenz:** MIT (Code) — kompatibel mit VerordnungsAmpel GPL-3.0
 > **Erfasst:** 2026-04-08
 
@@ -19,7 +19,7 @@ Lukas' eigenes vorheriges Forschungsprojekt — ein *Multiaxial Diagnostic Exper
 
 ### A.1 Code-Database-Builder — **höchster Wert**
 
-**Datei:** `_codebases/REF_Diagnostic_Paper/build_code_database.py` (801 Zeilen)
+**Referenzartefakt:** Code-Database-Builder (801 Zeilen)
 
 Direkt wiederverwendbar als Vorlage für das ICD-10-GM-Datenmodell. Die erzeugte `diagnostic_codes.db` zeigt das fertige Schema:
 
@@ -42,7 +42,7 @@ Direkt wiederverwendbar als Vorlage für das ICD-10-GM-Datenmodell. Die erzeugte
 
 ### A.2 Translations-System — i18n-Infrastruktur
 
-**Datei:** `_codebases/REF_Diagnostic_Paper/translations.json` (1469 Zeilen, 584 Keys)
+**Referenzartefakt:** Translation-Datei (1469 Zeilen, 584 Keys)
 
 Vollständige DE/EN-Infrastruktur, direkt portabel. Schema:
 
@@ -57,7 +57,7 @@ Vollständige DE/EN-Infrastruktur, direkt portabel. Schema:
 
 ### A.3 Testcenter — Flask + SQLite + REST-API
 
-**Ordner:** `_codebases/REF_Diagnostic_Paper/testcenter/`
+**Referenzartefakt:** Testcenter-Prototyp
 
 Ein vollständiges, laufendes Flask-Backend. Schlüsselpatterns:
 
@@ -82,7 +82,7 @@ Ein vollständiges, laufendes Flask-Backend. Schlüsselpatterns:
 
 ### A.4 Hierarchical State Machine — Decision-Engine-Pattern
 
-**Quelle:** Paper Section 9 *Technical Architecture of the Python Implementation* (Volltext im Spiegel unter `_codebases/REF_Diagnostic_Paper/paper/Review_Multiaxiale_Diagnostik_v2_en.tex`, Zeile 852 ff.)
+**Quelle:** Paper Section 9 *Technical Architecture of the Python Implementation*
 
 Die Architektur **"Hierarchical State Machines as Decision Engine"** ist ein methodisch fundiertes Pattern für Plausibilitätsprüfungen über mehrere Schritte. Das deckt sich exakt mit der strukturierten Begründungspflicht in VerordnungsAmpel:
 
@@ -124,7 +124,7 @@ ist ein **direkter Vorläufer unseres Verhältnis-Modells** (Schaden zu Einnahme
 
 ### B.3 Zenodo-Veröffentlichungs-Workflow
 
-Das Paper ist bereits auf Zenodo (DOI: 10.5281/zenodo.18736725). Wir können **denselben Workflow für ST-001 v1.0** nutzen — Lukas hat den Prozess schon aufgesetzt (siehe `ZENODO_CREDENTIALS.md` im Original-Projekt).
+Das Paper ist bereits auf Zenodo (DOI: 10.5281/zenodo.18736725). Wir können **denselben Veröffentlichungs-Workflow für ST-001 v1.0** nutzen; Zugangsdaten und lokale Übergabedateien bleiben außerhalb dieses Repositorys.
 
 ### B.4 ORCID + bibliographische Konvention
 
@@ -136,9 +136,9 @@ Das Paper nutzt LaTeX mit `diagnostic_references.bib`. Für ST-001 v1.0 kann der
 
 ### Sofort umsetzbar (für VerordnungsAmpel)
 
-- [x] **`build_code_database.py`** als Template kopiert → `_codebases/REF_Diagnostic_Paper/build_code_database.py`
-- [x] **`translations.json`** kopiert → `_codebases/REF_Diagnostic_Paper/translations.json`
-- [x] **`testcenter/app.py`** als Flask-Backend-Vorlage kopiert → `_codebases/REF_Diagnostic_Paper/testcenter/app.py`
+- [x] **Code-Database-Builder** als Architekturvorlage ausgewertet
+- [x] **Translation-Schema** als i18n-Vorlage ausgewertet
+- [x] **Testcenter-Prototyp** als Flask-Backend-Vorlage ausgewertet
 - [ ] ICD-10-GM-Builder-Script (`src/verordnungsampel/db/build_icd10gm.py`) nach Vorbild `build_code_database.py` schreiben
 - [ ] i18n-Modul vorbereiten, wenn DE/EN-Anforderung konkret wird
 - [ ] Flask-Backend-Prototyp aufsetzen, wenn von CLI auf PWA erweitert wird
@@ -182,7 +182,7 @@ Da Lukas Geiger sowohl Autor der Diagnostic-Paper-Codebase als auch der Verordnu
 ## Verweise
 
 - **Original-Projekt:** Diagnostic Testcenter / Geiger 2026, DOI `10.5281/zenodo.18736725`
-- **Lokaler Spiegel (diese Referenz):** `_codebases/REF_Diagnostic_Paper/`
+- **Referenzstatus:** lokaler, nicht versionierter Spiegel; nicht Teil dieses Repositorys
 - **VerordnungsAmpel-Konzept:** `../KONZEPT.md`
 - **Code-Audit der anderen Referenzen:** internes Audit-Dokument, nicht Teil dieses Repositories
 - **Um:bruch ST-001:** Begleitstudie zum Regress-System, siehe `https://github.com/research-line/regressangst`

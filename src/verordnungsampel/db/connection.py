@@ -1,6 +1,6 @@
 """Connection-Management fuer die VerordnungsAmpel-SQLite-Datenbank.
 
-Pattern aus REF_MediPlaner_CASHCOW/database.py adaptiert:
+Pattern aus einer internen Referenzimplementierung adaptiert:
 - Foreign Keys aktiv
 - Integritaetscheck mit Auto-Backup bei Korruption
 - Schema-Bootstrapping bei jedem Open

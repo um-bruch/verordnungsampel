@@ -87,7 +87,7 @@ Forschung, Lehre, Weiterentwicklung durch Akteure des Gesundheitswesens.
 | 4 | Praxisbesonderheiten-Erkennung + Quartalsreminder | ✅ |
 | 5 | Manipulationssicherer Compliance-Log (Hash-Chain) | ✅ |
 
-Test-Suite: **121 / 121 passed**.
+Test-Suite: **145 / 145 passed**.
 
 Methodische Auswertung: `coverage --cases cases.json` berechnet C(S)=erklärte
 Fälle/alle Fälle für pseudonymisierte ICD-/ATC-Falllisten.
@@ -148,6 +148,10 @@ Das Skript erzeugt `dist/VerordnungsAmpel/VerordnungsAmpel.exe`; `build/`, `dist
 `releases/` und `*.exe` bleiben lokale Release-Artefakte und werden nicht versioniert.
 Der Einstiegspunkt `verordnungsampel_gui.py` hält den Build ohne absolute lokale Pfade
 reproduzierbar.
+
+Git-Hygiene: lokale Referenzspiegel, Datenbanken, Logs, Test-Locks, Build-Ordner und
+Release-Artefakte bleiben per `.gitignore` außerhalb des Repositorys. Öffentliche
+Dokumente nennen keine lokalen Absolutpfade und keine internen Referenzordner.
 
 ### Screenshot
 
@@ -225,7 +229,7 @@ Pure plausibility checking against public rule sets.
 4. Practice-specifics detection + quarterly reminder
 5. Tamper-proof compliance log (hash chain)
 
-Test suite: **121 / 121 passed**.
+Test suite: **145 / 145 passed**.
 
 ### Quick Start
 

@@ -173,13 +173,13 @@ Die drei Bausteine ergänzen sich:
 
 ---
 
-## Codebases zum Ausschlachten
+## Nicht versionierte Referenzen
 
-Im Ordner `_codebases/` liegen zwei bestehende Um:bruch/Lukisch-Projekte als Referenzen, deren Architektur und Komponenten wiederverwendet werden können:
+Für die frühe Architektur wurden lokale, nicht versionierte Referenzen ausgewertet.
+Diese Referenzspiegel sind ausdrücklich nicht Teil des öffentlichen Repositorys; hier
+bleiben nur die wiederverwendbaren Architektur-Patterns dokumentiert.
 
-### REF_MediPlaner_CASHCOW
-
-**Pfad:** `_codebases/REF_MediPlaner_CASHCOW/`
+### Interne Desktop-Referenz
 
 **Was da brauchbar ist:**
 - Datenbankarchitektur (`database.py`) — SQLite-Setup, Migration, Schema-Verwaltung
@@ -194,9 +194,9 @@ Im Ordner `_codebases/` liegen zwei bestehende Um:bruch/Lukisch-Projekte als Ref
 - Medikamenten-/Patientendatenverwaltung (zu spezifisch)
 - UI (PySide6-Desktop-App, wir wollen PWA)
 
-### REF_Diagnostic_Paper (Geiger 2026, DOI 10.5281/zenodo.18736725)
+### Diagnostic-Paper (Geiger 2026, DOI 10.5281/zenodo.18736725)
 
-**Pfad:** `_codebases/REF_Diagnostic_Paper/` — ausführliche Einordnung in [`docs/RESOURCES_DIAGNOSTIC_PAPER.md`](docs/RESOURCES_DIAGNOSTIC_PAPER.md).
+Ausführliche Einordnung: [`docs/RESOURCES_DIAGNOSTIC_PAPER.md`](docs/RESOURCES_DIAGNOSTIC_PAPER.md).
 
 **Was da brauchbar ist:**
 - `build_code_database.py` (801 Zeilen) — Schema-Vorlage für die ICD-10-GM-Datenbank (bilinguale Titel, Cross-System-Mapping mit Qualitätsbewertung)
@@ -210,9 +210,7 @@ Im Ordner `_codebases/` liegen zwei bestehende Um:bruch/Lukisch-Projekte als Ref
 - ICD-11/DSM-5/ICF-Datenbank (`diagnostic_codes.db`) — wir nutzen ICD-10-GM
 - Test-Instrument-JSONs (PHQ-9, GAD-7, ...) — domänenfremd
 
-### REF_Foerderplaner_Autismo_pro
-
-**Pfad:** `_codebases/REF_Foerderplaner_Autismo_pro/`
+### Interne ICF-/Förderplan-Referenz
 
 **Was da brauchbar ist:**
 - Klienten-Datenverwaltung (`klienten_data/`) — Pattern für DSGVO-konforme lokale Datenhaltung

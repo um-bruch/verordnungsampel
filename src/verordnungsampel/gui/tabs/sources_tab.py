@@ -75,7 +75,7 @@ class SourcesTab(QWidget):
             self,
             "Aktualisierungs-Check",
             "Der Aktualisierungs-Check gegen die offiziellen G-BA-PDFs "
-            "muss derzeit manuell vom Maintainer angestossen werden.\n\n"
+            "muss derzeit manuell vom Maintainer angestoßen werden.\n\n"
             "Befehl:\n"
             "    python scripts/update_amrl.py diff --anlage III --url <G-BA-PDF-URL>\n\n"
             "Details: siehe data/seed/UPDATE_METHODE.md",
@@ -165,7 +165,7 @@ class SourcesTab(QWidget):
                 f"<b>{label}</b><br/>"
                 f"<span style='color:#333'>"
                 f"Stand: <b>{stand}</b> &nbsp; | &nbsp; "
-                f"Eintraege in DB: <b>{db_n}</b> (JSON: {json_n}) &nbsp; | &nbsp; "
+                f"Einträge in DB: <b>{db_n}</b> (JSON: {json_n}) &nbsp; | &nbsp; "
                 f"Extrahiert: {extr}"
                 f"</span>"
             )

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "verordnungsampel"
 version = "0.1.0"
-description = "Softwareentwurf — Abgleich aerztlicher Verordnungen mit bekannten oeffentlichen Regelwerken (AM-RL, PRISCUS). Regress-Risikoindikatoren ohne Gewaehr, zu Forschungszwecken."
+description = "Softwareentwurf — Abgleich ärztlicher Verordnungen mit bekannten öffentlichen Regelwerken (AM-RL, PRISCUS). Regress-Risikoindikatoren ohne Gewähr, zu Forschungszwecken."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "GPL-3.0-or-later" }
