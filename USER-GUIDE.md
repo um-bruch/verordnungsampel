@@ -128,11 +128,11 @@ Gesamtbewertung: [GRUEN]
 Begruendungen:
   1. (GRUEN) [DEFAULT_GRUEN]
      Keine Regel der eingebetteten Regelwerke trifft auf diese
-     Kombination zu. Das ersetzt NICHT die aerztliche Pruefung
+     Kombination zu. Das ersetzt NICHT die ärztliche Prüfung
      im Einzelfall.
 ================================================================
 Hinweis: Dies ist ein Informationswerk. Es ersetzt NICHT die
-aerztliche Pruefung im Einzelfall.
+ärztliche Prüfung im Einzelfall.
 ```
 
 ### Schritt 3: ROT-Fall (Option 4)
@@ -164,7 +164,7 @@ Ausgabe (Beispiel):
 python -m verordnungsampel.cli.main verify
 ```
 
-Erwartet: `Hash-Chain intakt. 2 Eintrag/Eintraege geprueft.`
+Erwartet: `Hash-Chain intakt. 2 Eintrag/Einträge geprüft.`
 
 Damit ist das Setup getestet. Alle weiteren Kapitel gehen ins Detail.
 
@@ -215,7 +215,7 @@ python -m verordnungsampel.cli.main check --icd M54.5 --atc A02BC02
 # ROT — Benzodiazepin 72 J.
 python -m verordnungsampel.cli.main check --icd F41 --atc N05BA01 --alter 72
 
-# JSON-Ausgabe fuer Weiterverarbeitung
+# JSON-Ausgabe für Weiterverarbeitung
 python -m verordnungsampel.cli.main check --icd I10 --atc C09AA02 --json
 ```
 
@@ -293,7 +293,7 @@ python -m verordnungsampel.cli.main workflow \
   --kk "<Krankenkasse>" \
   --praxis "<Praxisname>" --praxis-adresse "<Adresse>" \
   --arzt "<Arztname>" --bsnr <BSNR> --lanr <LANR> \
-  --patient <Praxis-internes-Kuerzel> \
+  --patient <Praxis-internes-Kürzel> \
   [--out <Pfad-zur-Textdatei>] [--json] [--no-log]
 ```
 
@@ -337,10 +337,10 @@ Quartalsformat: `YYYY-Qn` (z.B. `2026-Q2` = 1. April bis 30. Juni 2026).
 **CLI:**
 
 ```bash
-# Log anzeigen (letzte 20 Eintraege, kompakt)
+# Log anzeigen (letzte 20 Einträge, kompakt)
 python -m verordnungsampel.cli.main log --tail 20
 
-# Komplett als JSON fuer Export
+# Komplett als JSON für Export
 python -m verordnungsampel.cli.main log --json > compliance_log.json
 
 # Kette pruefen
