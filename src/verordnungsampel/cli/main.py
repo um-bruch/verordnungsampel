@@ -440,6 +440,28 @@ def cmd_gui(args: argparse.Namespace) -> int:
     return int(run_gui() or 0)
 
 
+def cmd_web(args: argparse.Namespace) -> int:
+    """Startet den lokalen Flask-Prototyp fuer Browser-/PWA-Tests."""
+    _print_startbanner(args)
+    try:
+        from verordnungsampel.web import create_app
+    except ImportError as exc:  # pragma: no cover - umgebungsabhaengig
+        print(
+            "FEHLER: Der Web-Prototyp benoetigt Flask.\n"
+            "Installation:  pip install -e \".[web]\"\n"
+            f"Originalfehler: {exc}",
+            file=sys.stderr,
+        )
+        return 5
+
+    config: Dict[str, Any] = {}
+    if args.db:
+        config["DATABASE"] = args.db
+    app = create_app(config)
+    app.run(host=args.host, port=args.port, debug=args.debug)
+    return 0
+
+
 def _load_seed_meta(conn) -> Dict[str, Dict[str, Any]]:
     """Holt Seed-Metadaten bevorzugt aus settings (persistiert), sonst aus JSON."""
     row = conn.execute(
@@ -880,6 +902,20 @@ def build_parser() -> argparse.ArgumentParser:
         help="Startet das PySide6-basierte Tray-Frontend",
     )
     p_gui.set_defaults(func=cmd_gui)
+
+    p_web = sub.add_parser(
+        "web",
+        help="Startet den lokalen Flask-Web-Prototyp",
+    )
+    p_web.add_argument("--host", default="127.0.0.1", help="Bind-Adresse")
+    p_web.add_argument("--port", type=int, default=5000, help="Port fuer den Webserver")
+    p_web.add_argument("--db", default=None, help="Optionaler Pfad zur SQLite-Datenbank")
+    p_web.add_argument(
+        "--debug",
+        action="store_true",
+        help="Flask-Debug-Modus aktivieren (nur lokal)",
+    )
+    p_web.set_defaults(func=cmd_web)
 
     p_sources = sub.add_parser(
         "sources",
