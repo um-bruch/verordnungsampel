@@ -4,8 +4,12 @@ Tabellen:
     - icd10               Diagnose-Codes (ICD-10-GM)
     - atc                 Wirkstoff-Codes (ATC, WHO)
     - amrl_anlage         AM-RL Anlagen III/V/VI als generische Eintraege
+    - amrl_anlage_atc     Relation AM-RL-Eintrag -> bekannte ATC-Codes
     - praxisbesonderheit  GKV-SV-Liste der bundesweiten Praxisbesonderheiten
+    - praxisbesonderheit_atc / _icd10
+                          Relationen Praxisbesonderheit -> bekannte Codes
     - regel               Generische Ampel-Regeln (atc_pattern + Bedingung -> Ampel)
+    - regel_atc / _icd10  Relationen Regel -> bekannte Codes
     - quelle              Quellen-Referenzen (z.B. AM-RL Anlage III, BSG-Urteile)
     - settings            Key-Value Konfiguration
 
@@ -17,7 +21,7 @@ from __future__ import annotations
 
 import sqlite3
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 def schema_version() -> int:
@@ -96,6 +100,22 @@ def create_schema(conn: sqlite3.Connection) -> None:
 
     cur.execute(
         """
+        CREATE TABLE IF NOT EXISTS amrl_anlage_atc (
+            amrl_anlage_id INTEGER NOT NULL,
+            atc_code        TEXT NOT NULL,
+            match_pattern   TEXT NOT NULL,
+            PRIMARY KEY (amrl_anlage_id, atc_code),
+            FOREIGN KEY (amrl_anlage_id) REFERENCES amrl_anlage(id) ON DELETE CASCADE,
+            FOREIGN KEY (atc_code) REFERENCES atc(code) ON DELETE CASCADE
+        )
+        """
+    )
+    cur.execute(
+        "CREATE INDEX IF NOT EXISTS idx_amrl_anlage_atc_code ON amrl_anlage_atc(atc_code)"
+    )
+
+    cur.execute(
+        """
         CREATE TABLE IF NOT EXISTS praxisbesonderheit (
             id            INTEGER PRIMARY KEY AUTOINCREMENT,
             atc_pattern   TEXT NOT NULL,
@@ -110,6 +130,44 @@ def create_schema(conn: sqlite3.Connection) -> None:
     )
     cur.execute(
         "CREATE INDEX IF NOT EXISTS idx_pb_atc_pattern ON praxisbesonderheit(atc_pattern)"
+    )
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS praxisbesonderheit_atc (
+            praxisbesonderheit_id INTEGER NOT NULL,
+            atc_code               TEXT NOT NULL,
+            match_pattern          TEXT NOT NULL,
+            PRIMARY KEY (praxisbesonderheit_id, atc_code),
+            FOREIGN KEY (praxisbesonderheit_id) REFERENCES praxisbesonderheit(id) ON DELETE CASCADE,
+            FOREIGN KEY (atc_code) REFERENCES atc(code) ON DELETE CASCADE
+        )
+        """
+    )
+    cur.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_praxisbesonderheit_atc_code
+        ON praxisbesonderheit_atc(atc_code)
+        """
+    )
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS praxisbesonderheit_icd10 (
+            praxisbesonderheit_id INTEGER NOT NULL,
+            icd10_code             TEXT NOT NULL,
+            match_pattern          TEXT NOT NULL,
+            PRIMARY KEY (praxisbesonderheit_id, icd10_code),
+            FOREIGN KEY (praxisbesonderheit_id) REFERENCES praxisbesonderheit(id) ON DELETE CASCADE,
+            FOREIGN KEY (icd10_code) REFERENCES icd10(code) ON DELETE CASCADE
+        )
+        """
+    )
+    cur.execute(
+        """
+        CREATE INDEX IF NOT EXISTS idx_praxisbesonderheit_icd10_code
+        ON praxisbesonderheit_icd10(icd10_code)
+        """
     )
 
     cur.execute(
@@ -130,6 +188,34 @@ def create_schema(conn: sqlite3.Connection) -> None:
     )
     cur.execute("CREATE INDEX IF NOT EXISTS idx_regel_atc ON regel(atc_pattern)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_regel_icd ON regel(icd_pattern)")
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS regel_atc (
+            regel_id      INTEGER NOT NULL,
+            atc_code      TEXT NOT NULL,
+            match_pattern TEXT NOT NULL,
+            PRIMARY KEY (regel_id, atc_code),
+            FOREIGN KEY (regel_id) REFERENCES regel(id) ON DELETE CASCADE,
+            FOREIGN KEY (atc_code) REFERENCES atc(code) ON DELETE CASCADE
+        )
+        """
+    )
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_regel_atc_code ON regel_atc(atc_code)")
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS regel_icd10 (
+            regel_id      INTEGER NOT NULL,
+            icd10_code    TEXT NOT NULL,
+            match_pattern TEXT NOT NULL,
+            PRIMARY KEY (regel_id, icd10_code),
+            FOREIGN KEY (regel_id) REFERENCES regel(id) ON DELETE CASCADE,
+            FOREIGN KEY (icd10_code) REFERENCES icd10(code) ON DELETE CASCADE
+        )
+        """
+    )
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_regel_icd10_code ON regel_icd10(icd10_code)")
 
     cur.execute(
         "INSERT OR REPLACE INTO settings(key, value) VALUES (?, ?)",

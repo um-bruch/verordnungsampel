@@ -11,7 +11,7 @@ from verordnungsampel.engine.evaluator import Ampel, evaluate
 
 
 def test_schema_version_aktuell():
-    assert schema_version() == 1
+    assert schema_version() == 2
 
 
 def test_in_memory_schema_anlegt():
@@ -22,11 +22,16 @@ def test_in_memory_schema_anlegt():
     tables = {row[0] for row in cur.fetchall()}
     expected = {
         "amrl_anlage",
+        "amrl_anlage_atc",
         "atc",
         "icd10",
         "praxisbesonderheit",
+        "praxisbesonderheit_atc",
+        "praxisbesonderheit_icd10",
         "quelle",
         "regel",
+        "regel_atc",
+        "regel_icd10",
         "settings",
     }
     assert expected.issubset(tables)
@@ -55,6 +60,59 @@ def test_seed_laden_mit_default_pfad():
     assert counts["quelle"] > 0
     assert counts["regel"] > 0
     assert counts["amrl_anlage"] > 0
+    assert counts["regel_atc"] > 0
+    assert counts["regel_icd10"] > 0
+    assert counts["amrl_anlage_atc"] > 0
+    assert counts["praxisbesonderheit_atc"] > 0
+    assert counts["praxisbesonderheit_icd10"] > 0
+
+
+def test_seed_laden_befuellt_code_relationen():
+    conn = open_in_memory()
+    load_seed_data(conn)
+
+    benzo_atc = {
+        row[0]
+        for row in conn.execute(
+            """
+            SELECT ra.atc_code
+            FROM regel_atc ra
+            JOIN regel r ON r.id = ra.regel_id
+            WHERE r.kuerzel = 'PRISCUS_BENZO_AELTER65'
+            """
+        )
+    }
+    assert {"N05BA01", "N05BA12"}.issubset(benzo_atc)
+
+    ace_icd = conn.execute(
+        """
+        SELECT ri.icd10_code
+        FROM regel_icd10 ri
+        JOIN regel r ON r.id = ri.regel_id
+        WHERE r.kuerzel = 'ACE_HEMMER_HYPERTONIE_OK'
+        """
+    ).fetchall()
+    assert ace_icd == [("I10",)]
+
+    pb = conn.execute(
+        """
+        SELECT patc.atc_code, picd.icd10_code
+        FROM praxisbesonderheit p
+        JOIN praxisbesonderheit_atc patc ON patc.praxisbesonderheit_id = p.id
+        JOIN praxisbesonderheit_icd10 picd ON picd.praxisbesonderheit_id = p.id
+        WHERE p.bezeichnung LIKE '%Multiple Sklerose%'
+        """
+    ).fetchone()
+    assert pb == ("L03AB07", "G35")
+
+
+def test_code_relationen_bleiben_idempotent():
+    conn = open_in_memory()
+    load_seed_data(conn)
+    first = conn.execute("SELECT COUNT(*) FROM regel_atc").fetchone()[0]
+    load_seed_data(conn)
+    second = conn.execute("SELECT COUNT(*) FROM regel_atc").fetchone()[0]
+    assert second == first
 
 
 def test_evaluate_ueber_db_priscus_benzo():

@@ -12,6 +12,10 @@ Erwartete Struktur (siehe data/seed/README.md):
     praxisbesonderheiten.json -> praxisbesonderheit
     regeln.json              -> regel
 
+Nach dem Laden werden normalisierte Relationstabellen aktualisiert:
+    amrl_anlage_atc, praxisbesonderheit_atc, praxisbesonderheit_icd10,
+    regel_atc, regel_icd10
+
 Alle Dateien sind optional. Fehlt eine, wird die jeweilige Tabelle leer
 gelassen (mit Warning-Log).
 
@@ -139,6 +143,86 @@ def _resolve_quelle_id(conn: sqlite3.Connection, kuerzel: str | None) -> int | N
     return row[0] if row else None
 
 
+def _refresh_code_relations(conn: sqlite3.Connection) -> Dict[str, int]:
+    """Aktualisiert Pattern-Relationen zu bekannten ICD-/ATC-Codes.
+
+    Die Ampel-Engine arbeitet weiterhin mit Patterns. Diese Relationen machen
+    das Schema aber fuer UI, Coverage-Analysen und Datenmodell-Checks abfragbar.
+    Nur explizite Patterns werden materialisiert; ``NULL`` bedeutet "keine
+    Einschraenkung" und wird nicht zu einer grossen Kreuztabelle erweitert.
+    """
+    relation_tables = (
+        "amrl_anlage_atc",
+        "praxisbesonderheit_atc",
+        "praxisbesonderheit_icd10",
+        "regel_atc",
+        "regel_icd10",
+    )
+    for table in relation_tables:
+        conn.execute(f"DELETE FROM {table}")
+
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO amrl_anlage_atc
+            (amrl_anlage_id, atc_code, match_pattern)
+        SELECT a.id, atc.code, a.atc_pattern
+        FROM amrl_anlage a
+        JOIN atc ON a.atc_pattern IS NOT NULL
+                AND a.atc_pattern <> ''
+                AND UPPER(atc.code) LIKE UPPER(a.atc_pattern)
+        """
+    )
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO praxisbesonderheit_atc
+            (praxisbesonderheit_id, atc_code, match_pattern)
+        SELECT p.id, atc.code, p.atc_pattern
+        FROM praxisbesonderheit p
+        JOIN atc ON p.atc_pattern IS NOT NULL
+                AND p.atc_pattern <> ''
+                AND UPPER(atc.code) LIKE UPPER(p.atc_pattern)
+        """
+    )
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO praxisbesonderheit_icd10
+            (praxisbesonderheit_id, icd10_code, match_pattern)
+        SELECT p.id, icd10.code, p.icd_pattern
+        FROM praxisbesonderheit p
+        JOIN icd10 ON p.icd_pattern IS NOT NULL
+                 AND p.icd_pattern <> ''
+                 AND UPPER(icd10.code) LIKE UPPER(p.icd_pattern)
+        """
+    )
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO regel_atc
+            (regel_id, atc_code, match_pattern)
+        SELECT r.id, atc.code, r.atc_pattern
+        FROM regel r
+        JOIN atc ON r.atc_pattern IS NOT NULL
+                AND r.atc_pattern <> ''
+                AND UPPER(atc.code) LIKE UPPER(r.atc_pattern)
+        """
+    )
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO regel_icd10
+            (regel_id, icd10_code, match_pattern)
+        SELECT r.id, icd10.code, r.icd_pattern
+        FROM regel r
+        JOIN icd10 ON r.icd_pattern IS NOT NULL
+                 AND r.icd_pattern <> ''
+                 AND UPPER(icd10.code) LIKE UPPER(r.icd_pattern)
+        """
+    )
+
+    return {
+        table: conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+        for table in relation_tables
+    }
+
+
 def load_seed_data(conn: sqlite3.Connection, seed_dir: Path | None = None) -> Dict[str, int]:
     """Laedt Seed-Daten aus JSON-Dateien in die DB.
 
@@ -161,6 +245,11 @@ def load_seed_data(conn: sqlite3.Connection, seed_dir: Path | None = None) -> Di
         "amrl_anlage": 0,
         "praxisbesonderheit": 0,
         "regel": 0,
+        "amrl_anlage_atc": 0,
+        "praxisbesonderheit_atc": 0,
+        "praxisbesonderheit_icd10": 0,
+        "regel_atc": 0,
+        "regel_icd10": 0,
     }
 
     quellen = _load_json(seed_dir / "quellen.json") or []
@@ -273,6 +362,8 @@ def load_seed_data(conn: sqlite3.Connection, seed_dir: Path | None = None) -> Di
             ),
         )
         counts["regel"] += 1
+
+    counts.update(_refresh_code_relations(conn))
 
     # Seed-Metadaten in settings persistieren, damit sie auch nach einem
     # App-Restart verfuegbar sind (z.B. fuer `sources` ohne Zugriff auf

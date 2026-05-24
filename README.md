@@ -87,7 +87,7 @@ Forschung, Lehre, Weiterentwicklung durch Akteure des Gesundheitswesens.
 | 4 | Praxisbesonderheiten-Erkennung + Quartalsreminder | ✅ |
 | 5 | Manipulationssicherer Compliance-Log (Hash-Chain) | ✅ |
 
-Test-Suite: **145 / 145 passed**.
+Test-Suite: **151 / 151 passed**.
 
 Methodische Auswertung: `coverage --cases cases.json` berechnet C(S)=erklärte
 Fälle/alle Fälle für pseudonymisierte ICD-/ATC-Falllisten.
@@ -171,6 +171,10 @@ Dokumente nennen keine lokalen Absolutpfade und keine internen Referenzordner.
 | Regelwerke | AM-RL Anlagen III / V / VI als JSON-Seed (`data/seed/`) |
 | Compliance-Log | Hash-Chain, versiegelt Ampel-Ergebnis + Begründung + Workflow |
 
+Das Regelwerk-Schema liegt in Version 2 vor. Zusätzlich zu den Pattern-Tabellen
+werden Relationen zu bekannten ICD-/ATC-Codes materialisiert, damit UI, Coverage
+und spätere PWA-Backends nicht jedes Mal Pattern-Expansion selbst nachbauen müssen.
+
 ### Dokumentation
 
 - [`KONZEPT.md`](KONZEPT.md) — Vollständiges Projektkonzept
@@ -233,7 +237,7 @@ Pure plausibility checking against public rule sets.
 4. Practice-specifics detection + quarterly reminder
 5. Tamper-proof compliance log (hash chain)
 
-Test suite: **145 / 145 passed**.
+Test suite: **151 / 151 passed**.
 
 ### Quick Start
 

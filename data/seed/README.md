@@ -41,6 +41,22 @@ Jede Regel sollte einen `quelle`-Verweis (Kürzel) tragen. Wenn die Quelle
 in `quellen.json` existiert, wird die Regel beim Seed-Laden mit der
 korrekten `quelle_id` verknüpft.
 
+## Normalisierte Code-Relationen
+
+Seit Schema-Version 2 erzeugt der Seed-Loader zusätzliche Relationstabellen:
+
+- `amrl_anlage_atc`
+- `praxisbesonderheit_atc`
+- `praxisbesonderheit_icd10`
+- `regel_atc`
+- `regel_icd10`
+
+Diese Tabellen materialisieren explizite `atc_pattern`- und `icd_pattern`-Treffer
+gegen die bekannten Seed-Codes. Die Ampel-Engine nutzt weiter die Pattern-Logik;
+die Relationen dienen UI-Abfragen, Coverage-Analysen und späteren Backend-Views.
+`NULL`-Patterns werden bewusst nicht als Kreuztabelle materialisiert, weil sie
+"keine Einschränkung" bedeuten.
+
 ## Versionierung und Updates
 
 Seit Seed-Version 1.0.0 (2026-04-12) haben die AM-RL-Anlagen-Dateien

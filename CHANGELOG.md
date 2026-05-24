@@ -21,9 +21,14 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - GitHub-Pflichtdateien (CODE_OF_CONDUCT, SECURITY, CONTRIBUTING, FUNDING)
 - Reproduzierbarer lokaler Windows-Build via `build_exe.bat` und `verordnungsampel_gui.py`
 - Gitignore-Abdeckung für lokale Build-Artefakte, Secrets, Credentials und Test-Locks erweitert
+- SQLite-Schema v2 mit Relationstabellen für AM-RL-, Praxisbesonderheits- und
+  Regelwerks-Patterns zu bekannten ICD-/ATC-Codes
+- Seed-Loader füllt diese Code-Relationen nach jedem `init` idempotent neu
 - Test-Suite-Wachstum: 24 neue Tests in `tests/test_i18n.py`
   (Lazy-Load, Fallback DE↔EN, Format-Substitution, Bridge-Kompatibilität,
   Konsistenz DE/EN-Keysets)
+- Test-Suite-Wachstum: 2 neue DB-Tests für Schema-v2-Relationen und
+  idempotente Pattern-Expansion
 
 ### Geändert / Changed
 - Ordner-Lifecycle: DEV → PreGit → GO-PRI; GitHub-Sichtbarkeit ist inzwischen öffentlich.
@@ -32,7 +37,7 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Zweckbestimmung neu formuliert: **"Regress-Prävention"** als Vermarktungsbegriff fallengelassen (Risiko § 444 BGB Zusicherung, § 5 UWG irreführende Werbung, MDR-Zweckbestimmung). Neu: "Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren aus öffentlichen Regelwerken — zu Forschungs- und Weiterentwicklungszwecken, ohne Gewähr." Betroffen: README, NOTICE, pyproject.toml, GUI-Strings, DSGVO-Konzept, Marktvergleich.
 - Desktop-Packaging dokumentiert: lokaler PyInstaller-Onedir-Build mit Seed-Daten und Tray-Icons
 - Öffentliche Konzept- und Ressourcen-Dokumentation um Hinweise auf lokale Referenzspiegel und interne Projektnamen bereinigt.
-- README, User-Guide und Seed-Dokumentation auf den aktuellen Stand der 145 Tests, die Quellen-Ansicht und den manuellen AM-RL-Update-Check gebracht.
+- README, User-Guide und Seed-Dokumentation auf den aktuellen Stand der 151 Tests, die Quellen-Ansicht und den manuellen AM-RL-Update-Check gebracht.
 - Repo-Hygiene ergänzt: `.gitattributes` für stabile Zeilenenden und `.gitignore` für SQLite-Sidecars, Coverage-, Cache- und Zertifikatsartefakte.
 
 ### Behoben / Fixed
