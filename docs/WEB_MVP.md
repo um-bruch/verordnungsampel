@@ -41,6 +41,18 @@ Danach im Browser öffnen:
 - getrennte Eingabemaske für Pilotpraxen
 - datensparsame Export-/Import-Flüsse für spätere Praxisintegration
 
+## Einordnung im Portierungsplan
+
+Der Web-MVP ist die bevorzugte Linie für Web, Android und iOS, aber nur als lokale
+PWA bzw. Companion-Oberfläche. Eine native Android- oder iOS-App ist aktuell kein
+Ziel. Auch eine Cloud-Synchronisierung ist kein Ziel, weil direkte Synchronisation
+in diesem Gesundheits- und Rechtskontext ein neues Datenschutz-, Haftungs- und
+Medizinprodukte-Konzept erfordern würde.
+
+Der geplante Austausch läuft dateibasiert über die in `EXPORTFORMAT.md`
+beschriebenen Formate `verordnungsampel-casebundle-v1.json` und
+`verordnungsampel-ruleset-v1.json`.
+
 ## Nächste sinnvolle Schritte
 
 1. Web-Maske für `justify` und `workflow` ergänzen
