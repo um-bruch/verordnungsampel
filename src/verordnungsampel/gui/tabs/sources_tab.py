@@ -24,6 +24,7 @@ from PySide6.QtWidgets import (
 )
 
 from verordnungsampel.db.connection import open_database
+from verordnungsampel.db.seed import ensure_seed_data
 
 
 class SourcesTab(QWidget):
@@ -85,6 +86,7 @@ class SourcesTab(QWidget):
         """Liest Seed-Meta + Zaehler aus der DB."""
         conn, db_path = open_database()
         try:
+            ensure_seed_data(conn)
             row = conn.execute(
                 "SELECT value FROM settings WHERE key='seed_meta_json'"
             ).fetchone()

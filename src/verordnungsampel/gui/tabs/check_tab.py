@@ -31,6 +31,7 @@ from PySide6.QtWidgets import (
 from verordnungsampel import __version__
 from verordnungsampel.audit.compliance_log import ComplianceLog
 from verordnungsampel.db.connection import open_database
+from verordnungsampel.db.seed import ensure_seed_data
 from verordnungsampel.engine.evaluator import Ampel, AmpelErgebnis, evaluate
 from verordnungsampel.engine.praxisbesonderheit import find_matching
 from verordnungsampel.gui import strings_de as S
@@ -135,6 +136,7 @@ class CheckTab(QWidget):
         try:
             conn, _ = open_database()
             try:
+                ensure_seed_data(conn)
                 ergebnis = evaluate(icd, atc, alter=alter, conn=conn)
                 pbs = find_matching(icd, atc, conn=conn)
             finally:

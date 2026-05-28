@@ -13,7 +13,7 @@ from flask import Flask, jsonify, render_template_string, request
 
 from verordnungsampel import __version__
 from verordnungsampel.db.connection import open_database
-from verordnungsampel.db.seed import load_seed_data
+from verordnungsampel.db.seed import ensure_seed_data
 from verordnungsampel.engine.evaluator import evaluate
 from verordnungsampel.engine.praxisbesonderheit import find_matching
 
@@ -309,10 +309,7 @@ def _parse_alter(raw_value: Any) -> int | None:
 
 def _ensure_seed_data(conn: sqlite3.Connection) -> None:
     """Laedt Seed-Daten beim ersten Web-Zugriff automatisch nach."""
-    row = conn.execute("SELECT COUNT(*) FROM quelle").fetchone()
-    if row and int(row[0]) > 0:
-        return
-    load_seed_data(conn)
+    ensure_seed_data(conn)
 
 
 def _run_check(

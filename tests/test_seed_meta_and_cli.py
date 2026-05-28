@@ -15,6 +15,7 @@ import pytest
 from verordnungsampel.db.connection import open_in_memory
 from verordnungsampel.db.seed import (
     _load_json,
+    ensure_seed_data,
     get_last_meta,
     load_meta_only,
     load_seed_data,
@@ -105,6 +106,15 @@ def test_load_seed_idempotent() -> None:
     c1 = load_seed_data(conn)
     c2 = load_seed_data(conn)
     assert c1["amrl_anlage"] == c2["amrl_anlage"] == 129
+
+
+def test_ensure_seed_data_laedt_frische_db_genau_einmal() -> None:
+    """Fresh DBs werden automatisch befuellt, spaetere Aufrufe bleiben no-op."""
+    conn = open_in_memory()
+    loaded = ensure_seed_data(conn)
+    assert loaded is not None
+    assert loaded["regel"] == 10
+    assert ensure_seed_data(conn) is None
 
 
 def test_load_meta_only_liest_ohne_db() -> None:
@@ -223,3 +233,49 @@ def test_cli_rules_atc_filter(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -
     data = json.loads(out)
     for r in data:
         assert r["atc_pattern"].startswith("A10")
+
+
+def test_cli_check_seedet_frische_installation_automatisch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """`check` darf vor dem ersten `init` kein false-green mit leerer DB liefern."""
+    monkeypatch.setenv("APPDATA", str(tmp_path))
+    rc, out = _run_cli([
+        "check",
+        "--icd",
+        "F41",
+        "--atc",
+        "N05BA01",
+        "--alter",
+        "72",
+        "--json",
+        "--no-log",
+    ])
+    assert rc == 0
+    data = json.loads(out)
+    assert data["gesamt"] == "rot"
+    assert data["treffer"][0]["regel"] == "PRISCUS_BENZO_AELTER65"
+
+
+def test_cli_workflow_seedet_frische_installation_automatisch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """`workflow` soll dokumentierte Container-Treffer auch ohne `init` liefern."""
+    monkeypatch.setenv("APPDATA", str(tmp_path))
+    rc, out = _run_cli([
+        "workflow",
+        "--icd",
+        "R52.1",
+        "--atc",
+        "QV12",
+        "--kk",
+        "AOK",
+        "--praxis",
+        "Praxis X",
+        "--json",
+        "--no-log",
+    ])
+    assert rc == 0
+    data = json.loads(out)
+    assert data["workflow_type"] == "pflicht_antrag"
+    assert data["containers"] == ["pflicht_vorab"]

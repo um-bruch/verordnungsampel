@@ -21,6 +21,7 @@ from verordnungsampel import __version__
 from verordnungsampel.audit.compliance_log import ComplianceLog
 from verordnungsampel.db.connection import open_database
 from verordnungsampel.db.seed import (
+    ensure_seed_data,
     get_last_meta,
     load_meta_only,
     load_seed_data,
@@ -221,6 +222,7 @@ def cmd_check(args: argparse.Namespace) -> int:
     """
     conn, _ = open_database()
     try:
+        ensure_seed_data(conn)
         erg = evaluate(args.icd, args.atc, alter=args.alter, conn=conn)
         pbs = find_praxisbesonderheiten(args.icd, args.atc, conn=conn)
     finally:
@@ -317,6 +319,7 @@ def cmd_workflow(args: argparse.Namespace) -> int:
     """
     conn, _ = open_database()
     try:
+        ensure_seed_data(conn)
         erg = evaluate(args.icd, args.atc, alter=args.alter, conn=conn)
     finally:
         conn.close()
@@ -487,6 +490,7 @@ def cmd_sources(args: argparse.Namespace) -> int:
     """
     conn, db_path = open_database()
     try:
+        ensure_seed_data(conn)
         meta_map = _load_seed_meta(conn)
         # Gruppe anlage -> anzahl aus DB
         anlage_counts: Dict[str, int] = {}
@@ -647,6 +651,7 @@ def cmd_rules(args: argparse.Namespace) -> int:
 
     conn, _ = open_database()
     try:
+        ensure_seed_data(conn)
         rows = conn.execute(sql, params).fetchall()
     finally:
         conn.close()
@@ -762,6 +767,7 @@ def cmd_coverage(args: argparse.Namespace) -> int:
 
     conn, _ = open_database()
     try:
+        ensure_seed_data(conn)
         report = analyze_cases(cases, conn=conn)
     finally:
         conn.close()

@@ -136,6 +136,35 @@ def load_meta_only(seed_dir: Path | None = None) -> Dict[str, Dict[str, Any]]:
     return result
 
 
+def ensure_seed_data(
+    conn: sqlite3.Connection, seed_dir: Path | None = None
+) -> Dict[str, int] | None:
+    """Laedt die Seed-Daten bei leerer oder unvollstaendiger DB nach.
+
+    Frische Installationen besitzen nach ``open_database()`` zwar bereits das
+    Schema, aber noch keine fachlichen Inhalte. Ohne diesen Guard wuerden CLI-
+    und GUI-Pruefungen stillschweigend mit leerem Regelwerk laufen und dadurch
+    false-green Ergebnisse liefern.
+
+    Returns:
+        ``counts`` aus :func:`load_seed_data`, wenn nachgeladen wurde, sonst
+        ``None`` wenn bereits fachliche Seed-Daten vorhanden sind.
+    """
+    row = conn.execute(
+        "SELECT "
+        "(SELECT COUNT(*) FROM quelle), "
+        "(SELECT COUNT(*) FROM amrl_anlage), "
+        "(SELECT COUNT(*) FROM regel)"
+    ).fetchone()
+    if row is None:
+        return load_seed_data(conn, seed_dir=seed_dir)
+
+    quelle_count, amrl_count, regel_count = (int(value or 0) for value in row)
+    if quelle_count > 0 and amrl_count > 0 and regel_count > 0:
+        return None
+    return load_seed_data(conn, seed_dir=seed_dir)
+
+
 def _resolve_quelle_id(conn: sqlite3.Connection, kuerzel: str | None) -> int | None:
     if not kuerzel:
         return None
