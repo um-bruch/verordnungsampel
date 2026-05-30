@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "verordnungsampel"
 version = "0.1.0"
-description = "Softwareentwurf — Abgleich ärztlicher Verordnungen mit bekannten öffentlichen Regelwerken (AM-RL, PRISCUS). Regress-Risikoindikatoren ohne Gewähr, zu Forschungszwecken."
+description = "Research-use software draft for local ICD-10-GM/ATC checks against public German prescribing rule sets (AM-RL, PRISCUS) with transparent risk indicators."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "GPL-3.0-or-later" }
 authors = [
     { name = "Lukas Geiger", email = "hallo@um-bruch.org" }
 ]
-keywords = ["medizin", "verordnung", "regress", "risiko-indikator", "gkv", "icd-10", "atc", "forschung", "open-source"]
+keywords = ["verordnungsampel", "am-rl", "g-ba", "icd-10-gm", "atc", "priscus", "praxisbesonderheiten", "health-policy", "prescribing-rules", "research-use-only", "local-first", "pyside6", "sqlite"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Healthcare Industry",
@@ -22,7 +22,8 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Sociology",
 ]
 dependencies = []
 
@@ -47,6 +48,7 @@ verordnungsampel = "verordnungsampel.cli.main:main"
 Homepage = "https://um-bruch.org"
 Repository = "https://github.com/research-line/verordnungsampel"
 Issues = "https://github.com/research-line/verordnungsampel/issues"
+Documentation = "https://github.com/research-line/verordnungsampel#readme"
 
 [tool.setuptools.packages.find]
 where = ["src"]

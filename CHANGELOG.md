@@ -6,6 +6,12 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 ## [Unreleased]
 
 ### Hinzugefügt / Added
+- `llms.txt` als maschinenlesbarer Projektkontext mit klarer Nicht-MDSW-,
+  Nicht-CDS- und Research-Use-Only-Abgrenzung.
+- Zusätzlicher README-Screenshot `README/screenshots/main-window.png` für das
+  eigentliche Ampel-Hauptfenster; der vorhandene Disclaimer-Screenshot bleibt als
+  Sicherheitshinweis sichtbar.
+- GitHub Actions für Windows-Testläufe sowie Stale-/Welcome-Community-Workflows.
 - `PORTIERUNGSPLAN.md` mit Usecase-basierter Plattformentscheidung: Windows und lokale Web/PWA bleiben primär, macOS/Linux werden als Source-Smokes geplant, Android/iOS nur als PWA-Smoke, Windows Store ist derzeit kein Ziel.
 - `EXPORTFORMAT.md` als Planungsgrundlage für dateibasierte, pseudonymisierte Fallbündel und Regelwerks-Snapshots ohne Cloud-Synchronisierung.
 - PySide6-basierte Tray-GUI (Companion-Modus neben Praxisverwaltungssystemen)
@@ -33,6 +39,12 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
   idempotente Pattern-Expansion
 
 ### Geändert / Changed
+- README-Discoverability für `VerordnungsAmpel`, AM-RL/G-BA, ICD-10-GM/ATC,
+  PRISCUS 2.0, Praxisbesonderheiten und local-first Health-Policy-Research
+  verbessert, ohne Wirk- oder Validierungsversprechen zu ergänzen.
+- Paketbeschreibung, Keywords und Classifiers in `pyproject.toml` auf
+  Research-Use-Only und Information-Analysis statt Medical-Software-Positionierung
+  geschärft.
 - Ordner-Lifecycle: DEV → PreGit → GO-PRI; GitHub-Sichtbarkeit ist inzwischen öffentlich.
 - Repository-URL: github.com/research-line/verordnungsampel
 - Der lokale `.SOFTWARE`-Ordnername bleibt bis zur nächsten Lifecycle-Bereinigung unverändert.
@@ -40,6 +52,7 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Desktop-Packaging dokumentiert: lokaler PyInstaller-Onedir-Build mit Seed-Daten und Tray-Icons
 - Öffentliche Konzept- und Ressourcen-Dokumentation um Hinweise auf lokale Referenzspiegel und interne Projektnamen bereinigt.
 - README, User-Guide und Seed-Dokumentation auf den aktuellen Stand der 151 Tests, die Quellen-Ansicht und den manuellen AM-RL-Update-Check gebracht.
+- README-Teststand auf 154 lokale Tests aktualisiert.
 - Repo-Hygiene ergänzt: `.gitattributes` für stabile Zeilenenden und `.gitignore` für SQLite-Sidecars, Coverage-, Cache- und Zertifikatsartefakte.
 
 ### Behoben / Fixed

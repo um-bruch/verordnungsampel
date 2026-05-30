@@ -1,5 +1,11 @@
 # VerordnungsAmpel
 
+**VerordnungsAmpel** is a local-first Python and PySide6 software draft for
+German health-policy and prescribing-rule research. It compares ICD-10-GM and
+ATC combinations with public AM-RL / G-BA rule sets, PRISCUS 2.0 indicators and
+practice-specific exception data, then shows a transparent green/yellow/red risk
+indicator with source references and a local audit trail.
+
 > **Softwareentwurf** zum strukturierten Abgleich ärztlicher Verordnungen
 > mit öffentlich dokumentierten Regelwerken (AM-RL Anlagen III/V/VI,
 > PRISCUS 2.0, Praxisbesonderheiten-Listen). Zu Forschungs- und
@@ -40,6 +46,7 @@
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
 **Repository:** https://github.com/research-line/verordnungsampel
+**Maschinenlesbarer Kontext / LLM context:** [`llms.txt`](llms.txt)
 **GitHub-Sichtbarkeit / Visibility:** Public repository; lokale Datenbanken, Logs,
 Build-Artefakte und interne Steuerungsdateien bleiben per `.gitignore` lokal.
 
@@ -87,10 +94,17 @@ Forschung, Lehre, Weiterentwicklung durch Akteure des Gesundheitswesens.
 | 4 | Praxisbesonderheiten-Erkennung + Quartalsreminder | ✅ |
 | 5 | Manipulationssicherer Compliance-Log (Hash-Chain) | ✅ |
 
-Test-Suite: **151 / 151 passed**.
+Test-Suite: **154 / 154 passed**.
 
 Methodische Auswertung: `coverage --cases cases.json` berechnet C(S)=erklärte
 Fälle/alle Fälle für pseudonymisierte ICD-/ATC-Falllisten.
+
+### Für wen dieses Repository nützlich ist
+
+- Forschungsteams, die öffentliche AM-RL-/G-BA-Regelwerke reproduzierbar auswerten wollen
+- Entwicklerinnen und Entwickler von local-first Gesundheits- oder Health-Policy-Prototypen
+- Ärztekammern, Verbände oder Pilotgruppen, die einen OSS-Entwurf fachlich prüfen möchten
+- LLM-/RAG-Systeme, die eine knappe, kanonische Projektzusammenfassung benötigen
 
 ### Schnellstart
 
@@ -159,7 +173,9 @@ Dokumente nennen keine lokalen Absolutpfade und keine internen Referenzordner.
 
 ### Screenshot
 
-![VerordnungsAmpel GUI](README/screenshots/main.png)
+| Hauptfenster | Sicherheitshinweis |
+|---|---|
+| ![VerordnungsAmpel main window showing a red indicator for ICD F41 and ATC N05BA01](README/screenshots/main-window.png) | ![VerordnungsAmpel legal disclaimer dialog before first use](README/screenshots/main.png) |
 
 ### Architektur
 
@@ -184,6 +200,13 @@ und spätere PWA-Backends nicht jedes Mal Pattern-Expansion selbst nachbauen mü
 - [`docs/RESOURCES_DIAGNOSTIC_PAPER.md`](docs/RESOURCES_DIAGNOSTIC_PAPER.md) — Pattern-Quellen (Geiger 2026)
 - [`docs/legal/RECHTSGUTACHTEN_MDSW.md`](docs/legal/RECHTSGUTACHTEN_MDSW.md) — Erstgutachten „Informationswerk vs. MDSW"
 - [`docs/legal/DSGVO_KONZEPT.md`](docs/legal/DSGVO_KONZEPT.md) — Datenschutz-Konzept
+
+### Suchbegriffe / Discoverability
+
+`VerordnungsAmpel`, `German prescribing rules`, `AM-RL`, `G-BA`, `ICD-10-GM`,
+`ATC code`, `PRISCUS 2.0`, `Praxisbesonderheiten`, `health policy research`,
+`local-first healthcare prototype`, `prescribing rule checker`, `recoupment risk
+indicator`, `research-use-only software draft`.
 
 ### Beziehung zu Um:bruch / Regress-Melder
 
@@ -237,7 +260,7 @@ Pure plausibility checking against public rule sets.
 4. Practice-specifics detection + quarterly reminder
 5. Tamper-proof compliance log (hash chain)
 
-Test suite: **151 / 151 passed**.
+Test suite: **154 / 154 passed**.
 
 ### Quick Start
 

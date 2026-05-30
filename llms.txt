@@ -1,0 +1,39 @@
+# VerordnungsAmpel
+
+Canonical repository: https://github.com/research-line/verordnungsampel
+Project home: https://um-bruch.org
+License: GPL-3.0-or-later
+Status: Pre-Alpha v0.1.0, research-use software draft
+
+VerordnungsAmpel is a local-first Python/PySide6 software draft for German
+health-policy and prescribing-rule research. It compares ICD-10-GM and ATC code
+combinations with public rule sets such as AM-RL annexes III/V/VI, G-BA source
+material, PRISCUS 2.0 indicators and practice-specific exception lists. The
+output is a transparent green/yellow/red risk indicator with source references,
+structured rationale capture and a local hash-chain audit trail.
+
+Important boundaries:
+- Not a medical device under MDR (EU) 2017/745.
+- Not clinical decision support.
+- Not legal advice.
+- Not clinically validated.
+- No promise of recoupment prevention.
+- No patient-data processing is required for the core examples.
+- Released for research, education, review and further development by qualified
+  third parties.
+
+Primary entry points:
+- `README.md`: bilingual project overview, quickstart and screenshots.
+- `KONZEPT.md`: full German concept and status history.
+- `PORTIERUNGSPLAN.md`: platform strategy and non-goals.
+- `EXPORTFORMAT.md`: planned pseudonymized JSON exchange formats.
+- `docs/legal/`: legal and privacy assessment documents.
+- `src/verordnungsampel/cli/main.py`: CLI entry point.
+- `src/verordnungsampel/gui/main_window.py`: PySide6 tray GUI.
+
+Search keywords:
+VerordnungsAmpel, German prescribing rules, AM-RL, G-BA, ICD-10-GM, ATC code,
+PRISCUS 2.0, Praxisbesonderheiten, health policy research, prescribing rule
+checker, recoupment risk indicator, local-first healthcare prototype,
+research-use-only software draft, PySide6, SQLite, hash-chain audit trail.
+

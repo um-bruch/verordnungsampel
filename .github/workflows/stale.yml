@@ -1,0 +1,35 @@
+name: Stale issues and pull requests
+
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v10
+        with:
+          days-before-stale: 45
+          days-before-close: 14
+          stale-issue-label: stale
+          stale-pr-label: stale
+          stale-issue-message: >
+            This issue has been marked stale because there has been no recent
+            activity. Please comment with updated information if it is still
+            relevant.
+          stale-pr-message: >
+            This pull request has been marked stale because there has been no
+            recent activity. Please rebase or comment if it should stay open.
+          close-issue-message: >
+            Closing this issue after a stale period. It can be reopened if new
+            information is available.
+          close-pr-message: >
+            Closing this pull request after a stale period. It can be reopened
+            if work resumes.
+
