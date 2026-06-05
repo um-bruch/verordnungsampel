@@ -23,7 +23,7 @@ CLI und PySide6-GUI:
 ## Starten
 
 ```powershell
-cd 'C:\Users\User\OneDrive\.TOPICS\.SOFTWARE\DATA\GO-PRI_VerordnungsAmpel_SOCIAL'
+cd verordnungsampel
 python -m pip install -e ".[web]"
 python -m verordnungsampel.cli.main web
 ```

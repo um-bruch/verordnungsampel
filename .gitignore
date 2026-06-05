@@ -1,6 +1,6 @@
 # VerordnungsAmpel — .gitignore
 
-# Referenz-Codebases (NICHT mit veroeffentlichen, urheberrechtlich geschuetzt)
+# Referenz-Codebases (NICHT mit veröffentlichen, urheberrechtlich geschützt)
 _codebases/
 
 # Python
@@ -96,7 +96,11 @@ token.*
 AUFGABEN.txt
 BUGREPORT.md
 DIAGNOSE_REPORT.md
+DECISIONS.md
+PORTIERUNGSPLAN.md
 SKILL.md
+TODO.md
+DONE.md
 tmpclaude-*
 
 # Rechtsdokumente als lokale Entwürfe (nur das finale PDF/MD kommt ins Repo via docs/legal/)

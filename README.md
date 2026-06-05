@@ -48,7 +48,8 @@ indicator with source references and a local audit trail.
 **Repository:** https://github.com/research-line/verordnungsampel
 **Maschinenlesbarer Kontext / LLM context:** [`llms.txt`](llms.txt)
 **GitHub-Sichtbarkeit / Visibility:** Public repository; lokale Datenbanken, Logs,
-Build-Artefakte und interne Steuerungsdateien bleiben per `.gitignore` lokal.
+Build-Artefakte, Portierungspläne und interne Steuerungsdateien bleiben per
+`.gitignore` lokal.
 
 ---
 
@@ -167,9 +168,10 @@ Das Skript erzeugt `dist/VerordnungsAmpel/VerordnungsAmpel.exe`; `build/`, `dist
 Der Einstiegspunkt `verordnungsampel_gui.py` hält den Build ohne absolute lokale Pfade
 reproduzierbar.
 
-Git-Hygiene: lokale Referenzspiegel, Datenbanken, Logs, Test-Locks, Build-Ordner und
-Release-Artefakte bleiben per `.gitignore` außerhalb des Repositorys. Öffentliche
-Dokumente nennen keine lokalen Absolutpfade und keine internen Referenzordner.
+Git-Hygiene: lokale Referenzspiegel, Datenbanken, Logs, Test-Locks, Build-Ordner,
+Portierungspläne und Release-Artefakte bleiben per `.gitignore` außerhalb des
+Repositorys. Öffentliche Dokumente nennen keine lokalen Absolutpfade und keine
+internen Referenzordner.
 
 ### Screenshot
 

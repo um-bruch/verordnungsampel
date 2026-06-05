@@ -12,7 +12,6 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
   eigentliche Ampel-Hauptfenster; der vorhandene Disclaimer-Screenshot bleibt als
   Sicherheitshinweis sichtbar.
 - GitHub Actions für Windows-Testläufe sowie Stale-/Welcome-Community-Workflows.
-- `PORTIERUNGSPLAN.md` mit Usecase-basierter Plattformentscheidung: Windows und lokale Web/PWA bleiben primär, macOS/Linux werden als Source-Smokes geplant, Android/iOS nur als PWA-Smoke, Windows Store ist derzeit kein Ziel.
 - `EXPORTFORMAT.md` als Planungsgrundlage für dateibasierte, pseudonymisierte Fallbündel und Regelwerks-Snapshots ohne Cloud-Synchronisierung.
 - PySide6-basierte Tray-GUI (Companion-Modus neben Praxisverwaltungssystemen)
 - Vollständiger AM-RL-Seed-Datensatz (Anlagen III, V, VI-A, VI-B)
@@ -54,6 +53,7 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - README, User-Guide und Seed-Dokumentation auf den aktuellen Stand der 151 Tests, die Quellen-Ansicht und den manuellen AM-RL-Update-Check gebracht.
 - README-Teststand auf 154 lokale Tests aktualisiert.
 - Repo-Hygiene ergänzt: `.gitattributes` für stabile Zeilenenden und `.gitignore` für SQLite-Sidecars, Coverage-, Cache- und Zertifikatsartefakte.
+- Repo-Hygiene nachgezogen: lokale Portierungspläne und interne Steuerungsdateien bleiben aus dem öffentlichen GitHub-Repo heraus; `llms.txt` und Web-MVP-Doku verweisen nur noch auf öffentliche Einstiegspunkte.
 
 ### Behoben / Fixed
 - Deutsche Nutzertexte im Regelwerke-Tab nutzen echte Umlaute für "angestoßen" und "Einträge".

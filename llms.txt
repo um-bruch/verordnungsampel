@@ -25,8 +25,8 @@ Important boundaries:
 Primary entry points:
 - `README.md`: bilingual project overview, quickstart and screenshots.
 - `KONZEPT.md`: full German concept and status history.
-- `PORTIERUNGSPLAN.md`: platform strategy and non-goals.
 - `EXPORTFORMAT.md`: planned pseudonymized JSON exchange formats.
+- `docs/WEB_MVP.md`: local browser/PWA prototype notes and non-goals.
 - `docs/legal/`: legal and privacy assessment documents.
 - `src/verordnungsampel/cli/main.py`: CLI entry point.
 - `src/verordnungsampel/gui/main_window.py`: PySide6 tray GUI.
@@ -36,4 +36,3 @@ VerordnungsAmpel, German prescribing rules, AM-RL, G-BA, ICD-10-GM, ATC code,
 PRISCUS 2.0, Praxisbesonderheiten, health policy research, prescribing rule
 checker, recoupment risk indicator, local-first healthcare prototype,
 research-use-only software draft, PySide6, SQLite, hash-chain audit trail.
-
