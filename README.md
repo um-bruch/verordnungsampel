@@ -45,7 +45,7 @@ indicator with source references and a local audit trail.
 
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
-**Repository:** https://github.com/research-line/verordnungsampel
+**Repository:** https://github.com/um-bruch/verordnungsampel
 **Maschinenlesbarer Kontext / LLM context:** [`llms.txt`](llms.txt)
 **GitHub-Sichtbarkeit / Visibility:** Public repository; lokale Datenbanken, Logs,
 Build-Artefakte, Portierungspläne und interne Steuerungsdateien bleiben per
@@ -111,7 +111,7 @@ Fälle/alle Fälle für pseudonymisierte ICD-/ATC-Falllisten.
 
 ```bash
 # Installation (Source)
-git clone https://github.com/research-line/verordnungsampel.git
+git clone https://github.com/um-bruch/verordnungsampel.git
 cd verordnungsampel
 pip install -r requirements.txt
 pip install -e .
@@ -267,7 +267,7 @@ Test suite: **154 / 154 passed**.
 ### Quick Start
 
 ```bash
-git clone https://github.com/research-line/verordnungsampel.git
+git clone https://github.com/um-bruch/verordnungsampel.git
 cd verordnungsampel
 pip install -r requirements.txt
 pip install -e .

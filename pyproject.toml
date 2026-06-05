@@ -46,9 +46,9 @@ verordnungsampel = "verordnungsampel.cli.main:main"
 
 [project.urls]
 Homepage = "https://um-bruch.org"
-Repository = "https://github.com/research-line/verordnungsampel"
-Issues = "https://github.com/research-line/verordnungsampel/issues"
-Documentation = "https://github.com/research-line/verordnungsampel#readme"
+Repository = "https://github.com/um-bruch/verordnungsampel"
+Issues = "https://github.com/um-bruch/verordnungsampel/issues"
+Documentation = "https://github.com/um-bruch/verordnungsampel#readme"
 
 [tool.setuptools.packages.find]
 where = ["src"]

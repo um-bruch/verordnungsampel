@@ -3,7 +3,7 @@
 > **Für niedergelassene Vertragsärzte, Praxisteams und technisch interessierte Anwender.**
 >
 > Stand: 2026-04-12 · Version 0.1.0 (Pre-Alpha) · Lizenz: GPL-3.0-or-later
-> Repository: https://github.com/research-line/verordnungsampel
+> Repository: https://github.com/um-bruch/verordnungsampel
 
 ---
 
@@ -67,7 +67,7 @@ Die Kernbibliothek kommt **ohne externe Python-Abhängigkeiten** aus (nur Standa
 ### 2.2 Installation aus dem Quellcode
 
 ```bash
-git clone https://github.com/research-line/verordnungsampel.git
+git clone https://github.com/um-bruch/verordnungsampel.git
 cd verordnungsampel
 pip install -r requirements.txt
 pip install -e .
@@ -629,7 +629,7 @@ Ja. Python 3.10+ genügt. Die CLI funktioniert auf allen drei Plattformen. Die G
 
 ## 12. Support und Mitwirken
 
-- **GitHub-Issues:** https://github.com/research-line/verordnungsampel/issues — für Fehlermeldungen, Regelwerks-Updates, Verbesserungsvorschläge.
+- **GitHub-Issues:** https://github.com/um-bruch/verordnungsampel/issues — für Fehlermeldungen, Regelwerks-Updates, Verbesserungsvorschläge.
 - **E-Mail:** hallo@um-bruch.org
 - **Pull Requests:** willkommen. Signoff via DCO (Developer Certificate of Origin) erforderlich — siehe `CONTRIBUTING.md`.
 - **Sicherheits-Themen:** siehe `SECURITY.md` (verantwortliche Offenlegung).

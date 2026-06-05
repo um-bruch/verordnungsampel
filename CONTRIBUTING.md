@@ -53,7 +53,7 @@ Neue Features erfordern begleitende Tests.
 ### Erste Schritte
 
 ```bash
-git clone https://github.com/research-line/verordnungsampel.git
+git clone https://github.com/um-bruch/verordnungsampel.git
 cd verordnungsampel
 pip install -r requirements.txt
 pip install -e ".[dev]"
@@ -122,7 +122,7 @@ New features require accompanying tests.
 ### Getting Started
 
 ```bash
-git clone https://github.com/research-line/verordnungsampel.git
+git clone https://github.com/um-bruch/verordnungsampel.git
 cd verordnungsampel
 pip install -r requirements.txt
 pip install -e ".[dev]"

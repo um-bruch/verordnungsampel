@@ -45,7 +45,7 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
   Research-Use-Only und Information-Analysis statt Medical-Software-Positionierung
   geschärft.
 - Ordner-Lifecycle: DEV → PreGit → GO-PRI; GitHub-Sichtbarkeit ist inzwischen öffentlich.
-- Repository-URL: github.com/research-line/verordnungsampel
+- Repository-URL: github.com/um-bruch/verordnungsampel
 - Der lokale `.SOFTWARE`-Ordnername bleibt bis zur nächsten Lifecycle-Bereinigung unverändert.
 - Zweckbestimmung neu formuliert: **"Regress-Prävention"** als Vermarktungsbegriff fallengelassen (Risiko § 444 BGB Zusicherung, § 5 UWG irreführende Werbung, MDR-Zweckbestimmung). Neu: "Softwareentwurf zur Anzeige bekannter Regress-Risikoindikatoren aus öffentlichen Regelwerken — zu Forschungs- und Weiterentwicklungszwecken, ohne Gewähr." Betroffen: README, NOTICE, pyproject.toml, GUI-Strings, DSGVO-Konzept, Marktvergleich.
 - Desktop-Packaging dokumentiert: lokaler PyInstaller-Onedir-Build mit Seed-Daten und Tray-Icons

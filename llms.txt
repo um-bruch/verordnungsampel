@@ -1,6 +1,6 @@
 # VerordnungsAmpel
 
-Canonical repository: https://github.com/research-line/verordnungsampel
+Canonical repository: https://github.com/um-bruch/verordnungsampel
 Project home: https://um-bruch.org
 License: GPL-3.0-or-later
 Status: Pre-Alpha v0.1.0, research-use software draft
