@@ -6,16 +6,81 @@ dieselben Evaluations- und Praxisbesonderheitsfunktionen wie CLI und GUI.
 
 from __future__ import annotations
 
+import json
 import sqlite3
 from typing import Any
 
-from flask import Flask, jsonify, render_template_string, request
+from flask import Flask, Response, jsonify, render_template_string, request
 
 from verordnungsampel import __version__
 from verordnungsampel.db.connection import open_database
 from verordnungsampel.db.seed import ensure_seed_data
 from verordnungsampel.engine.evaluator import evaluate
 from verordnungsampel.engine.praxisbesonderheit import find_matching
+
+MANIFEST = {
+    "name": "VerordnungsAmpel",
+    "short_name": "VA-Check",
+    "description": "Lokaler Ampel-Check für Verordnungsrisiken aus öffentlichen Regelwerken.",
+    "start_url": "/",
+    "id": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#f5f1e8",
+    "theme_color": "#355f3d",
+    "lang": "de-DE",
+    "icons": [
+        {"src": "/static/icons/Icon-192.png", "sizes": "192x192", "type": "image/png"},
+        {"src": "/static/icons/Icon-512.png", "sizes": "512x512", "type": "image/png"},
+        {
+            "src": "/static/icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable",
+        },
+        {
+            "src": "/static/icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable",
+        },
+    ],
+}
+
+SW_JS = """\
+const CACHE_NAME = "verordnungsampel-v1";
+const STATIC_ASSETS = [
+  "/manifest.webmanifest",
+  "/offline.html",
+  "/static/icons/Icon-192.png",
+  "/static/icons/Icon-512.png",
+  "/static/icons/Icon-maskable-192.png",
+  "/static/icons/Icon-maskable-512.png",
+];
+self.addEventListener("install", (event) => {
+  event.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(STATIC_ASSETS)));
+  self.skipWaiting();
+});
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => Promise.all(
+      keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
+    )).then(() => self.clients.claim())
+  );
+});
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET") return;
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match("/offline.html"))
+    );
+    return;
+  }
+  event.respondWith(
+    caches.match(event.request).then((cached) => cached || fetch(event.request))
+  );
+});
+"""
 
 DISCLAIMER_TEXT = (
     "Informationswerk, nicht klinisch validiert, kein Medizinprodukt. "
@@ -35,6 +100,7 @@ HTML_TEMPLATE = """
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VerordnungsAmpel Web-Prototyp</title>
+  <link rel="manifest" href="/manifest.webmanifest">
   <style>
     :root {
       --bg: linear-gradient(180deg, #f5f1e8 0%, #eef3e4 100%);
@@ -289,6 +355,11 @@ HTML_TEMPLATE = """
       </section>
     {% endif %}
   </main>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js");
+    }
+  </script>
 </body>
 </html>
 """
@@ -413,6 +484,23 @@ def create_app(test_config: dict[str, Any] | None = None) -> Flask:
                 "disclaimer": app.config["DISCLAIMER"],
                 "result": result,
             }
+        )
+
+    @app.get("/manifest.webmanifest")
+    def manifest() -> Any:
+        return Response(json.dumps(MANIFEST, ensure_ascii=False), mimetype="application/manifest+json")
+
+    @app.get("/sw.js")
+    def service_worker() -> Any:
+        return Response(SW_JS, mimetype="application/javascript",
+                        headers={"Service-Worker-Allowed": "/"})
+
+    @app.get("/offline.html")
+    def offline() -> Any:
+        return (
+            "<html><body><h1>Lokal nicht erreichbar</h1>"
+            "<p>Starten Sie den Python-Server neu.</p></body></html>",
+            200,
         )
 
     return app
