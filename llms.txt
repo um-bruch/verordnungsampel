@@ -1,6 +1,8 @@
 # VerordnungsAmpel
 
 Canonical repository: https://github.com/um-bruch/verordnungsampel
+Former repository path: https://github.com/research-line/verordnungsampel
+  redirects here and appears in older Um:bruch PDFs and citations.
 Project home: https://um-bruch.org
 License: GPL-3.0-or-later
 Status: Pre-Alpha v0.1.0, research-use software draft
@@ -24,6 +26,8 @@ Important boundaries:
 
 Primary entry points:
 - `README.md`: bilingual project overview, quickstart and screenshots.
+- `https://github.com/um-bruch/regressangst`: ST-001 companion repository for
+  the Regress-Melder / recoupment-anxiety research context.
 - `KONZEPT.md`: full German concept and status history.
 - `EXPORTFORMAT.md`: planned pseudonymized JSON exchange formats.
 - `docs/WEB_MVP.md`: local browser/PWA prototype notes and non-goals.

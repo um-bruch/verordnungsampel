@@ -46,6 +46,8 @@ indicator with source references and a local audit trail.
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
 **Repository:** https://github.com/um-bruch/verordnungsampel
+**Früherer Pfad / Former path:** `research-line/verordnungsampel`
+leitet auf das aktuelle Um:bruch-Repository weiter.
 **Maschinenlesbarer Kontext / LLM context:** [`llms.txt`](llms.txt)
 **GitHub-Sichtbarkeit / Visibility:** Public repository; lokale Datenbanken, Logs,
 Build-Artefakte, Portierungspläne und interne Steuerungsdateien bleiben per
@@ -214,7 +216,7 @@ indicator`, `research-use-only software draft`.
 
 - **PP-003** (Um:bruch) = anonyme Meldeplattform für bereits geschehene Regresse
 - **ST-001** (Um:bruch) = wissenschaftliche Begleitstudie zum Regress-System
-  https://github.com/research-line/regressangst
+  https://github.com/um-bruch/regressangst
 - **VerordnungsAmpel** (dieses Projekt) = Softwareentwurf zur Anzeige bekannter
   Regress-Risikoindikatoren vor der Verordnung
 
@@ -298,7 +300,7 @@ absolute local paths.
 ### Relationship to Um:bruch / Regress-Melder
 
 - **PP-003** — anonymous reporting platform concept for past recoupments
-- **ST-001** — scientific companion study — https://github.com/research-line/regressangst
+- **ST-001** — scientific companion study — https://github.com/um-bruch/regressangst
 - **VerordnungsAmpel** — this project — **software draft** displaying recoupment-risk indicators from public rule-sets, released for research and further development (no warranty, no clinical validation, no claim of actual prevention)
 
 ### Disclaimer

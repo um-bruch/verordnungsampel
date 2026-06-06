@@ -38,6 +38,10 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
   idempotente Pattern-Expansion
 
 ### Geändert / Changed
+- README und `llms.txt` markieren den aktuellen kanonischen GitHub-Pfad
+  `um-bruch/verordnungsampel`, den früheren Redirect-Pfad
+  `research-line/verordnungsampel` und den aktuellen ST-001-Kontext unter
+  `um-bruch/regressangst`.
 - README-Discoverability für `VerordnungsAmpel`, AM-RL/G-BA, ICD-10-GM/ATC,
   PRISCUS 2.0, Praxisbesonderheiten und local-first Health-Policy-Research
   verbessert, ohne Wirk- oder Validierungsversprechen zu ergänzen.
