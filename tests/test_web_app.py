@@ -152,9 +152,9 @@ def test_index_html_apple_touch_icon_sizes(tmp_path):
     assert 'sizes="180x180"' in page
 
 
-def test_index_html_no_apple_mobile_web_app_capable(tmp_path):
-    page = _make_client(tmp_path).get("/").get_data(as_text=True)
-    assert "apple-mobile-web-app-capable" not in page
+def test_manifest_display_standalone(tmp_path):
+    data = _make_client(tmp_path).get("/manifest.webmanifest").get_data(as_text=True)
+    assert '"standalone"' in data
 
 
 def test_apple_touch_icon_endpoint_returns_200(tmp_path):

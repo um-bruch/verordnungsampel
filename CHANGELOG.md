@@ -44,9 +44,9 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Apple HIG Touch-Target: `min-height: 44px; min-width: 44px` am Submit-Button
 - Service Worker `CACHE_NAME` auf `verordnungsampel-v2` angehoben; `{ignoreSearch: true}`
   bei `caches.match()`; `apple-touch-icon-180.png` im Precache-Manifest ergänzt
-- 9 neue Tests in `tests/test_web_app.py` für iOS-PWA-Anforderungen: viewport-fit, theme-color,
-  apple-status-bar-style, apple-title, apple-touch-icon href/sizes, kein deprecated
-  `apple-mobile-web-app-capable`, Icon-Endpoint-Status-200, Safe-Area-CSS (168 Tests gesamt)
+- 9 Tests in `tests/test_web_app.py` für iOS-PWA-Anforderungen: viewport-fit, theme-color,
+  apple-status-bar-style, apple-title, apple-touch-icon href/sizes, manifest display:standalone,
+  Icon-Endpoint-Status-200, Safe-Area-CSS (168 Tests gesamt)
 
 ### Geändert / Changed
 - README und `llms.txt` markieren den aktuellen kanonischen GitHub-Pfad
