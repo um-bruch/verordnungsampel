@@ -36,6 +36,17 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
   Konsistenz DE/EN-Keysets)
 - Test-Suite-Wachstum: 2 neue DB-Tests für Schema-v2-Relationen und
   idempotente Pattern-Expansion
+- iOS-PWA-Meta-Tags im Web-Prototyp: `viewport-fit=cover`, `theme-color #355f3d`,
+  `apple-mobile-web-app-status-bar-style: default`, `apple-mobile-web-app-title: VA-Check`
+  (P3 Mobile PWA-Smoke gemäß PORTIERUNGSPLAN.md)
+- `apple-touch-icon-180.png` für iOS Add-to-Home-Screen (aus `Icon-192.png` via Pillow LANCZOS skaliert)
+- Safe-Area-Padding: `env(safe-area-inset-*)` im Body-CSS für Notch/Home-Indicator-Freihaltebereich
+- Apple HIG Touch-Target: `min-height: 44px; min-width: 44px` am Submit-Button
+- Service Worker `CACHE_NAME` auf `verordnungsampel-v2` angehoben; `{ignoreSearch: true}`
+  bei `caches.match()`; `apple-touch-icon-180.png` im Precache-Manifest ergänzt
+- 9 neue Tests in `tests/test_web_app.py` für iOS-PWA-Anforderungen: viewport-fit, theme-color,
+  apple-status-bar-style, apple-title, apple-touch-icon href/sizes, kein deprecated
+  `apple-mobile-web-app-capable`, Icon-Endpoint-Status-200, Safe-Area-CSS (168 Tests gesamt)
 
 ### Geändert / Changed
 - README und `llms.txt` markieren den aktuellen kanonischen GitHub-Pfad

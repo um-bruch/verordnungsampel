@@ -95,7 +95,7 @@ def test_sw_endpoint_returns_javascript(tmp_path):
 
     assert response.status_code == 200
     assert "javascript" in response.content_type
-    assert b"verordnungsampel-v1" in response.data
+    assert b"verordnungsampel-v2" in response.data
 
 
 def test_offline_fallback_endpoint(tmp_path):
@@ -116,3 +116,53 @@ def test_index_html_references_manifest_and_sw(tmp_path):
     assert response.status_code == 200
     assert "manifest.webmanifest" in page
     assert "sw.js" in page
+
+
+def test_index_html_viewport_fit_cover(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert "viewport-fit=cover" in page
+
+
+def test_index_html_theme_color_meta(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert 'name="theme-color"' in page
+    assert "#355f3d" in page
+
+
+def test_index_html_apple_status_bar_style_default(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert "apple-mobile-web-app-status-bar-style" in page
+    assert 'content="default"' in page
+
+
+def test_index_html_apple_title(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert "apple-mobile-web-app-title" in page
+    assert "VA-Check" in page
+
+
+def test_index_html_apple_touch_icon_href(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert "apple-touch-icon" in page
+    assert "/static/icons/apple-touch-icon-180.png" in page
+
+
+def test_index_html_apple_touch_icon_sizes(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert 'sizes="180x180"' in page
+
+
+def test_index_html_no_apple_mobile_web_app_capable(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert "apple-mobile-web-app-capable" not in page
+
+
+def test_apple_touch_icon_endpoint_returns_200(tmp_path):
+    response = _make_client(tmp_path).get("/static/icons/apple-touch-icon-180.png")
+    assert response.status_code == 200
+
+
+def test_index_html_safe_area_css(tmp_path):
+    page = _make_client(tmp_path).get("/").get_data(as_text=True)
+    assert "env(safe-area-inset-top" in page
+    assert "env(safe-area-inset-bottom" in page

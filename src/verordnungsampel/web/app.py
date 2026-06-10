@@ -48,7 +48,7 @@ MANIFEST = {
 }
 
 SW_JS = """\
-const CACHE_NAME = "verordnungsampel-v1";
+const CACHE_NAME = "verordnungsampel-v2";
 const STATIC_ASSETS = [
   "/manifest.webmanifest",
   "/offline.html",
@@ -56,6 +56,7 @@ const STATIC_ASSETS = [
   "/static/icons/Icon-512.png",
   "/static/icons/Icon-maskable-192.png",
   "/static/icons/Icon-maskable-512.png",
+  "/static/icons/apple-touch-icon-180.png",
 ];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(STATIC_ASSETS)));
@@ -77,7 +78,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request))
+    caches.match(event.request, {ignoreSearch: true}).then((cached) => cached || fetch(event.request))
   );
 });
 """
@@ -98,9 +99,13 @@ HTML_TEMPLATE = """
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>VerordnungsAmpel Web-Prototyp</title>
   <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#355f3d">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="VA-Check">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon-180.png">
   <style>
     :root {
       --bg: linear-gradient(180deg, #f5f1e8 0%, #eef3e4 100%);
@@ -120,6 +125,10 @@ HTML_TEMPLATE = """
       color: var(--text);
       background: var(--bg);
       min-height: 100vh;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      padding-left: env(safe-area-inset-left, 0px);
     }
     main {
       width: min(980px, calc(100% - 2rem));
@@ -203,6 +212,8 @@ HTML_TEMPLATE = """
       color: white;
       background: linear-gradient(135deg, #355f3d, #4a7b52);
       cursor: pointer;
+      min-height: 44px;
+      min-width: 44px;
     }
     .hint {
       margin-top: 0.75rem;
