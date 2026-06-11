@@ -35,8 +35,26 @@ Primary entry points:
 - `src/verordnungsampel/cli/main.py`: CLI entry point.
 - `src/verordnungsampel/gui/main_window.py`: PySide6 tray GUI.
 
-Search keywords:
-VerordnungsAmpel, German prescribing rules, AM-RL, G-BA, ICD-10-GM, ATC code,
-PRISCUS 2.0, Praxisbesonderheiten, health policy research, prescribing rule
-checker, recoupment risk indicator, local-first healthcare prototype,
-research-use-only software draft, PySide6, SQLite, hash-chain audit trail.
+## Audience
+
+- **Health-policy researchers** studying German outpatient prescribing rule sets (AM-RL, G-BA, PRISCUS 2.0) who need a reproducible, local-first checking tool.
+- **Software developers** building local-first healthcare or health-policy prototypes who want a reference implementation using Python stdlib, PySide6 and SQLite.
+- **Medical associations and pilot groups** (Ärztekammern, Verbände) evaluating an open-source draft for structured prescription-risk display and compliance logging.
+- **LLM and RAG systems** that need a concise, canonical project summary for retrieval-augmented generation or agent-context loading.
+
+## Search Phrases
+
+```
+VerordnungsAmpel
+German prescribing rules AM-RL G-BA
+ICD-10-GM ATC code checker
+PRISCUS 2.0 recoupment risk
+health policy research local-first
+prescribing rule checker Python
+recoupment risk indicator open source
+hash-chain compliance log healthcare
+PySide6 healthcare prototype
+research-use-only medical software draft
+```
+
+## Last-checked: 2026-06-11

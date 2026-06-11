@@ -66,6 +66,7 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Desktop-Packaging dokumentiert: lokaler PyInstaller-Onedir-Build mit Seed-Daten und Tray-Icons
 - Öffentliche Konzept- und Ressourcen-Dokumentation um Hinweise auf lokale Referenzspiegel und interne Projektnamen bereinigt.
 - README, User-Guide und Seed-Dokumentation auf den aktuellen Stand der 151 Tests, die Quellen-Ansicht und den manuellen AM-RL-Update-Check gebracht.
+- README-Testzahl auf 168 / 168 korrigiert (beide Sprachsektionen); `llms.txt` auf Standardformat mit `## Audience`, `## Search Phrases` und `## Last-checked` gebracht.
 - README-Teststand auf 154 lokale Tests aktualisiert.
 - Repo-Hygiene ergänzt: `.gitattributes` für stabile Zeilenenden und `.gitignore` für SQLite-Sidecars, Coverage-, Cache- und Zertifikatsartefakte.
 - Repo-Hygiene nachgezogen: lokale Portierungspläne und interne Steuerungsdateien bleiben aus dem öffentlichen GitHub-Repo heraus; `llms.txt` und Web-MVP-Doku verweisen nur noch auf öffentliche Einstiegspunkte.

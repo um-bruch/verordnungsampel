@@ -97,7 +97,7 @@ Forschung, Lehre, Weiterentwicklung durch Akteure des Gesundheitswesens.
 | 4 | Praxisbesonderheiten-Erkennung + Quartalsreminder | ✅ |
 | 5 | Manipulationssicherer Compliance-Log (Hash-Chain) | ✅ |
 
-Test-Suite: **154 / 154 passed**.
+Test-Suite: **168 / 168 passed**.
 
 Methodische Auswertung: `coverage --cases cases.json` berechnet C(S)=erklärte
 Fälle/alle Fälle für pseudonymisierte ICD-/ATC-Falllisten.
@@ -264,7 +264,7 @@ Pure plausibility checking against public rule sets.
 4. Practice-specifics detection + quarterly reminder
 5. Tamper-proof compliance log (hash chain)
 
-Test suite: **154 / 154 passed**.
+Test suite: **168 / 168 passed**.
 
 ### Quick Start
 
