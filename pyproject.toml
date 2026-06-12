@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "verordnungsampel"
 version = "0.1.0"
-description = "Research-use software draft for local ICD-10-GM/ATC checks against public German prescribing rule sets (AM-RL, PRISCUS) with transparent risk indicators."
+description = "Research-use software draft for local ICD-10-GM/ATC checks against public German prescribing rule sets (AM-RL, G-BA, PRISCUS) with transparent risk indicators."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "GPL-3.0-or-later" }
 authors = [
     { name = "Lukas Geiger", email = "hallo@um-bruch.org" }
 ]
-keywords = ["verordnungsampel", "am-rl", "g-ba", "icd-10-gm", "atc", "priscus", "praxisbesonderheiten", "health-policy", "prescribing-rules", "research-use-only", "local-first", "pyside6", "sqlite"]
+keywords = ["verordnungsampel", "am-rl", "g-ba", "icd-10-gm", "atc", "priscus", "praxisbesonderheiten", "arzneimittel-richtlinie", "health-policy", "prescribing-rules", "drug-prescribing", "research-use-only", "local-first", "local-pwa", "pyside6", "sqlite"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Healthcare Industry",
@@ -45,7 +45,7 @@ web = [
 verordnungsampel = "verordnungsampel.cli.main:main"
 
 [project.urls]
-Homepage = "https://um-bruch.org"
+Homepage = "https://um-bruch.org/projekte/"
 Repository = "https://github.com/um-bruch/verordnungsampel"
 Issues = "https://github.com/um-bruch/verordnungsampel/issues"
 Documentation = "https://github.com/um-bruch/verordnungsampel#readme"

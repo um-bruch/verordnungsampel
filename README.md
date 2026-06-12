@@ -46,6 +46,7 @@ indicator with source references and a local audit trail.
 **Status:** Pre-Alpha v0.1.0 — CLI-MVP funktional, PySide6-Tray-GUI in Entwicklung
 **Lizenz / License:** GPL-3.0-or-later
 **Repository:** https://github.com/um-bruch/verordnungsampel
+**Projektseite / Project page:** https://um-bruch.org/projekte/
 **Früherer Pfad / Former path:** `research-line/verordnungsampel`
 leitet auf das aktuelle Um:bruch-Repository weiter.
 **Maschinenlesbarer Kontext / LLM context:** [`llms.txt`](llms.txt)
@@ -170,6 +171,22 @@ Das Skript erzeugt `dist/VerordnungsAmpel/VerordnungsAmpel.exe`; `build/`, `dist
 Der Einstiegspunkt `verordnungsampel_gui.py` hält den Build ohne absolute lokale Pfade
 reproduzierbar.
 
+### Lokaler Browser-/PWA-Prototyp
+
+Für lokale Tests gibt es zusätzlich eine Flask-basierte Browseroberfläche, die dieselbe
+Fachlogik wie CLI und PySide6-GUI nutzt. Sie läuft nur lokal, verarbeitet keine
+Patientendaten und synchronisiert nichts in die Cloud.
+
+```bash
+pip install -e ".[web]"
+python -m verordnungsampel.cli.main web
+```
+
+Danach ist die Oberfläche unter `http://127.0.0.1:5000/` erreichbar. Manifest,
+Service Worker, Offline-Fallback und iOS-Add-to-Home-Screen-Metadaten sind für
+lokale PWA-Tests vorhanden; strukturierte Begründung und Workflow-Textgenerator
+bleiben vorerst CLI-/Desktop-Funktionen.
+
 Git-Hygiene: lokale Referenzspiegel, Datenbanken, Logs, Test-Locks, Build-Ordner,
 Portierungspläne und Release-Artefakte bleiben per `.gitignore` außerhalb des
 Repositorys. Öffentliche Dokumente nennen keine lokalen Absolutpfade und keine
@@ -210,7 +227,9 @@ und spätere PWA-Backends nicht jedes Mal Pattern-Expansion selbst nachbauen mü
 `VerordnungsAmpel`, `German prescribing rules`, `AM-RL`, `G-BA`, `ICD-10-GM`,
 `ATC code`, `PRISCUS 2.0`, `Praxisbesonderheiten`, `health policy research`,
 `local-first healthcare prototype`, `prescribing rule checker`, `recoupment risk
-indicator`, `research-use-only software draft`.
+indicator`, `research-use-only software draft`, `Arzneimittel-Richtlinie checker`,
+`G-BA AM-RL checker`, `drug prescribing rule checker`, `local PWA prescribing
+rule checker`.
 
 ### Beziehung zu Um:bruch / Regress-Melder
 
@@ -293,6 +312,22 @@ It creates `dist/VerordnungsAmpel/VerordnungsAmpel.exe`; `build/`, `dist/`,
 The `verordnungsampel_gui.py` entry point keeps the build reproducible without
 absolute local paths.
 
+### Local browser / PWA prototype
+
+The repository also contains a Flask-based local browser prototype that reuses the
+same checking logic as the CLI and PySide6 GUI. It is local-only, does not process
+patient data and does not sync anything to a cloud service.
+
+```bash
+pip install -e ".[web]"
+python -m verordnungsampel.cli.main web
+```
+
+Open `http://127.0.0.1:5000/` afterwards. The prototype includes a manifest,
+service worker, offline fallback and iOS Add-to-Home-Screen metadata for local
+PWA testing; structured rationale capture and workflow text generation remain
+CLI / desktop functions for now.
+
 ### Screenshot
 
 ![VerordnungsAmpel GUI](README/screenshots/main.png)
@@ -311,4 +346,4 @@ with the practising physician.
 
 ---
 
-*Project home: https://um-bruch.org*
+*Project page: https://um-bruch.org/projekte/*

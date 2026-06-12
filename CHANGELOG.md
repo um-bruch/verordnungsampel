@@ -49,6 +49,9 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
   Icon-Endpoint-Status-200, Safe-Area-CSS (168 Tests gesamt)
 
 ### Geändert / Changed
+- README, `llms.txt`, `docs/WEB_MVP.md` und Paketmetadaten mit kanonischer
+  Um:bruch-Projektseite, lokalen PWA-/Web-Nutzungshinweisen und zusätzlichen
+  AM-RL-/G-BA-/Arzneimittel-Richtlinie-Suchankern synchronisiert.
 - README und `llms.txt` markieren den aktuellen kanonischen GitHub-Pfad
   `um-bruch/verordnungsampel`, den früheren Redirect-Pfad
   `research-line/verordnungsampel` und den aktuellen ST-001-Kontext unter

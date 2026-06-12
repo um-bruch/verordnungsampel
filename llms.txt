@@ -4,6 +4,7 @@ Canonical repository: https://github.com/um-bruch/verordnungsampel
 Former repository path: https://github.com/research-line/verordnungsampel
   redirects here and appears in older Um:bruch PDFs and citations.
 Project home: https://um-bruch.org
+Project page: https://um-bruch.org/projekte/
 License: GPL-3.0-or-later
 Status: Pre-Alpha v0.1.0, research-use software draft
 
@@ -55,6 +56,10 @@ recoupment risk indicator open source
 hash-chain compliance log healthcare
 PySide6 healthcare prototype
 research-use-only medical software draft
+Arzneimittel-Richtlinie checker
+G-BA AM-RL checker
+drug prescribing rule checker
+local PWA prescribing rule checker
 ```
 
-## Last-checked: 2026-06-11
+## Last-checked: 2026-06-12

@@ -1,12 +1,11 @@
 # Web-MVP der VerordnungsAmpel
 
-Stand: 2026-05-23
+Stand: 2026-06-12
 
 ## Ziel dieses Schritts
 
-Die geplante Browser-/PWA-Linie hat jetzt einen ersten lokalen Prototypen, ohne
-eine zweite Fachlogik aufzubauen. Der Web-Stack nutzt dieselben Python-Module wie
-CLI und PySide6-GUI:
+Die Browser-/PWA-Linie hat einen lokalen Prototypen, ohne eine zweite Fachlogik
+aufzubauen. Der Web-Stack nutzt dieselben Python-Module wie CLI und PySide6-GUI:
 
 - `evaluate()` für die Ampelentscheidung
 - `find_matching()` für Praxisbesonderheiten
@@ -19,6 +18,10 @@ CLI und PySide6-GUI:
 - JSON-Endpunkt `POST /api/check`
 - Health-Endpunkt `GET /health`
 - Seed-Autoinit beim ersten Web-Zugriff auf eine leere Datenbank
+- Manifest unter `GET /manifest.webmanifest`
+- Service Worker `GET /sw.js` mit Offline-Fallback `GET /offline.html`
+- iOS-PWA-Metadaten: `viewport-fit=cover`, `theme-color`,
+  `apple-mobile-web-app-title` und `apple-touch-icon`
 
 ## Starten
 
@@ -37,7 +40,6 @@ Danach im Browser öffnen:
 
 - strukturierte Begründung im Browser
 - Workflow-Textgenerator als Web-Maske
-- PWA-Metadaten, Offline-Cache und Installierbarkeit
 - getrennte Eingabemaske für Pilotpraxen
 - datensparsame Export-/Import-Flüsse für spätere Praxisintegration
 
@@ -57,4 +59,4 @@ beschriebenen Formate `verordnungsampel-casebundle-v1.json` und
 
 1. Web-Maske für `justify` und `workflow` ergänzen
 2. Eingaben im Browser lokal zwischenspeichern, aber ohne Voll-Sync
-3. PWA-Basis ergänzen: Manifest, Service Worker, Offline-Fallback
+3. PWA-Installierbarkeit manuell auf iOS, Android und Desktop-Browsern prüfen
