@@ -30,8 +30,8 @@ MANIFEST = {
     "theme_color": "#355f3d",
     "lang": "de-DE",
     "icons": [
-        {"src": "/static/icons/Icon-192.png", "sizes": "192x192", "type": "image/png"},
-        {"src": "/static/icons/Icon-512.png", "sizes": "512x512", "type": "image/png"},
+        {"src": "/static/icons/Icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+        {"src": "/static/icons/Icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
         {
             "src": "/static/icons/Icon-maskable-192.png",
             "sizes": "192x192",
@@ -430,8 +430,8 @@ def create_app(test_config: dict[str, Any] | None = None) -> Flask:
     app.config.from_mapping(
         DATABASE=None,
         DISCLAIMER=DISCLAIMER_TEXT,
-        JSON_SORT_KEYS=False,
     )
+    app.json.sort_keys = False
     if test_config:
         app.config.update(test_config)
 

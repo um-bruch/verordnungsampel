@@ -166,3 +166,30 @@ def test_index_html_safe_area_css(tmp_path):
     page = _make_client(tmp_path).get("/").get_data(as_text=True)
     assert "env(safe-area-inset-top" in page
     assert "env(safe-area-inset-bottom" in page
+
+
+# --- Regressionstests Bugsweep 2026-06-20 ---
+
+def test_manifest_non_maskable_icons_have_purpose_any(tmp_path):
+    """Bug #1: Nicht-maskable Icons müssen purpose='any' haben (Browser-Installierbarkeit)."""
+    data = _make_client(tmp_path).get("/manifest.webmanifest").get_json(force=True)
+    non_maskable = [i for i in data["icons"] if i.get("purpose") != "maskable"]
+    assert len(non_maskable) >= 2
+    for icon in non_maskable:
+        assert icon.get("purpose") == "any", f"Icon {icon['src']} fehlt purpose='any'"
+
+
+def test_manifest_all_four_icons_present(tmp_path):
+    """Bug #1: Alle 4 Icons (2× any, 2× maskable) müssen vorhanden sein."""
+    data = _make_client(tmp_path).get("/manifest.webmanifest").get_json(force=True)
+    assert len(data["icons"]) == 4
+    purposes = {i.get("purpose") for i in data["icons"]}
+    assert "any" in purposes
+    assert "maskable" in purposes
+
+
+def test_app_json_sort_keys_false(tmp_path):
+    """Bug #2: app.json.sort_keys muss False sein (JSON_SORT_KEYS Config-Key in Flask 3.0 entfernt)."""
+    from verordnungsampel.web.app import create_app
+    app = create_app({"TESTING": True, "DATABASE": str(tmp_path / "test.db")})
+    assert app.json.sort_keys is False
