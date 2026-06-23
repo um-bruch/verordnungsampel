@@ -135,9 +135,9 @@ class MainWindow(QMainWindow):
     def _toggle_always_on_top(self, checked: bool) -> None:
         flags = self.windowFlags()
         if checked:
-            self.setWindowFlags(flags | Qt.WindowStaysOnTopHint)
+            self.setWindowFlags(flags | Qt.WindowType.WindowStaysOnTopHint)
         else:
-            self.setWindowFlags(flags & ~Qt.WindowStaysOnTopHint)
+            self.setWindowFlags(flags & ~Qt.WindowType.WindowStaysOnTopHint)
         # setWindowFlags versteckt das Fenster — wieder zeigen
         self.show()
 

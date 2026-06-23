@@ -67,7 +67,7 @@ class JustifyTab(QWidget):
         self.scroll.setWidgetResizable(True)
         self.form_host = QWidget()
         self.form_layout = QVBoxLayout(self.form_host)
-        self.form_layout.setAlignment(Qt.AlignTop)
+        self.form_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.scroll.setWidget(self.form_host)
         root.addWidget(self.scroll, stretch=1)
 

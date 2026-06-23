@@ -213,8 +213,8 @@ def build_dialog(parent=None):
     dlg.setModal(True)
     # X-Button deaktivieren (nur Akzeptieren/Ablehnen erlaubt)
     dlg.setWindowFlags(
-        (dlg.windowFlags() | Qt.CustomizeWindowHint)
-        & ~Qt.WindowCloseButtonHint
+        (dlg.windowFlags() | Qt.WindowType.CustomizeWindowHint)
+        & ~Qt.WindowType.WindowCloseButtonHint
     )
     dlg.resize(620, 620)
 

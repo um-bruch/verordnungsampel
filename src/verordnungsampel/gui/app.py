@@ -100,8 +100,8 @@ class TrayController:
         from PySide6.QtWidgets import QSystemTrayIcon
 
         if reason in (
-            QSystemTrayIcon.Trigger,
-            QSystemTrayIcon.DoubleClick,
+            QSystemTrayIcon.ActivationReason.Trigger,
+            QSystemTrayIcon.ActivationReason.DoubleClick,
         ):
             self.toggle_window()
 

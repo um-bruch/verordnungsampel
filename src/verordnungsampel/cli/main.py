@@ -180,7 +180,10 @@ def _interactive_answers(fsm: JustificationFSM) -> JustificationAnswers:
 
 def _load_answers_file(path: Path) -> JustificationAnswers:
     """Laedt Antworten aus einer JSON-Datei (non-interactive Modus)."""
-    data = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Ungültige Antwortdatei {path}: {exc}") from exc
     if not isinstance(data, dict):
         raise ValueError(
             f"Antwortdatei {path} muss ein JSON-Objekt enthalten, "
@@ -255,6 +258,12 @@ def cmd_check(args: argparse.Namespace) -> int:
             for err in e.errors:
                 print(f"  - {err}", file=sys.stderr)
             return 3
+        except (ValueError, OSError) as e:
+            # Bugsweep (2026-06-23): _load_answers_file wirft ValueError (ungültiges JSON/
+            # kein Objekt) bzw. OSError/FileNotFoundError (fehlende --answers-Datei). cmd_check
+            # fing nur JustificationError → roher Traceback statt sauberer Fehlermeldung.
+            print(f"FEHLER: Antwortdatei konnte nicht geladen werden: {e}", file=sys.stderr)
+            return 2
         if justification is not None and not args.json:
             print(_format_justification(justification))
 
@@ -331,8 +340,14 @@ def cmd_workflow(args: argparse.Namespace) -> int:
 
     if args.out:
         out_path = Path(args.out)
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        out_path.write_text(rendered, encoding="utf-8")
+        # Bugsweep (2026-06-23): Datei-Schreiben kann OSError (PermissionError, kein
+        # Verzeichnis, ...) werfen → vorher roher Traceback statt sauberer Fehlermeldung.
+        try:
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            out_path.write_text(rendered, encoding="utf-8")
+        except OSError as exc:
+            print(f"FEHLER: Workflow-Datei konnte nicht geschrieben werden: {exc}", file=sys.stderr)
+            return 2
         print(f"Workflow-Text geschrieben: {out_path}")
         if args.json:
             print(json.dumps(output.to_dict(), ensure_ascii=False, indent=2))
@@ -713,7 +728,10 @@ def _load_coverage_cases(path: Path) -> list[CoverageCase]:
     Erwartet entweder eine Liste von Faellen oder ein Objekt mit Feld
     ``cases``. Jeder Fall braucht mindestens ``icd`` und ``atc``.
     """
-    data = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Ungültige Coverage-Datei {path}: {exc}") from exc
     if isinstance(data, dict):
         data = data.get("cases")
     if not isinstance(data, list):

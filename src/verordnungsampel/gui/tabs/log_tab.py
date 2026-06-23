@@ -10,6 +10,7 @@ from typing import List
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
+    QAbstractItemView,
     QHBoxLayout,
     QHeaderView,
     QLabel,
@@ -57,11 +58,11 @@ class LogTab(QWidget):
         self.table = QTableWidget(0, len(self.COLUMNS))
         self.table.setHorizontalHeaderLabels(self.COLUMNS)
         self.table.horizontalHeader().setSectionResizeMode(
-            QHeaderView.ResizeToContents
+            QHeaderView.ResizeMode.ResizeToContents
         )
         self.table.horizontalHeader().setStretchLastSection(True)
-        self.table.setSelectionBehavior(QTableWidget.SelectRows)
-        self.table.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.verticalHeader().setVisible(False)
         root.addWidget(self.table, stretch=1)
 
@@ -115,7 +116,7 @@ class LogTab(QWidget):
                     }
                     color = color_map.get(val, "#333")
                     item.setForeground(Qt.GlobalColor.black)
-                    item.setData(Qt.ForegroundRole, None)
+                    item.setData(Qt.ItemDataRole.ForegroundRole, None)
                     from PySide6.QtGui import QBrush, QColor
                     item.setForeground(QBrush(QColor(color)))
                 self.table.setItem(row, col, item)

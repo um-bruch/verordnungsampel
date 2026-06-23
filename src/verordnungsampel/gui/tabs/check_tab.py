@@ -6,6 +6,7 @@ das Ergebnis als farbige Ampel-Box mit allen Begründungen und Quellen.
 
 from __future__ import annotations
 
+import html
 from typing import Optional
 
 from PySide6.QtCore import Qt, Signal
@@ -65,7 +66,7 @@ class CheckTab(QWidget):
 
         form_box = QGroupBox("Eingabe")
         form = QFormLayout(form_box)
-        form.setLabelAlignment(Qt.AlignRight)
+        form.setLabelAlignment(Qt.AlignmentFlag.AlignRight)
 
         self.icd_edit = QLineEdit()
         self.icd_edit.setPlaceholderText("z.B. I10")
@@ -97,7 +98,7 @@ class CheckTab(QWidget):
 
         # Ampel-Box
         self.ampel_label = QLabel(S.AMPEL_NONE)
-        self.ampel_label.setAlignment(Qt.AlignCenter)
+        self.ampel_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.ampel_label.setMinimumHeight(60)
         self.ampel_label.setFrameShape(QFrame.StyledPanel)
         f = QFont()
@@ -110,7 +111,7 @@ class CheckTab(QWidget):
         # Details
         self.details = QTextBrowser()
         self.details.setOpenExternalLinks(True)
-        self.details.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.details.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.details.setPlainText(S.CHECK_HINT_EMPTY)
         root.addWidget(self.details, stretch=1)
 
@@ -177,7 +178,10 @@ class CheckTab(QWidget):
 
     def _render_details(self, ergebnis: AmpelErgebnis, pbs) -> None:
         lines = []
-        header = f"ICD={ergebnis.icd}  ATC={ergebnis.atc}"
+        # Bugsweep (2026-06-23): icd/atc sind GUI-Nutzereingaben und fliessen in setHtml.
+        # Ungeescaped würde QTextDocument HTML interpretieren (z.B. <img src=...> lädt
+        # remote nach). DB-/Quellen-Felder bleiben vorerst ungeescaped (s. AUFGABEN).
+        header = f"ICD={html.escape(ergebnis.icd)}  ATC={html.escape(ergebnis.atc)}"
         if ergebnis.alter is not None:
             header += f"  Alter={ergebnis.alter}"
         lines.append(f"<h3>{header}</h3>")

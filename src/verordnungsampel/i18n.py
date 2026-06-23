@@ -44,8 +44,11 @@ def _translations_dir() -> Path:
 
 def _load_language_file(path: Path) -> dict[str, str]:
     """Lade eine einzelne Sprach-Datei und filtere Meta-Keys (führendes ``_``)."""
-    with path.open("r", encoding="utf-8") as fh:
-        raw = json.load(fh)
+    try:
+        with path.open("r", encoding="utf-8") as fh:
+            raw = json.load(fh)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Ungültige JSON-Übersetzungsdatei {path}: {exc}") from exc
     if not isinstance(raw, dict):
         raise ValueError(f"Translation file {path} muss ein JSON-Objekt sein")
     return {k: v for k, v in raw.items() if not k.startswith("_") and isinstance(v, str)}
@@ -129,9 +132,14 @@ def t(key: str, *, lang: str | None = None, **fmt: object) -> str:
     """
     _ensure_loaded()
     target_lang = lang or _current_language
-    raw: str | None = _translations.get(target_lang, {}).get(key)
+    # Bugsweep (2026-06-23): isinstance-Guard. Mappt eine Sprache in der geladenen
+    # Übersetzungsdatei auf null (statt auf ein Objekt), liefert .get(lang, {}) das
+    # None und das verkettete .get(key) crashte mit AttributeError.
+    _lang_dict = _translations.get(target_lang)
+    raw: str | None = _lang_dict.get(key) if isinstance(_lang_dict, dict) else None
     if raw is None and target_lang != _FALLBACK_LANGUAGE:
-        raw = _translations.get(_FALLBACK_LANGUAGE, {}).get(key)
+        _fb_dict = _translations.get(_FALLBACK_LANGUAGE)
+        raw = _fb_dict.get(key) if isinstance(_fb_dict, dict) else None
     if raw is None:
         raise TranslationError(
             f"Key '{key}' fehlt in Sprache '{target_lang}' und Fallback "

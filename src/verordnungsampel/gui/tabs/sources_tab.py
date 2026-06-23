@@ -46,7 +46,7 @@ class SourcesTab(QWidget):
             "AM-RL-Anlagen und weitere Quellen mit Stand-Datum und Eintragszahl."
             "</span>"
         )
-        header.setTextFormat(Qt.RichText)
+        header.setTextFormat(Qt.TextFormat.RichText)
         header.setWordWrap(True)
         root.addWidget(header)
 
@@ -55,7 +55,7 @@ class SourcesTab(QWidget):
         self._scroll.setWidgetResizable(True)
         self._inner = QWidget()
         self._inner_layout = QVBoxLayout(self._inner)
-        self._inner_layout.setAlignment(Qt.AlignTop)
+        self._inner_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self._scroll.setWidget(self._inner)
         root.addWidget(self._scroll, 1)
 
@@ -141,7 +141,7 @@ class SourcesTab(QWidget):
             data = self._load_data()
         except Exception as exc:  # pragma: no cover - UI-Fehlerpfad
             lbl = QLabel(f"<span style='color:#a00'>Fehler beim Laden: {exc}</span>")
-            lbl.setTextFormat(Qt.RichText)
+            lbl.setTextFormat(Qt.TextFormat.RichText)
             self._inner_layout.addWidget(lbl)
             return
 
@@ -171,7 +171,7 @@ class SourcesTab(QWidget):
                 f"Extrahiert: {extr}"
                 f"</span>"
             )
-            title.setTextFormat(Qt.RichText)
+            title.setTextFormat(Qt.TextFormat.RichText)
             title.setWordWrap(True)
             lay.addWidget(title)
             url = meta.get("quelle_url")
@@ -180,7 +180,7 @@ class SourcesTab(QWidget):
                     f"<span style='color:#666;font-size:10px'>Quelle: "
                     f"<a href='{url}'>{url}</a></span>"
                 )
-                url_lbl.setTextFormat(Qt.RichText)
+                url_lbl.setTextFormat(Qt.TextFormat.RichText)
                 url_lbl.setOpenExternalLinks(True)
                 url_lbl.setWordWrap(True)
                 lay.addWidget(url_lbl)
@@ -190,7 +190,7 @@ class SourcesTab(QWidget):
         weitere_title = QLabel(
             "<br/><b>Weitere Quellen</b> (PRISCUS, GKV-SV, BSG-Urteile):"
         )
-        weitere_title.setTextFormat(Qt.RichText)
+        weitere_title.setTextFormat(Qt.TextFormat.RichText)
         self._inner_layout.addWidget(weitere_title)
 
         for kuerzel, titel, stand in data["quellen"]:
@@ -198,7 +198,7 @@ class SourcesTab(QWidget):
                 f"&bull; <b>{kuerzel}</b> (Stand {stand or '?'}) "
                 f"<span style='color:#666'>{titel or ''}</span>"
             )
-            lbl.setTextFormat(Qt.RichText)
+            lbl.setTextFormat(Qt.TextFormat.RichText)
             lbl.setWordWrap(True)
             self._inner_layout.addWidget(lbl)
 
@@ -211,7 +211,7 @@ class SourcesTab(QWidget):
             f"Praxisbesonderheiten: {data['pb_count']}"
             f"</span>"
         )
-        footer.setTextFormat(Qt.RichText)
+        footer.setTextFormat(Qt.TextFormat.RichText)
         footer.setWordWrap(True)
         self._inner_layout.addWidget(footer)
         self._inner_layout.addStretch(1)

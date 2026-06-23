@@ -265,6 +265,10 @@ class ComplianceLog:
             """
         )
         for row in cur:
+            try:
+                _extra = json.loads(row[9]) if row[9] else {}
+            except json.JSONDecodeError:
+                _extra = {}
             yield LogEintrag(
                 seq=row[0],
                 timestamp=row[1],
@@ -277,7 +281,7 @@ class ComplianceLog:
                 nutzer=row[8],
                 prev_hash=row[10],
                 hash=row[11],
-                extra=json.loads(row[9]) if row[9] else {},
+                extra=_extra,
             )
 
     def all_entries(self) -> List[LogEintrag]:
