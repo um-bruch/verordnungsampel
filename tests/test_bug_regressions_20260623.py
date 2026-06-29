@@ -58,5 +58,26 @@ def test_cmd_workflow_guards_file_write():
 
 def test_check_tab_escapes_user_icd_atc():
     src = (SRC / "gui" / "tabs" / "check_tab.py").read_text(encoding="utf-8")
-    assert "html.escape(ergebnis.icd)" in src
-    assert "html.escape(ergebnis.atc)" in src
+    assert "_html(ergebnis.icd)" in src
+    assert "_html(ergebnis.atc)" in src
+
+
+def test_check_tab_escapes_rule_source_and_container_fields():
+    src = (SRC / "gui" / "tabs" / "check_tab.py").read_text(encoding="utf-8")
+    assert "_html(t.regel_kuerzel)" in src
+    assert "_html(t.begruendung)" in src
+    assert "_html(t.quelle.kuerzel)" in src
+    assert "_html(t.quelle.titel)" in src
+    assert "_html(t.quelle.stand)" in src
+    assert "_html(t.quelle.url)" in src
+    assert "_html(t.container)" in src
+
+
+def test_sources_tab_escapes_db_backed_rich_text_fields():
+    src = (SRC / "gui" / "tabs" / "sources_tab.py").read_text(encoding="utf-8")
+    assert "_html(exc)" in src
+    assert "_html(stand)" in src
+    assert "_html(url)" in src
+    assert "_html(kuerzel)" in src
+    assert "_html(titel or '')" in src
+    assert "_html(data['db_path'])" in src

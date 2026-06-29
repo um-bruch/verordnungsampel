@@ -45,6 +45,10 @@ AMPEL_STYLE = {
 }
 
 
+def _html(value: object) -> str:
+    return html.escape("" if value is None else str(value), quote=True)
+
+
 class CheckTab(QWidget):
     """Hauptbildschirm: Verordnung eingeben und bewerten."""
 
@@ -178,12 +182,10 @@ class CheckTab(QWidget):
 
     def _render_details(self, ergebnis: AmpelErgebnis, pbs) -> None:
         lines = []
-        # Bugsweep (2026-06-23): icd/atc sind GUI-Nutzereingaben und fliessen in setHtml.
-        # Ungeescaped würde QTextDocument HTML interpretieren (z.B. <img src=...> lädt
-        # remote nach). DB-/Quellen-Felder bleiben vorerst ungeescaped (s. AUFGABEN).
-        header = f"ICD={html.escape(ergebnis.icd)}  ATC={html.escape(ergebnis.atc)}"
+        # Alle variablen Inhalte laufen in setHtml; auch DB-Felder sind daher zu escapen.
+        header = f"ICD={_html(ergebnis.icd)}  ATC={_html(ergebnis.atc)}"
         if ergebnis.alter is not None:
-            header += f"  Alter={ergebnis.alter}"
+            header += f"  Alter={_html(ergebnis.alter)}"
         lines.append(f"<h3>{header}</h3>")
 
         # Hinweis bei DEFAULT_GRUEN (= kein Treffer)
@@ -198,30 +200,31 @@ class CheckTab(QWidget):
         for t in ergebnis.treffer:
             color = AMPEL_STYLE[t.ampel][0]
             kuerzel = f"<span style='color:{color};'><b>[{t.ampel.value.upper()}]</b></span>"
-            lines.append(f"<li>{kuerzel} <b>{t.regel_kuerzel}</b>: {t.begruendung}")
+            lines.append(f"<li>{kuerzel} <b>{_html(t.regel_kuerzel)}</b>: {_html(t.begruendung)}")
             if t.quelle:
-                src = f"{t.quelle.kuerzel} — {t.quelle.titel}"
+                src = f"{_html(t.quelle.kuerzel)} — {_html(t.quelle.titel)}"
                 if t.quelle.stand:
-                    src += f", Stand {t.quelle.stand}"
+                    src += f", Stand {_html(t.quelle.stand)}"
                 if t.quelle.url:
-                    src = f"<a href='{t.quelle.url}'>{src}</a>"
+                    url = _html(t.quelle.url)
+                    src = f"<a href='{url}'>{src}</a>"
                 lines.append(f"<br/><small>Quelle: {src}</small>")
             if t.container:
-                lines.append(f"<br/><small>Container: <code>{t.container}</code></small>")
+                lines.append(f"<br/><small>Container: <code>{_html(t.container)}</code></small>")
             lines.append("</li>")
         lines.append("</ul>")
 
         if ergebnis.container_hinweise:
             lines.append(
                 "<b>Container-Hinweise:</b> "
-                + ", ".join(f"<code>{c}</code>" for c in ergebnis.container_hinweise)
+                + ", ".join(f"<code>{_html(c)}</code>" for c in ergebnis.container_hinweise)
             )
 
         if pbs:
             lines.append(f"<p><b>{S.CHECK_PB_LABEL}</b></p><ul>")
             for pb in pbs:
-                q = f" ({pb.quelle.kuerzel})" if pb.quelle else ""
-                lines.append(f"<li>{pb.bezeichnung}{q}</li>")
+                q = f" ({_html(pb.quelle.kuerzel)})" if pb.quelle else ""
+                lines.append(f"<li>{_html(pb.bezeichnung)}{q}</li>")
             lines.append("</ul>")
             lines.append(
                 "<small>Nicht vergessen: KV-Kennziffer auf dem "

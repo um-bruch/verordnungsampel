@@ -75,6 +75,9 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 - Repo-Hygiene nachgezogen: lokale Portierungspläne und interne Steuerungsdateien bleiben aus dem öffentlichen GitHub-Repo heraus; `llms.txt` und Web-MVP-Doku verweisen nur noch auf öffentliche Einstiegspunkte.
 
 ### Behoben / Fixed
+- GUI-RichText-Ausgaben in Check- und Regelwerke-Tab escapen jetzt auch
+  DB-/Quellenfelder, Container, Praxisbesonderheiten, Fehlertexte und
+  Quellen-URLs vor `setHtml`.
 - Deutsche Nutzertexte im Regelwerke-Tab nutzen echte Umlaute für "angestoßen" und "Einträge".
 - Marketing-Blacklist: "KI" als interne Abkürzung für Kontraindikation ersetzt (Verwechslungsgefahr mit AI/KI); "KI-gestützt" → "KI-basiert" in USER-GUIDE
 

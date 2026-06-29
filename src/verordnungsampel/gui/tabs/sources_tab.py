@@ -9,6 +9,7 @@ Spiegelt die Ausgabe des CLI-Befehls `sources`. Zusaetzlich:
 
 from __future__ import annotations
 
+import html
 from typing import Dict, Any
 
 from PySide6.QtCore import Qt
@@ -25,6 +26,10 @@ from PySide6.QtWidgets import (
 
 from verordnungsampel.db.connection import open_database
 from verordnungsampel.db.seed import ensure_seed_data
+
+
+def _html(value: object) -> str:
+    return html.escape("" if value is None else str(value), quote=True)
 
 
 class SourcesTab(QWidget):
@@ -140,7 +145,7 @@ class SourcesTab(QWidget):
         try:
             data = self._load_data()
         except Exception as exc:  # pragma: no cover - UI-Fehlerpfad
-            lbl = QLabel(f"<span style='color:#a00'>Fehler beim Laden: {exc}</span>")
+            lbl = QLabel(f"<span style='color:#a00'>Fehler beim Laden: {_html(exc)}</span>")
             lbl.setTextFormat(Qt.TextFormat.RichText)
             self._inner_layout.addWidget(lbl)
             return
@@ -166,9 +171,9 @@ class SourcesTab(QWidget):
             title = QLabel(
                 f"<b>{label}</b><br/>"
                 f"<span style='color:#333'>"
-                f"Stand: <b>{stand}</b> &nbsp; | &nbsp; "
-                f"Einträge in DB: <b>{db_n}</b> (JSON: {json_n}) &nbsp; | &nbsp; "
-                f"Extrahiert: {extr}"
+                f"Stand: <b>{_html(stand)}</b> &nbsp; | &nbsp; "
+                f"Einträge in DB: <b>{_html(db_n)}</b> (JSON: {_html(json_n)}) &nbsp; | &nbsp; "
+                f"Extrahiert: {_html(extr)}"
                 f"</span>"
             )
             title.setTextFormat(Qt.TextFormat.RichText)
@@ -176,9 +181,10 @@ class SourcesTab(QWidget):
             lay.addWidget(title)
             url = meta.get("quelle_url")
             if url:
+                url_html = _html(url)
                 url_lbl = QLabel(
                     f"<span style='color:#666;font-size:10px'>Quelle: "
-                    f"<a href='{url}'>{url}</a></span>"
+                    f"<a href='{url_html}'>{url_html}</a></span>"
                 )
                 url_lbl.setTextFormat(Qt.TextFormat.RichText)
                 url_lbl.setOpenExternalLinks(True)
@@ -195,8 +201,8 @@ class SourcesTab(QWidget):
 
         for kuerzel, titel, stand in data["quellen"]:
             lbl = QLabel(
-                f"&bull; <b>{kuerzel}</b> (Stand {stand or '?'}) "
-                f"<span style='color:#666'>{titel or ''}</span>"
+                f"&bull; <b>{_html(kuerzel)}</b> (Stand {_html(stand or '?')}) "
+                f"<span style='color:#666'>{_html(titel or '')}</span>"
             )
             lbl.setTextFormat(Qt.TextFormat.RichText)
             lbl.setWordWrap(True)
@@ -205,10 +211,10 @@ class SourcesTab(QWidget):
         # Footer
         footer = QLabel(
             f"<br/><span style='color:#666;font-size:10px'>"
-            f"Datenbank: {data['db_path']}<br/>"
-            f"Letzte init: {data['last_init']}<br/>"
-            f"PRISCUS/Container-Regeln: {data['regel_count']} &nbsp; | &nbsp; "
-            f"Praxisbesonderheiten: {data['pb_count']}"
+            f"Datenbank: {_html(data['db_path'])}<br/>"
+            f"Letzte init: {_html(data['last_init'])}<br/>"
+            f"PRISCUS/Container-Regeln: {_html(data['regel_count'])} &nbsp; | &nbsp; "
+            f"Praxisbesonderheiten: {_html(data['pb_count'])}"
             f"</span>"
         )
         footer.setTextFormat(Qt.TextFormat.RichText)
