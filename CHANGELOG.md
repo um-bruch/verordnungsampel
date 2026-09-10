@@ -5,6 +5,12 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
 ## [Unreleased]
 
+### Hinzugefügt / Added
+- Austauschformat & Schnittstellenverträge (TW-VA-03 / TASKPLAN #1176):
+  - Neues Kernmodul `verordnungsampel.exchange` für die dateibasierten Schemas `verordnungsampel-casebundle-v1` (pseudonymisierte Fallbündel mit strikter PII-Schranke `contains_clear_patient_data: false`, Heuristik zur Erkennung von Klartext-Patientennamen und Unverified-Markierung importierter Workflow-Freitexte) sowie `verordnungsampel-ruleset-v1` (versionierte Regelwerks-Snapshots mit SHA-256-Dateiprüfsummen, Quellständen, atomarer Transaktionsabsicherung und verpflichtender Bestätigung vor lokalen Datenänderungen).
+  - CLI-Erweiterungen: `export-casebundle`, `import-casebundle`, `export-ruleset`, `import-ruleset`.
+  - 17 neue Tests in `tests/test_exchange.py` (188/188 Tests passed gesamt). [2026-09-10]
+
 ### Sicherheit / Security
 - Die optionale lokale Web/PWA-Komponente verlangt jetzt `Flask>=3.1.3`,
   damit Installationen nicht mehr auf von `GHSA-68rp-wp8r-4726` betroffene

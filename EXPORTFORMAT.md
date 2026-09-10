@@ -1,8 +1,8 @@
 # Exportformat VerordnungsAmpel
 
-Stand: 2026-05-28
+Stand: 2026-09-10
 
-Dieses Dokument beschreibt die geplanten dateibasierten Austauschformate für die plattformübergreifende Nutzung. Es ist noch keine Implementierungszusage; es legt die Grenzen für spätere CLI-, Desktop- und PWA-Funktionen fest.
+Dieses Dokument beschreibt die dateibasierten Austauschformate für die plattformübergreifende Nutzung (implementiert in `verordnungsampel.exchange` und über die CLI-Befehle `export-casebundle`, `import-casebundle`, `export-ruleset`, `import-ruleset`). Es legt die Grenzen für CLI-, Desktop- und Web/PWA-Funktionen fest.
 
 ## Grundregeln
 

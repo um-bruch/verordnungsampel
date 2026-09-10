@@ -791,6 +791,159 @@ def cmd_verify(args: argparse.Namespace) -> int:
     return 2
 
 
+def cmd_export_casebundle(args: argparse.Namespace) -> int:
+    """Exportiert Fallbuendel als verordnungsampel-casebundle-v1 JSON."""
+    from verordnungsampel.exchange import export_casebundle, export_casebundle_from_log
+
+    if args.from_log:
+        with ComplianceLog() as log:
+            data = export_casebundle_from_log(
+                log,
+                pseudonymize=not args.no_pseudonymize,
+                include_audit_chain=args.include_audit,
+            )
+    elif args.cases:
+        p = Path(args.cases)
+        if not p.exists():
+            print(f"FEHLER: Datei {args.cases} existiert nicht.", file=sys.stderr)
+            return 2
+        try:
+            raw = json.loads(p.read_text(encoding="utf-8"))
+        except Exception as exc:
+            print(f"FEHLER: JSON konnte nicht geladen werden: {exc}", file=sys.stderr)
+            return 2
+        case_list = raw.get("cases") if isinstance(raw, dict) else raw
+        if not isinstance(case_list, list):
+            print("FEHLER: Input-Datei muss eine Liste von Faellen oder {'cases': [...]} sein.", file=sys.stderr)
+            return 2
+        data = export_casebundle(
+            case_list,
+            pseudonymized=not args.no_pseudonymize,
+            hash_chain_exported=args.include_audit,
+        )
+    else:
+        print("FEHLER: Entweder --from-log oder --cases <pfad.json> angeben.", file=sys.stderr)
+        return 2
+
+    json_str = json.dumps(data, ensure_ascii=False, indent=2)
+    if args.out:
+        out_path = Path(args.out)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json_str, encoding="utf-8")
+        print(f"Casebundle mit {len(data['cases'])} Fall/Faellen nach '{args.out}' exportiert.")
+    else:
+        print(json_str)
+    return 0
+
+
+def cmd_import_casebundle(args: argparse.Namespace) -> int:
+    """Importiert und validiert ein verordnungsampel-casebundle-v1 JSON."""
+    from verordnungsampel.exchange import import_casebundle, validate_casebundle
+
+    p = Path(args.file)
+    if not p.exists():
+        print(f"FEHLER: Datei {args.file} existiert nicht.", file=sys.stderr)
+        return 2
+
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"FEHLER: JSON konnte nicht gelesen werden: {exc}", file=sys.stderr)
+        return 2
+
+    errors = validate_casebundle(data)
+    if errors:
+        print("FEHLER: Casebundle ist UNGUELTIG:", file=sys.stderr)
+        for err in errors:
+            print(f"  - {err}", file=sys.stderr)
+        return 2
+
+    cases = data.get("cases", [])
+    print(f"Casebundle-Validierung erfolgreich: {len(cases)} Fall/Faelle entsprechen dem Schema.")
+
+    if args.into_log and not args.dry_run:
+        with ComplianceLog() as log:
+            res = import_casebundle(data, target_log=log)
+            print(f"{res['imported_into_log_count']} Faelle erfolgreich in den Compliance-Log uebernommen.")
+    elif args.dry_run:
+        print("Dry-Run: Keine Aenderungen am lokalen Compliance-Log vorgenommen.")
+    else:
+        print("Hinweis: Nutzen Sie '--into-log', um die Faelle in den lokalen Compliance-Log zu uebernehmen.")
+
+    return 0
+
+
+def cmd_export_ruleset(args: argparse.Namespace) -> int:
+    """Exportiert das Regelwerk als verordnungsampel-ruleset-v1 JSON."""
+    from verordnungsampel.exchange import export_ruleset
+
+    seed_dir = Path(args.seed_dir) if args.seed_dir else None
+    conn, _ = open_database(args.db)
+    try:
+        ensure_seed_data(conn)
+        data = export_ruleset(conn, seed_dir=seed_dir)
+    finally:
+        conn.close()
+
+    json_str = json.dumps(data, ensure_ascii=False, indent=2)
+    if args.out:
+        out_path = Path(args.out)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json_str, encoding="utf-8")
+        print(f"Regelwerk ({len(data['rules'])} Regeln, {len(data['checksums']['files'])} Checksummen) nach '{args.out}' exportiert.")
+    else:
+        print(json_str)
+    return 0
+
+
+def cmd_import_ruleset(args: argparse.Namespace) -> int:
+    """Importiert einen Regelwerks-Snapshot atomar."""
+    from verordnungsampel.exchange import import_ruleset, validate_ruleset
+
+    p = Path(args.file)
+    if not p.exists():
+        print(f"FEHLER: Datei {args.file} existiert nicht.", file=sys.stderr)
+        return 2
+
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"FEHLER: JSON konnte nicht gelesen werden: {exc}", file=sys.stderr)
+        return 2
+
+    errors = validate_ruleset(data)
+    if errors:
+        print("FEHLER: Ruleset ist UNGUELTIG:", file=sys.stderr)
+        for err in errors:
+            print(f"  - {err}", file=sys.stderr)
+        return 2
+
+    if not args.confirm:
+        print(
+            "HINWEIS: Ruleset ist syntaktisch gueltig, aber noch nicht importiert.\n"
+            "Regelwerks-Snapshots ersetzen bestehende lokale Daten atomar.\n"
+            "Fuehren Sie den Befehl mit '--confirm' aus, um den Import anzuwenden.",
+            file=sys.stderr,
+        )
+        return 1
+
+    conn, _ = open_database(args.db)
+    try:
+        counts = import_ruleset(data, conn, confirmed=True)
+        print(
+            f"Ruleset erfolgreich atomar importiert:\n"
+            f"  - Regeln: {counts['rules']}\n"
+            f"  - ICD-10: {counts['icd10']}\n"
+            f"  - ATC: {counts['atc']}\n"
+            f"  - Praxisbesonderheiten: {counts['praxisbesonderheiten']}\n"
+            f"  - Relationen: {counts['relations']}"
+        )
+    finally:
+        conn.close()
+
+    return 0
+
+
 def _add_check_args(p: argparse.ArgumentParser) -> None:
     """Wiederverwendbare Argumente fuer check/justify."""
     p.add_argument("--icd", required=True, help="ICD-10-GM-Code (z.B. I10)")
@@ -982,6 +1135,80 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_coverage.add_argument("--json", action="store_true", help="Ausgabe als JSON")
     p_coverage.set_defaults(func=cmd_coverage)
+
+    p_exp_cb = sub.add_parser(
+        "export-casebundle",
+        help="Exportiert Fallbuendel als verordnungsampel-casebundle-v1 JSON",
+    )
+    p_exp_cb.add_argument(
+        "--from-log", action="store_true", help="Faelle aus lokalem Compliance-Log exportieren"
+    )
+    p_exp_cb.add_argument(
+        "--cases", default=None, help="Pfad zu einer JSON-Datei mit Faellen"
+    )
+    p_exp_cb.add_argument(
+        "--out", default=None, help="Ausgabedatei (Standard: stdout)"
+    )
+    p_exp_cb.add_argument(
+        "--no-pseudonymize",
+        action="store_true",
+        help="Keine automatische Pseudonymisierung",
+    )
+    p_exp_cb.add_argument(
+        "--include-audit",
+        action="store_true",
+        help="Hash-Chain-Audit-Eintraege einschliessen",
+    )
+    p_exp_cb.set_defaults(func=cmd_export_casebundle)
+
+    p_imp_cb = sub.add_parser(
+        "import-casebundle",
+        help="Validiert und importiert verordnungsampel-casebundle-v1 JSON",
+    )
+    p_imp_cb.add_argument(
+        "--file", required=True, help="Pfad zur Casebundle-JSON-Datei"
+    )
+    p_imp_cb.add_argument(
+        "--into-log",
+        action="store_true",
+        help="Faelle in lokalen Compliance-Log uebernehmen",
+    )
+    p_imp_cb.add_argument(
+        "--dry-run", action="store_true", help="Nur Validierung ohne Log-Import"
+    )
+    p_imp_cb.set_defaults(func=cmd_import_casebundle)
+
+    p_exp_rs = sub.add_parser(
+        "export-ruleset",
+        help="Exportiert Regelwerk als verordnungsampel-ruleset-v1 JSON",
+    )
+    p_exp_rs.add_argument(
+        "--db", default=None, help="Optionaler Pfad zur SQLite-Datenbank"
+    )
+    p_exp_rs.add_argument(
+        "--seed-dir", default=None, help="Optionaler Pfad zum Seed-Verzeichnis"
+    )
+    p_exp_rs.add_argument(
+        "--out", default=None, help="Ausgabedatei (Standard: stdout)"
+    )
+    p_exp_rs.set_defaults(func=cmd_export_ruleset)
+
+    p_imp_rs = sub.add_parser(
+        "import-ruleset",
+        help="Importiert verordnungsampel-ruleset-v1 JSON atomar",
+    )
+    p_imp_rs.add_argument(
+        "--file", required=True, help="Pfad zur Ruleset-JSON-Datei"
+    )
+    p_imp_rs.add_argument(
+        "--db", default=None, help="Optionaler Pfad zur SQLite-Datenbank"
+    )
+    p_imp_rs.add_argument(
+        "--confirm",
+        action="store_true",
+        help="Bestaetigung zum Ersetzen bestehender Daten",
+    )
+    p_imp_rs.set_defaults(func=cmd_import_ruleset)
 
     return parser
 
