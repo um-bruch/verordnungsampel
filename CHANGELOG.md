@@ -5,6 +5,13 @@ Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
 ## [Unreleased]
 
+### Behoben / Fixed
+- Bugsweep-Iteration 1 (Exchange-Datenschutz & Resilienz):
+  - Datenschutz / PII: `_CLEARNAME_PATTERN` erkennt nun auch durch Komma getrennte Klarnamen nach dem in Arztpraxen üblichen Schema `Nachname, Vorname` (z.B. `Mueller, Hans` oder `Müller, Erika`). Dadurch werden Klarnamen zuverlässig in `export_casebundle` und `validate_casebundle` abgewiesen und in `export_casebundle_from_log` pseudonymisiert.
+  - Resilienz: `export_casebundle` stürzt nicht mehr mit `AttributeError` oder `TypeError` ab, wenn `result`, `justification` oder `workflow` den Wert `None` haben oder Unterlisten `None` sind.
+  - Schema-Kompatibilität: `import_casebundle` übernimmt das Patientenalter auch dann verlässlich in den lokalen Compliance-Log, wenn die Eingabedaten gemäß `EXPORTFORMAT.md` das Feld `age_years` statt `alter` verwenden.
+  - 6 neue Regressionstests in `tests/test_bugsweep_iteration1_exchange_privacy_and_resilience.py` (194/194 Tests passed gesamt). [2026-09-18]
+
 ### Hinzugefügt / Added
 - Austauschformat & Schnittstellenverträge (TW-VA-03 / TASKPLAN #1176):
   - Neues Kernmodul `verordnungsampel.exchange` für die dateibasierten Schemas `verordnungsampel-casebundle-v1` (pseudonymisierte Fallbündel mit strikter PII-Schranke `contains_clear_patient_data: false`, Heuristik zur Erkennung von Klartext-Patientennamen und Unverified-Markierung importierter Workflow-Freitexte) sowie `verordnungsampel-ruleset-v1` (versionierte Regelwerks-Snapshots mit SHA-256-Dateiprüfsummen, Quellständen, atomarer Transaktionsabsicherung und verpflichtender Bestätigung vor lokalen Datenänderungen).

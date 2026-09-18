@@ -51,9 +51,9 @@ VALID_WORKFLOW_TYPES = {
 }
 
 # Heuristik zur Erkennung potenzieller Klartextnamen in patient_ref
-# z.B. "Max Mustermann", "Dr. Müller, Hans" oder E-Mail-Adressen
+# z.B. "Max Mustermann", "Dr. Müller, Hans", "Mueller, Hans" oder E-Mail-Adressen
 _CLEARNAME_PATTERN = re.compile(
-    r"(?:^[A-ZÄÖÜ][a-zäöüß]+\s+[A-ZÄÖÜ][a-zäöüß]+)|(?:@)|(?:Herr|Frau|Dr\.|Prof\.)",
+    r"(?:^[A-ZÄÖÜ][a-zäöüß]+(?:,\s*|\s+)[A-ZÄÖÜ][a-zäöüß]+)|(?:@)|(?:Herr|Frau|Dr\.|Prof\.)",
     re.IGNORECASE,
 )
 
@@ -108,29 +108,61 @@ def export_casebundle(
                 "Nur Pseudonyme (z.B. 'P-101') sind zulaessig."
             )
 
-        # Sichere Struktur
-        res = case_dict.get("result", {})
-        just = case_dict.get("justification", {})
-        wf = case_dict.get("workflow", {})
+        # Sichere Struktur (Resilienz gegen None und inkompatible Typen)
+        res_raw = case_dict.get("result")
+        res = res_raw if isinstance(res_raw, dict) else {}
+
+        just_raw = case_dict.get("justification")
+        just = just_raw if isinstance(just_raw, dict) else {}
+
+        wf_raw = case_dict.get("workflow")
+        wf = wf_raw if isinstance(wf_raw, dict) else {}
+
+        traffic_light = res.get("traffic_light")
+        if not traffic_light:
+            traffic_light = "gruen"
+        else:
+            traffic_light = str(traffic_light).lower()
+
+        matched_rules = res.get("matched_rules")
+        matched_rules_list = list(matched_rules) if isinstance(matched_rules, (list, tuple)) else []
+
+        source_refs = res.get("source_refs")
+        source_refs_list = list(source_refs) if isinstance(source_refs, (list, tuple)) else []
+
+        just_status = just.get("status")
+        if not just_status:
+            just_status = "not_applicable"
+        else:
+            just_status = str(just_status).lower()
+
+        just_steps = just.get("steps")
+        just_steps_list = list(just_steps) if isinstance(just_steps, (list, tuple)) else []
+
+        wf_type = wf.get("type") or "keine_aktion"
+
+        alter_val = case_dict.get("alter")
+        if alter_val is None:
+            alter_val = case_dict.get("age_years")
 
         norm_item: Dict[str, Any] = {
             "case_ref": str(case_ref),
             "patient_ref": str(patient_ref) if patient_ref else None,
             "icd": str(case_dict.get("icd", "")).strip().upper(),
             "atc": str(case_dict.get("atc", "")).strip().upper(),
-            "alter": case_dict.get("alter", case_dict.get("age_years")),
+            "alter": alter_val,
             "checked_at": case_dict.get("checked_at") or _utc_now_iso(),
             "result": {
-                "traffic_light": str(res.get("traffic_light", "gruen")).lower(),
-                "matched_rules": list(res.get("matched_rules", [])),
-                "source_refs": list(res.get("source_refs", [])),
+                "traffic_light": traffic_light,
+                "matched_rules": matched_rules_list,
+                "source_refs": source_refs_list,
             },
             "justification": {
-                "status": str(just.get("status", "not_applicable")).lower(),
-                "steps": list(just.get("steps", [])),
+                "status": just_status,
+                "steps": just_steps_list,
             },
             "workflow": {
-                "type": wf.get("type", "keine_aktion"),
+                "type": wf_type,
                 "text": wf.get("text"),
             },
         }
@@ -391,25 +423,34 @@ def import_casebundle(
     imported_count = 0
     if target_log is not None:
         for item in processed_cases:
-            res = item.get("result") or {}
-            wf = item.get("workflow") or {}
-            just = item.get("justification") or {}
+            res_raw = item.get("result")
+            res = res_raw if isinstance(res_raw, dict) else {}
+
+            wf_raw = item.get("workflow")
+            wf = wf_raw if isinstance(wf_raw, dict) else {}
+
+            just_raw = item.get("justification")
+            just = just_raw if isinstance(just_raw, dict) else {}
+
+            alter_val = item.get("alter")
+            if alter_val is None:
+                alter_val = item.get("age_years")
 
             extra_payload = {
                 "source": "casebundle_import",
                 "schema_version": CASEBUNDLE_SCHEMA_VERSION,
                 "case_ref": item.get("case_ref"),
                 "patient_ref": item.get("patient_ref"),
-                "matched_rules": res.get("matched_rules", []),
-                "source_refs": res.get("source_refs", []),
+                "matched_rules": list(res.get("matched_rules") or []),
+                "source_refs": list(res.get("source_refs") or []),
                 "justification": just,
                 "workflow": wf,
             }
             target_log.append(
                 icd=item["icd"],
                 atc=item["atc"],
-                alter=item.get("alter"),
-                ampel=res.get("traffic_light", "gruen"),
+                alter=alter_val,
+                ampel=res.get("traffic_light") or "gruen",
                 begruendung=f"Importierter Fall {item.get('case_ref')}",
                 container=wf.get("type"),
                 nutzer="import",
